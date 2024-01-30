@@ -1,0 +1,289 @@
+cpp assingment date .
+-----------------------------------------------------
+q.1.
+//Write a program that prints "Hello, World!" to the console using cout.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    cout<<"hello world";
+    return 0;
+}
+output:-
+hello world
+-----------------------------------------------------------------------------------------------------------------
+2)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string name;
+    cout<<"enter your name\n";
+    cin>>name;
+    cout<<"name is:"<<name;
+}
+
+------------------------------------------------------------------------------------
+3)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    float a,b,c;
+    cout<<"enter two value\n";
+    cin>>a>>b;
+    c=a+b;
+    cout<<" sum is "<<a<<" and "<<b<<" is "<<c;
+}
+
+-----------------------------------------------------------------------------------------
+4)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    float l,b,area;
+    cout<<"enter two value\n";
+    cin>>l>>b;
+    area=l*b;
+    cout<<" sum is "<<l<<" and "<<b<<" is "<<area;
+}
+------------------------------------------------------------------------------------------
+5) 
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    cout<<"Welcome to the Programming World!\n";
+    return 0;
+}
+-----------------------------------------------------------------------------------------------
+6)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    cout<<"Learning programming is fun!\n";
+    return 0;
+}
+-----------------------------------------------------------------------------------------------
+7)
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    cout<<"Hello, Universe!\n";
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------
+8)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    cout<<"Programming is amazing and opens up new possibilities!\n";
+    return 0;
+}
+--------------------------------------------------------------------------------
+10)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+   
+    cout<<"Coding is today's language of creativity ";
+    
+}
+-------------------------------------------------------------------------------------------------
+11)
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+   
+    cout<<"shankar lal saini ";
+    
+}
+---------------------------------------------------------------------------------------------------------
+12)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+   
+    cout<<"Goodbye, see you next time! ";
+    
+}
+------------------------------------------------------------------------------------------------------------
+13)
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+   
+    cout<<"Code today for a better tomorrow ";
+    
+}
+
+-----------------------------------------------------------------------------------------------------------
+14)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string lauguage;
+    cout<<"enter the languages \n";
+    cin>>lauguage; 
+    cout<<"My favorite programming language is "<<lauguage;
+    
+}
+
+
+---------------------------------------------------------------------------------------------------
+
+15)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    
+    cout<<"Making great strides in programming today!";
+    
+}
+---------------------------------------------------------------------------------------------------------
+16)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int byear,age;
+    int presentyear=2024;
+    cout<<"enter your birth year\n";
+    cin>>byear;
+    age=presentyear-byear;
+    cout<<"your age is :"<<age;
+}
+
+
+-----------------------------------------------------------------------------------------------------
+17)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string color ;
+    cout<<"enter your color\n";
+    cin>>color;
+    cout<<"Your favorite color is "<<color;
+    
+}
+
+----------------------------------------------------------------------------------------------------------
+18)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    long a,b,sum,sub,mul,divi,moduler;
+    cout<<"enter the value of a and b\n";
+    cin>>a>>b;
+    sum=a+b;
+    sub=a-b;
+    mul=a*b;
+    divi=a/b;
+    moduler=a%b;
+    cout<<"sum of "<<a<<" and "<< b << sum <<endl;
+    cout<<"sub of "<<a<<" and "<< b << sub  <<endl;
+    cout<<"mul of "<<a<<" and "<< b << mul <<endl;
+    cout<<"divi of "<<a<<" and "<< b << divi <<endl;
+    cout<<"moduler  of "<<a<<" and "<< b << moduler<<"\t";
+}
+
+-------------------------------------------------------------------------------------------------------
+
+19)
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    long p,t,r,si;
+    cout<< "Enter p,r,t\n";
+    cin >>p>>r>>t;
+    si=(p*r*t/100);
+    cout<<si;
+    
+}
+
+
+---------------------------------------------------------------------------------------------
+
+20)
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+    string word;
+    cout << "Enter a word: ";
+    cin >> word;
+    cout << word << " " << word << endl;
+    
+}
+----------------------------------------------------------------------------------------------------
+21)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{    long n;
+    cout<<"enter the number\n";
+    cin>>n;
+    cout<<" Your favorite number is "<<n;
+    
+}
+
+
+----------------------------------------------------------------------------------------------------------
+
+22)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{    string name;
+     cout<<"enter your name\n";
+     cin>>name;
+     int age;
+     cout<<"enter your age\n";
+     cin>>age;
+     cout<<"hello "<<name<<endl;
+     cout<<"you are age year old"<<age;
+}
+
+
+--------------------------------------------------------------------------------------------------------
+23)
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{    int n,a;
+    cout<<"enter the number\n";
+    cin>>n;
+    a=n*n;
+    cout<<"square is "<<a;
+    return 0;
+}
