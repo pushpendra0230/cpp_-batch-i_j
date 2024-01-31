@@ -1,0 +1,180 @@
+cpp assingment date 30 jan 2024.
+---------------------------------------------------------------------
+1)You want to greet the user and print their name. 
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string name;
+    cout<<"enter your name : ";
+    cin>>name;
+
+    cout<<"hello "<<name;
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------
+2)Create a program that takes two numbers as input and prints their sum.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int num1,num2;
+    cout<<"enter the value of num1 and num2 : ";
+    cin>>num1>>num2;
+    int sum =num1+num2;
+    cout<<"sum is : "<<sum;
+    return 0;
+}
+
+----------------------------------------------------------------------------------------
+3)Design a program that prompts the user for their age and prints a message mentioning their age.
+
+#include<bits/stdc++.h>
+using namespace std ;
+int main()
+{
+    int age;
+    cout<<"enter your age : ";
+    cin>>age;
+
+    cout<<" Your age is :  "<< age << " years old. ";
+    return 0;
+}
+
+----------------------------------------------------------------------------------------------------
+4)Write a C++ program that takes a temperature in Celsius as input and outputs the equivalent temperature in Fahrenheit.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    float temp_c;
+    cout<<"enter the temprature in celcius : ";
+    cin>>temp_c;
+    float temp_f=((temp_c+1.8)+32);
+    cout<<"celcius to fahrenheit temprature is : "<<temp_f;
+
+}
+-----------------------------------------------------------------------------------------------------
+5)You need to gather information about a person's name, age, and favorite color. Develop a program that takes these inputs and prints a summary.
+
+#include<bits/stdc++.h>
+using namespace std ;
+int main()
+{
+    string name;
+    cout<<"enter your name : ";
+    cin>>name;
+    int age;
+    cout<<"enter your age : ";
+    cin>>age;
+    string color;
+    cout<<"enter your color : ";
+    cin>>color;
+
+    cout<<"name is : "<<name<<"\nage is : "<<age<<"\nfav color is : "<<color;
+    return 0;
+}
+-----------------------------------------------------------------------------------------------
+6)Create a program that asks the user for an integer input and prints whether it's even or odd.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int num;
+    cout<<"enter the num : ";
+    cin>>num;
+    
+    if(num%2==0)
+    {
+        cout<<" number is even ";
+    }
+    else{
+        cout<<"num is odd ";
+    }
+    return 0;
+}
+-----------------------------------------------------------------------------------------------
+7)Design a simple banking program that asks the user for their initial balance and a withdrawal amount, then prints the remaining balance.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int balance;
+    cout<<"enter your initial balance : ";
+    cin>>balance;
+    int widamt;
+    cout<<"enter your withdrowal amount : ";
+    cin>>widamt;
+    int rem=balance-widamt;
+    cout<<"remaning balance : "<<rem;
+
+    return 0;
+}
+----------------------------------------------------------------------------------------------
+8)Write a program that asks the user to enter a password. If the entered password matches a predefined one, print "Access Granted," otherwise, print "Access Denied."
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string passwd,password="siyaram";
+    cout<<"enter the password : ";
+    cin>>passwd;
+    
+    if(passwd==password)
+    {
+        cout<<"access granted ";
+    }
+    else{
+        cout<<"access denied ";
+    }
+    return 0;
+}
+
+------------------------------------------------------------------------------------------
+9)Develop a program that takes a single character as input and prints whether it is a vowel or a consonant.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+
+    char ch;
+    cout<<"enter a charector : ";
+    cin>>ch;
+
+    if(ch=='a'||ch=='e'||ch=='i'||ch=='o'||ch=='u')
+    {
+        cout<<"vowel";
+    }
+    else{
+        cout<<"consonant";
+    }
+    return 0;
+}
+
+------------------------------------------------------------------------------------------------------
+10)Create a C++ program that takes a sentence as input and outputs the sentence.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+ {
+    std::string sentence;
+    std::cout << "Enter a sentence: ";
+    std::getline(std::cin, sentence);
+    cout << "You entered: " << sentence<<std::endl;
+    return 0;
+}
+
+
+
+-----------------------------------------------------------------------------------------------------------------
