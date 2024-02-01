@@ -1,0 +1,219 @@
+cpp assingment date 31jan2024 .
+----------------------------------------------------------------------------------------------------
+q.1.**Even or Odd:**
+Write a C++ program that takes an integer as input and uses an `if-else` statement to determine
+whether the number is even or odd.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int number;
+    cout<<"emter a integer number\n";
+    cin>>number;
+    if(number%2==0)
+    {
+    cout<<number<<" number is even\n";
+    }
+    else
+    {
+        cout<<number<<" number is odd\n";
+    }
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------
+q.2. **Grade Calculator:**
+Create a program that takes a student's percentage as input and outputs their corresponding grade
+(A, B, C, etc.) using `if-else` statements.
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int percentage;
+    cout<<"emter the percentage of student:-\n";
+    cin>>percentage;
+    char grade;
+    if(percentage>=100)
+    {
+        cout<<" A++\n";
+    }
+    else if(percentage>=90&&percentage<=100)
+    {
+    cout<<" A\n";
+    }
+    else if(percentage>=80&&percentage<90)
+    {
+        cout<<" B\n";
+    }
+    else if(percentage>=70&&percentage<80)
+    {
+        cout<<" C\n";
+    }
+    else if(percentage>=60&&percentage<70)
+    {
+        cout<<" D\n";
+    }
+    else if(percentage>=50&&percentage<60)
+    {
+        cout<<" E\n";
+    }
+    else
+    {
+        cout<<" Fail";
+    }
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------
+q.3. **Leap Year Checker:**
+Write a program that checks if a given year is a leap year or not. Use an `if-else` statement and
+logical operators to make the determination.
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int year;
+    cout<<"enter a year:-\n";
+    cin>>year;
+    if(year%4==0&&year%100!=0||(year%400==0))
+    {
+        cout<<year<<" this year is a leap year\n";
+    }
+    else
+    {
+        cout<<" this year is not a leap year\n";
+    }
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------
+q.4. **Triangle Type:**
+Develop a program that takes three angles as input and determines whether the triangle is acute,
+obtuse, or right-angled using `if-else` statements.
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int angle1 , angle2 , angle3;
+    cout <<"Enter the first angle of the triangle: \n";
+    cin>>angle1;
+    cout<<"Enter the second angle of the triangle: \n";
+    cin>>angle2;
+    cout<<"Enter the third angle of the triangle: \n";
+    cin>>angle3;
+    
+    if(angle1 + angle2 + angle3 == 180)
+    {
+        if(angle1 <90 && angle2 <90 && angle3 <90)
+        {
+        cout<<"the triangle is acute.\n";
+        }
+    
+    else if(angle1 == 90 || angle2 == 90 || angle3 == 90)
+    {
+    cout<<"the triangle is right-angled triangle.\n";
+    }
+    else
+    {
+        cout<<"the triangle is obtuse tringle.\n";
+    }
+}
+    else
+    {
+        cout<<"Invalid triangle! The angles do not add up to 180 degrees.\n";
+    }
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------
+q.5. **Positive, Negative, or Zero:**
+Create a C++ program that takes an integer as input and prints whether it is positive, negative, or
+zero using `if-else` statements.
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int number;
+    cout<<"enter a number\n";
+    cin>>number;
+    
+    
+    if(number>0)
+    {
+        cout<<"the number is positive\n";
+    }
+    else if(number<0)
+    {
+        cout<<"the number is negative\n";
+    }
+    else
+    {
+        cout<<"the number is zero";
+    }
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------
+q.6. **Login System:**
+Implement a basic login system where the user enters a username and password. Use `if-else`
+statements to validate the login credentials.
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    string dbemail="sonipushpendra256@gmail.com",dbpassword="1888";
+    string email,password;
+    cout<<"enter your email\n";
+    cin>>email;
+    cout<<"enter your password\n";
+    cin>>password;
+    if(email!=dbemail || password!=dbpassword)
+    {
+        cout<<"invalid email or password\n";
+    }
+    else
+    {
+        cout<<"login successfully\n";
+    }
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
