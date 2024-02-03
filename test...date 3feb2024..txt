@@ -1,0 +1,195 @@
+test...date 3feb2024.
+-------------------------------------------------------
+1. Write a program that checks if a given year is a leap year or not. Use an `if-else` statement
+and logical operators to make the determination.
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int year;
+    cout<<"enter a year:-\n";
+    cin>>year;
+    if(year%4==0&&year%100!=0||(year%400==0))
+    {
+        cout<<year<<" this year is a leap year\n";
+    }
+    else
+    {
+        cout<<" this year is not a leap year\n";
+    }
+    return 0;
+}
+-----------------------------------------------------------------
+q.2. Create a C++ program that takes an integer as input and prints whether it is positive,
+negative, or zero using `if-else` statements.
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    int number;
+    cout<<"enter a number\n";
+    cin>>number;
+    
+    
+    if(number>0)
+    {
+        cout<<"the number is positive\n";
+    }
+    else if(number<0)
+    {
+        cout<<"the number is negative\n";
+    }
+    else
+    {
+        cout<<"the number is zero";
+    }
+    return 0;
+}
+-------------------------------------------------------
+q.3. Write a program that takes the current time as input and prints a message based on
+whether it&#39;s morning, afternoon, evening, or night.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    // Get the current time point in UTC
+    auto currentTimePoint = chrono::system_clock::now();
+
+    // Get the time zone offset for IST (Indian Standard Time)
+    constexpr int istOffsetHours = 5;
+    constexpr int istOffsetMinutes = 30;
+
+    // Adjust the current time point for IST
+    currentTimePoint += chrono::hours(istOffsetHours) + chrono::minutes(istOffsetMinutes);
+
+    // Convert the time point to a time_t object
+    time_t currentTime = chrono::system_clock::to_time_t(currentTimePoint);
+
+    // Convert the time_t object to a tm structure
+    tm* localTime = std::localtime(&currentTime);
+    
+    // Extract the hour part
+    int hour = localTime->tm_hour;
+    
+    if(hour>=6 && hour<12)
+    {
+        cout<<"It's currently Morning .";
+    }
+    else if(hour>=12 && hour<18)
+    {
+        cout<<"It's currently After Noon .";
+    }
+    else if(hour>=18 && hour<21)
+    {
+        cout<<"It's currently Evening .";
+    }
+    else if(hour>=21 && hour<=24)
+    {
+        cout<<"It's currently Night .";
+    }
+    else if(hour>=0 && hour<3)
+    {
+        cout<<"It's currently Midnight .";
+    }
+    else if(hour>=3 && hour<6)
+    {
+        cout<<"It's currently Early Morning .";
+    }
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------
+
+q.4.Develop a program that checks the availability of a product in a store. If the product is in
+stock(greater than 1) and the user has a valid membership, they can purchase it; otherwise,
+display an &quot;Out of stock&quot; message.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    try 
+    {
+        int stocks = 100, stck;
+        int membership_code = 1000, mbm;
+        
+        cout << "Enter the number of stocks you want to purchase and enter your membership code:\n";
+        cin >> stck >> mbm;
+        
+        if (mbm != membership_code)
+        {
+            throw runtime_error("Sir,Please enter a valid membership code.\n");
+        }
+        else if (stocks < 100) 
+        {
+            throw invalid_argument("Sir, The Stock Is Out.\n");
+        }
+        else if (stck > stocks) 
+        {
+            throw runtime_error("Sir, you are demanding more than the stock.\n");
+        }
+        else 
+        {
+            cout << "Stock purchased: " << stck << "\n";
+            stocks = stocks - stck;
+            cout << "Available Stocks: " << stocks << endl;
+        }
+    }
+    catch(const exception & e) 
+    {
+        cerr << "Error: " << e.what() << endl;
+    }
+
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------
+
+q.5.Create a basic ATM system where the user can withdraw money. Use if-else statements to
+check the account balance and handle withdrawal limits.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    try 
+{
+        int withdraw, account = 100000;
+        cout << "Enter the amount you want to withdraw:\n";
+        cin >> withdraw;
+
+        if (withdraw > account) 
+{
+            throw runtime_error("Insufficient Balance.");
+        }
+ else if (account < 500) 
+{
+            throw runtime_error("Insufficient Balance (Account Balance is less than 500).");
+        }
+ else if ((withdraw % 500) != 0) 
+{
+            throw invalid_argument("This amount can be given because this amount is Not in multiple of 5.");
+        }
+ else
+ {
+            account = account - withdraw;
+            cout << "Withdraw amount: " << withdraw << "\n";
+            cout << "Account Balance left: " << account;
+        }
+    }
+    catch (const exception& e) 
+{
+        cerr << "Error: " << e.what() << endl;
+    }
+
+    return 0;
+}
+=================================================================================================================================================
