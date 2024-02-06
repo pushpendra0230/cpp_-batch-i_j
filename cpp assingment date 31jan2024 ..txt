@@ -189,8 +189,421 @@ int main()
     }
     return 0;
 }
------------------------------------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------
+q.7. **Traffic Light Simulation:**
+Write a program that simulates a traffic light. The program should take user input for the current
+signal and output the next signal using `if-else` statements...
 
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    string currentsignal;
+    cout << "Enter the current signal (red, yellow, or green): ";
+    cin >> currentsignal;
+    // Convert the string to lowercase
+    for (char &c : currentsignal) 
+    {
+        c = tolower(c);
+    }
+    if (currentsignal == "red") 
+    {
+        cout << "The next signal is green.\n";
+    }
+    else if (currentsignal == "yellow") 
+    {
+        cout << "The next signal is red.\n";
+    }
+    else if (currentsignal == "green")
+    {
+        cout << "The next signal is yellow.\n";
+    }
+    else 
+    {
+        cout << "Invalid signal input. Please enter red, yellow, or green.\n";
+    }
+    return 0;
+}
+------------------------------------------------------------------------------------------------------
+q.8. **Divisibility Checker:**
+Create a program that checks if a given number is divisible by both 5 and 7. Use logical operators
+within an `if` statement for the check...
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int number;
+    cout << "Enter a number: ";
+    cin >> number;
+    if (number % 5 == 0 && number % 7 == 0)
+    {
+        cout << number << " is divisible by both 5 and 7.\n";
+    }
+    else 
+    {
+        cout << number << " is not divisible by both 5 and 7.\n";
+    }
+
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------
+q.9. **Temperature Converter:**
+
+Develop a program that converts temperatures between Celsius and Fahrenheit. Use `if-else`
+statements to handle the conversion based on user input....
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    char choice;
+    double temperature, convertedTemp;
+
+    cout << "Temperature Converter:\n";
+    cout << "Enter 'C' to convert from Celsius to Fahrenheit or 'F' to convert from Fahrenheit to Celsius: ";
+    cin >> choice;
+
+    if (choice == 'C' || choice == 'c') 
+    {
+        cout << "Enter the temperature in Celsius: ";
+        cin >> temperature;
+        convertedTemp = (temperature * 9.0 / 5.0) + 32.0;
+        cout << "Temperature in Fahrenheit: " << convertedTemp <<"\n";
+    } 
+    else if (choice == 'F' || choice == 'f') 
+    {
+        cout << "Enter the temperature in Fahrenheit: ";
+        cin >> temperature;
+        convertedTemp = (temperature - 32.0) * 5.0 / 9.0;
+        cout << "Temperature in Celsius: " << convertedTemp << "\n";
+    } 
+    else
+    {
+        cout << "Invalid choice! Please enter 'C' or 'F'." << "\n";
+    }
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------
+q.10. **Largest of Three Numbers:**
+Write a C++ program that takes three numbers as input and outputs the largest one using `if-else`
+statements and relational operators....
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    double num1, num2, num3;
+    cout << "Enter three numbers: ";
+    cin >> num1 >> num2 >> num3;
+    
+    double largest;
+    if (num1 >= num2 && num1 >= num3)
+    {
+        largest = num1;
+    }
+    else if (num2 >= num1 && num2 >= num3) 
+    {
+        largest = num2;
+    }
+    else 
+    {
+        largest = num3;
+    }
+    cout << "The largest number is: " << largest <<"\n";
+    
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------------
+q.26. Simple Alarm Clock:
+Write a program that takes the current time as input and prints a message based on whether it's
+morning, afternoon, evening, or night.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    // Get the current time point in UTC
+    auto currentTimePoint = chrono::system_clock::now();
+
+    // Get the time zone offset for IST (Indian Standard Time)
+    constexpr int istOffsetHours = 5;
+    constexpr int istOffsetMinutes = 30;
+
+    // Adjust the current time point for IST
+    currentTimePoint += chrono::hours(istOffsetHours) + chrono::minutes(istOffsetMinutes);
+
+    // Convert the time point to a time_t object
+    time_t currentTime = chrono::system_clock::to_time_t(currentTimePoint);
+
+    // Convert the time_t object to a tm structure
+    tm* localTime = std::localtime(&currentTime);
+    
+    // Extract the hour part
+    int hour = localTime->tm_hour;
+    
+    if(hour>=6 && hour<12)
+    {
+        cout<<"It's currently Morning .";
+    }
+    else if(hour>=12 && hour<18)
+    {
+        cout<<"It's currently After Noon .";
+    }
+    else if(hour>=18 && hour<21)
+    {
+        cout<<"It's currently Evening .";
+    }
+    else if(hour>=21 && hour<=24)
+    {
+        cout<<"It's currently Night .";
+    }
+    else if(hour>=0 && hour<3)
+    {
+        cout<<"It's currently Midnight .";
+    }
+    else if(hour>=3 && hour<6)
+    {
+        cout<<"It's currently Early Morning .";
+    }
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------
+q.27. Positive or Negative:
+Write a program that takes an integer as input and prints whether it is a positive or negative number.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int number;
+    cout << "Enter an integer number: ";
+    cin >> number;
+    if (number > 0) 
+    {
+        cout << "The number is positive.\n";
+    } 
+    else if (number < 0)
+    {
+        cout << "The number is negative.\n";
+    } 
+    else 
+    {
+        cout << "The number is zero.\n";
+    }
+
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------
+q.36. Product Availability Checker:
+Develop a program that checks the availability of a product in a store. If the product is in
+stock(greater than 1) and the user has a valid membership, they can purchase it; otherwise, display
+an "Out of stock" message.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    try 
+    {
+        int stocks = 100, stck;
+        int membership_code = 1000, mbm;
+        
+        cout << "Enter the number of stocks you want to purchase and enter your membership code:\n";
+        cin >> stck >> mbm;
+        
+        if (mbm != membership_code)
+        {
+            throw runtime_error("Sir,Please enter a valid membership code.\n");
+        }
+        else if (stocks < 100) 
+        {
+            throw invalid_argument("Sir, The Stock Is Out.\n");
+        }
+        else if (stck > stocks) 
+        {
+            throw runtime_error("Sir, you are demanding more than the stock.\n");
+        }
+        else 
+        {
+            cout << "Stock purchased: " << stck << "\n";
+            stocks = stocks - stck;
+            cout << "Available Stocks: " << stocks << endl;
+        }
+    }
+    catch(const exception & e) 
+    {
+        cerr << "Error: " << e.what() << endl;
+    }
+
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------------------
+q.37. Credit Score Evaluator:
+Write a program that evaluates a person's credit score and categorizes it as "Excellent," "Good,"
+"Fair," or "Poor" using if-else statements.
+Credit score >1,00,000 Good
+Credit score>50,000 Fair
+Credit score>10,000 Poor.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int creditScore;
+    cout<<"enter your credit score accourding to your bank: ";
+    cin>>creditScore;
+    
+    if (creditScore > 100000) 
+    {
+        cout << "Excellent" << std::endl;
+    }
+    else if (creditScore > 50000) 
+    {
+        cout << "Good";
+    }
+    else if (creditScore > 10000) 
+    {
+        cout << "Fair";
+    }
+    else 
+    {
+        cout << "Poor";
+    }
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------------------------------------
+q.38. Simple ATM System:
+Create a basic ATM system where the user can withdraw money. Use if-else statements to check the
+account balance and handle withdrawal limits.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    try 
+{
+        int withdraw, account = 100000;
+        cout << "Enter the amount you want to withdraw:\n";
+        cin >> withdraw;
+
+        if (withdraw > account) 
+{
+            throw runtime_error("Insufficient Balance.");
+        }
+ else if (account < 500) 
+{
+            throw runtime_error("Insufficient Balance (Account Balance is less than 500).");
+        }
+ else if ((withdraw % 500) != 0) 
+{
+            throw invalid_argument("This amount can be given because this amount is Not in multiple of 5.");
+        }
+ else
+ {
+            account = account - withdraw;
+            cout << "Withdraw amount: " << withdraw << "\n";
+            cout << "Account Balance left: " << account;
+        }
+    }
+    catch (const exception& e) 
+{
+        cerr << "Error: " << e.what() << endl;
+    }
+
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------------------
+q.39. Student Eligibility Checker:
+Implement a program that checks if a student is eligible for a scholarship based on their grades. Use
+if-else statements to determine eligibility criteria.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int 
+main () 
+ { 
+double percentage;
+  
+  do
+	
+	{
+	  
+cout << "Enter student's percentage 1 to 100 only: ";
+	  
+ 
+cin >> percentage;
+	  
+ 
+if (percentage < 1 || percentage > 100)
+		
+		{
+		  
+cout << "Invalid input! Percentage must be between 1 and 100.\n";
+		
+}
+	
+}
+  
+while (percentage < 1 || percentage > 100);
+  
+if (percentage >= 80.0)
+	
+	{
+	  
+cout << "Congratulations! You are eligible for the scholarship.\n";
+	
+}
+  
+  else
+	
+	{
+	  
+cout << "Sorry, you are not eligible for the scholarship.\n";
+	
+}
+  
+return 0;
+
+}
+---------------------------------------------------------------------------------------------------------------------------------------
+q.40. Day Type Identifier:
+Implement a program that takes a day of the week (Monday, Tuesday, etc.) as input and prints
+whether it's a weekday or a weekend day using if-else statements.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string dayoweek;
+    cout<<"enter the day of the week\n";
+    cin>>dayoweek;
+    // Convert the string to lowercase
+    for (char &c : dayoweek) 
+    {
+        c = tolower(c);
+    }
+    if(dayoweek=="monday" || dayoweek=="tuesday" || dayoweek=="wednusday" || dayoweek=="thusday" || dayoweek=="friday")
+    {
+        cout<<"weekday";
+    }
+    else if(dayoweek=="saturday" || dayoweek=="sunday")
+    {
+        cout<<"weekend";
+    }
+    else
+    {
+        cout<<"please enter the correct day of the week";
+    }
+return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
