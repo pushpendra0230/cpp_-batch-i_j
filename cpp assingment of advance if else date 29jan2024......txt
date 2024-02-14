@@ -77,7 +77,410 @@ otherwise, deny access........
 
 
 
+#include<bits/stdc++.h>
+using namespace std;
 
+int main() 
+{
+    int age;
+    char premium_membership;
+    cout<<"Enter your age: \n";
+    cin>>age;
+    cout<<"Do you have a valid premium membership? (y/n): \n";
+    cin>>premium_membership;
+    if (age >= 18 && (premium_membership == 'y' || premium_membership == 'Y')) 
+    {
+        cout<<"Congratulations! Access granted! You are eligible for premium membership.\n";
+        cout<<"Enjoy the access. \n";
+    } 
+    else 
+    {
+        cout<<"Sorry, you are not eligible for premium membership.\n";
+        cout<<"Please make sure you are at least 18 years old and have a valid subscription.\n";
+    }
+    return 0;
+}
+-------------------------------------------------------------------------------------------------------------------------
+q.3: Grade Classification
+Design a program that takes a student's numerical grade as input and outputs their corresponding
+letter grade. Use if-else statements to categorize the grades as 'A', 'B', 'C', 'D', or 'F'..........
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+    int numericalGrade;
+    cout << "Enter the student's numerical grade: ";
+    cin >> numericalGrade;
+
+    char letterGrade;
+    if (numericalGrade >= 90) 
+    {
+        letterGrade = 'A';
+    } 
+    else if (numericalGrade >= 80) 
+    {
+        letterGrade = 'B';
+    } 
+    else if (numericalGrade >= 70) 
+    {
+        letterGrade = 'C';
+    } 
+    else if (numericalGrade >= 60) 
+    {
+        letterGrade = 'D';
+    }
+    else
+    {
+        letterGrade = 'F';
+    }
+    cout << "The student's letter grade is: " << letterGrade << endl;
+
+        return 0;
+     
+}
+--------------------------------------------------------------------------------------------------
+q.4: Shipping Charges
+Write a C++ program that calculates shipping charges based on the weight of a package. If the weight
+is less than or equal to 5 pounds, apply a flat rate; otherwise, charge an additional fee per pound for
+weights exceeding 5 pounds......
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+    double weight, flatRate, additionalFeePerPound, shippingCharges;
+    cout<<"Enter the weight of the package in pounds: ";
+    cin>>weight;
+
+    if (weight <= 5) 
+    {
+        flatRate = 840.0;
+        shippingCharges = flatRate;
+    }
+    else 
+    {
+        flatRate = 840.0;
+        additionalFeePerPound = 168.0;
+        shippingCharges = flatRate + additionalFeePerPound * (weight - 5);
+    }
+    cout<<"Shipping charges for the package weighing "<<weight <<" pounds: rupees " <<shippingCharges<<"\n";
+        return 0;
+     
+}
+--------------------------------------------------------------------------------------------------------------------------------
+q.5: Discount Calculation
+You are working for an e-commerce platform. Implement a program that calculates the total cost of
+an order after applying discounts. If the order amount is greater than $50 and the user is a premium
+member, provide a 10% discount; otherwise, provide a 5% discount........
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+    double orderAmount, discountRate, totalCost;
+    char isPremiumMember;
+
+    cout<<"Enter the order amount: $ \n";
+    cin>>orderAmount;
+
+    cout<<"Are you a premium member? (y/n): \n";
+    cin>>isPremiumMember;
+
+    if (orderAmount > 50 && (isPremiumMember == 'y' || isPremiumMember == 'Y')) 
+    {
+        discountRate = 0.10;
+    }
+    else 
+    {
+        discountRate = 0.05;
+    }
+
+    totalCost = orderAmount - (orderAmount * discountRate);
+    cout<<"Total cost after applying discount: $ \n" << totalCost <<"\n";
+
+        return 0;
+     
+}
+-----------------------------------------------------------------------------------------------
+q.6: Ticket Pricing
+Develop a program that determines the price of a movie ticket based on the age of the user and the
+time of the movie. If the user is a child (age <= 12), provide a discount. If the movie is a matinee
+(before 5 PM), apply an additional discount.......
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+    int age, hour;
+    double ticketPrice;
+    cout<<"please enter your age: \n";
+    cin>>age;
+    cout<<"please enter the hour of the movie whare you comfortable to watch the movie (enter hour as a 1 to 24 time for example 13 fpr (1 pm): \n";
+    cin>>hour;
+    if(hour<1 || hour>24)
+    {
+        cout<<"the hour time is invalid please enter the hour time in between 1 to 24: \n";
+        return 1;
+        
+    }
+    double childTicketPriceINR = 200.0;
+    double adultTicketPriceINR = 300.0;
+    if (hour < 17)
+    {
+        childTicketPriceINR -= 50.0;
+        adultTicketPriceINR -= 50.0;
+    }
+    if(age<=12)
+    {
+        ticketPrice = childTicketPriceINR;
+    } 
+    else
+    {
+        ticketPrice = adultTicketPriceINR;
+    }
+    cout<<"the price of movie ticket is: rupees "<<ticketPrice <<" INR " <<"\n";
+    
+        return 0;
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+q.7: Authentication System**
+Design a program for a secure system that requires two-factor authentication. The user needs to
+input both a valid username/password combination and a time-sensitive authentication code. Grant
+access only if both conditions are met........
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+    string username, password, authenticationCode;
+    string validUsername = "sonipushpendra256", validPassword = "0206";
+
+    cout<<"Enter your username: ";
+    cin>>username;
+    cout<<"Enter your password: ";
+    cin>>password;
+
+    bool isValidCredentials = (username == validUsername && password == validPassword);
+    if (!isValidCredentials) 
+    {
+        cout << "Invalid username or password. Access denied.\n";
+        return 1;
+    }
+
+    cout<<"Enter the time-sensitive authentication code: ";
+    cin>>authenticationCode;
+
+    string validAuthenticationCode = "635024";
+    bool isValidAuthenticationCode = (authenticationCode == validAuthenticationCode);
+    if (!isValidAuthenticationCode) 
+    {
+        cout << "Invalid authentication code. Access denied.\n";
+        return 1;
+    }
+
+    cout<<"Access granted! Welcome, " << username << "!" <<"\n";
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------------
+q.8.**Voting Eligibility**
+
+Create a program that checks if a person is eligible to vote. The eligibility criteria include being at
+least 18 years old and not having a criminal record. Grant voting access only if both conditions are
+satisfied.......
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+    int age;
+    bool hasCriminalRecord;
+
+    cout<<"Enter your age: \n";
+    cin>>age;
+
+    cout<<"Do you have a criminal record? (1 for yes, 0 for no): \n";
+    cin>>hasCriminalRecord;
+    
+    if (age >= 18 && !hasCriminalRecord)
+    {
+        cout<<"You are eligible to vote!\n";
+    }
+    else 
+    {
+        cout<<"Sorry, you are not eligible to vote.\n";
+    }
+
+    return 0;
+}
+----------------------------------------------------------------------------------------------------------------------
+q.9.**Temperature Classification**
+Write a program that classifies the temperature into different categories (cold, moderate, hot). Use
+relational operators to compare the temperature input and categorize it accordingly......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+    int temperature;
+    cout<<"Enter the temperature: \n";
+    cin>>temperature;
+    if (temperature < 10) 
+    {
+        cout << "Cold\n";
+    } 
+    else if(temperature >= 10 && temperature <= 35) 
+    {
+        cout << "Moderate\n";
+    }
+    else 
+    {
+        cout << "Hot\n";
+    }
+    return 0;
+}
+--------------------------------------------------------------------------------------------------------------
+q.10.**Exam Pass/Fail**
+Develop a program that determines whether a student passes or fails an exam based on the input
+marks. If the student scores 40% or more, consider it a pass; otherwise, mark it as a fail.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+    double marks;
+    cout << "Enter the marks you obtained in the exam: \n";
+    cin >> marks;
+    if (marks >= 40.0) 
+    {
+        cout<<"Congratulations! You are passed in the exam.\n";
+    }
+    else 
+    {
+        cout<<"Sorry, you are failed in the exam.\n";
+    }
+    return 0;
+}
+------------------------------------------------------------------------------------------------------
+q.11.**Library Fine Calculation**
+Implement a program for a library that calculates the fine for overdue books. If a book is returned
+after the due date, charge a base fine. If it's returned more than a week late, apply an additional fee.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+    int overdue;
+    int baseFine = 50;
+    int additionalFinePerWeek = 20;
+    cout<<"Enter the number of days the book is overdue: \n";
+    cin>>overdue;
+    int fine = baseFine;
+    if (overdue > 7) 
+    {
+        int additionalWeeks = (overdue - 7) / 7;
+        fine += additionalWeeks * additionalFinePerWeek;
+    }
+    cout<<"The fine for the overdue book is: ₹" << fine << " INR" <<"\n";
+    return 0;
+}
+-------------------------------------------------------------------------------------------------------------------
+q.12.**Product Discount**
+Design a program for an online store that applies different discounts based on the user's purchase
+history. If a user has made more than 5 purchases, offer a 15% discount; otherwise, provide a
+standard 10% discount.......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+    int numPurchases;
+    cout<<"Enter the number of purchases: \n";
+    cin>>numPurchases;
+    double discount;
+    if (numPurchases > 5) 
+    {
+        discount = 0.15; 
+    }
+    else
+    {
+        discount = 0.10;
+    }
+    cout<<"congrets!!You qualify for a " << (discount * 100) << "% discount." <<"\n";
+
+    return 0;
+}
+-------------------------------------------------------------------------------------------------
+q.13.Event Invitation
+Create a program for an exclusive event. Users are invited if they are either VIP guests or have
+purchased a premium ticket. Use the OR logical operator to check the conditions and grant access
+accordingly........
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+    bool isVipGuest, hasPremiumTicket;
+    cout<<"Are you a VIP guest? (1 for yes, 0 for no): ";
+    cin>>isVipGuest;
+
+    cout<<"Do you have a premium ticket? (1 for yes, 0 for no): ";
+    cin>>hasPremiumTicket;
+
+    if (isVipGuest || hasPremiumTicket)
+    {
+        cout<<"You are invited to the exclusive event!\n";
+    }
+    else 
+    {
+        cout<<"Sorry, you are not invited to the event.\n";
+    }
+    return 0;
+}
+------------------------------------------------------------------------------------------------------------------
+q.14: Password Recovery
+Design a simple password recovery system. Allow access if the user provides either the correct
+password or a valid recovery code. Ensure that users can gain access if either condition is satisfied......
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main () 
+{
+    string password = "635024", recoveryCode = "873988", userInput;
+    cout<<"Enter your password or recovery code: ";
+    cin>>userInput;
+
+    if (userInput == password || userInput == recoveryCode) 
+    {
+        cout<<"Access granted! Welcome!\n";
+    }
+    else 
+    {
+        cout<<"Access denied! Invalid password or recovery code.\n";
+    }
+    return 0;
+}
+===========================================================================================================================
 
 
 
