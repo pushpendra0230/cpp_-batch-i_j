@@ -1,0 +1,131 @@
+cpp assingment of advance if else date 29jab2024.........
+---------------------------------------------------------------------------
+q.1: Access Control
+You are developing a simple login system. Write a C++ program that prompts the user for a username
+and password. If both the username and password match predefined values, grant access.
+Otherwise, deny access.........
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    string dbemail="sonipushpendra256@gmail.com",dbpassword="0206";
+    string email,password;
+    cout<<"enter your email: \n";
+    cin>>email;
+    cout<<"enter your password: \n";
+    cin>>password;
+    if(email!=dbemail || password!=dbpassword)
+    {
+        cout<<"Access denied! Invalid username or password. \n";
+    }
+    else
+    {
+        cout<<"Access granted! \n";
+    }
+    int maxAttempts = 3;
+    int attempts = 0;
+    string username, correctUsername = "sonipushpendra256@gmail.com", correctPassword = "0206";
+    while (attempts < maxAttempts) 
+    {
+        cout << "Enter username: ";
+        cin >> username;
+        cout << "Enter password: ";
+        cin >> password;
+        if (username == correctUsername && password == correctPassword)
+        {
+            cout <<"Login successful. Welcome, " <<username <<"!" <<"\n";
+            break;
+        }
+        else 
+        {
+            cout <<"Access denied! Invalid username or password. Please try again.\n";
+            attempts++;
+        }
+    }
+    if (attempts == maxAttempts) 
+    {
+        cout << "Maximum login attempts reached. Access denied.\n";
+    }
+    char choice;
+    string newUsername, newPassword;
+    cout<<"Do you want to create a new ID and password? (y/n): ";
+    cin>>choice;
+
+    if (choice == 'y' || choice == 'Y') 
+    {
+        cout<<"Enter new username: ";
+        cin>>newUsername;
+        cout<<"Enter new password: ";
+        cin>>newPassword;
+        cout<<"New ID and password created successfully!" << endl;
+    }
+    else
+    {
+        cout<<"sure if you don't want to make new i'd or password. this is your choice. thank you.\n";
+    }
+    return 0;
+}
+---------------------------------------------------------------------------------------------------------------
+q.2: Membership Eligibility
+Create a program that checks if a user is eligible for a premium membership based on age and
+subscription status. If the user is at least 18 years old and has a valid subscription, provide access;
+otherwise, deny access........
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
