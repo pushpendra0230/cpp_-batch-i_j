@@ -1,0 +1,1093 @@
+cpp assingment Recursion Basic date 28feb2024...
+=========================================================================================================
+1. Write a recursive function to print numbers from 1 to 15.
+2. Create a recursive function that counts down from 15 to 1 and prints each number.
+3. Write a recursive function to print even numbers from 2 to 22.
+4. Create a recursive function to print the first 6 multiples of 4.
+5. Write a recursive function to calculate the sum of numbers from 1 to 15.
+6. Create a recursive function that prints the square of numbers from 1 to 6.
+7. Create a recursive function that prints factorial of 6.
+
+
+
+
+8. Create a recursive function that prints the cube of numbers from 1 to 7.
+9. Create a recursive function that prints the square of numbers from 1 to 12.
+10. Write a recursive function to print numbers from 1 to 25 in reverse order.
+11. Create a recursive function that counts down from 25 to 1 and prints each number in reverse
+order.
+12. Write a recursive function to print odd numbers from 1 to 27.
+13. Create a recursive function to print the first 7 multiples of 5.
+14. Write a recursive function to calculate the sum of numbers from 1 to 20.
+15. Create a recursive function that prints the square of numbers from 1 to 8.
+16. Create a recursive function that prints factorial of 8.
+17. Create a recursive function that prints the cube of numbers from 1 to 9.
+18. Create a recursive function that prints the square of numbers from 1 to 18.
+19. Write a recursive function to print numbers from 1 to 30 in reverse order.
+20. Create a recursive function that counts down from 30 to 1 and prints each number in reverse
+order.
+21. Write a recursive function to print even numbers from 2 to 24.
+22. Create a recursive function to print the first 8 multiples of 3.
+23. Write a recursive function to calculate the sum of numbers from 1 to 25.
+24. Create a recursive function that prints the square of numbers from 1 to 9.
+25. Create a recursive function that prints factorial of 9.
+26. Create a recursive function that prints the cube of numbers from 1 to 10.
+27. Create a recursive function that prints the square of numbers from 1 to 15.
+28. Write a recursive function to print numbers from 1 to 35 in reverse order.
+
+29. Create a recursive function that counts down from 35 to 1 and prints each number in reverse
+order.
+30. Write a recursive function to print odd numbers from 1 to 37.
+31. Create a recursive function to print the first 9 multiples of 4.
+32. Write a recursive function to calculate the sum of numbers from 1 to 30.
+33. Create a recursive function that prints the square of numbers from 1 to 10.
+34. Create a recursive function that prints factorial of 10.
+35. Create a recursive function that prints the cube of numbers from 1 to 11.
+36. Create a recursive function that prints the square of numbers from 1 to 20.
+37. Write a recursive function to print numbers from 1 to 40 in reverse order.
+38. Create a recursive function that counts down from 40 to 1 and prints each number in reverse
+order.
+39. Write a recursive function to print even numbers from 2 to 28.
+40. Create a recursive function to print the first 10 multiples of 5.
+
+=========================================================================================================================
+q.1. Write a recursive function to print numbers from 1 to 15....
+
+#include<bits/stdc++.h>
+using namespace std;
+void recursion(int n)
+{
+    if(n<=0)
+        return;
+   
+    recursion(n-1);
+    cout<<n<<" ";
+}
+int main()
+{
+    int n;
+    cout<<"Enter the value of n:\n";
+    cin>>n;
+    recursion(n);
+}
+output:-
+Enter the value of n:
+15
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 
+-------------------------------------------------------------------------------------------------------------------------
+q.2. Create a recursive function that counts down from 15 to 1 and prints each number....
+
+#include<bits/stdc++.h>
+using namespace std;
+void recursion(int n)
+{
+    if(n<0)
+    return;
+    cout<<n<<" ";
+    recursion(n-1);
+}
+int main()
+{
+    int n;
+    cout<<"Enter the value of n:\n";
+    cin>>n;
+    recursion(n);
+}
+output:-
+Enter the value of n:
+15
+15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 0 
+-------------------------------------------------------------------------------------------------------------------------
+q.3. Write a recursive function to print even numbers from 2 to 22....
+
+#include<bits/stdc++.h>
+using namespace std;
+void recursion(int n)
+{
+    if(n<2)
+    return;
+    recursion(n-2);
+    cout<<n<<" ";
+}
+int main()
+{
+    int n;
+    cout<<"Enter the value of n:\n";
+    cin>>n;
+    recursion(n);
+}
+output:-
+Enter the value of n:
+22
+2 4 6 8 10 12 14 16 18 20 22 
+----------------------------------------------------------------------------------------------------------------------
+q.4. Create a recursive function to print the first 6 multiples of 4.....
+
+#include<bits/stdc++.h>
+using namespace std;
+void recursion(int n,int j)
+{
+    if(n<=0)
+    return;
+    recursion(n-1,4);
+    cout<<j*n<<" ";
+}
+int main()
+{
+    int n;
+    cout<<"Enter the value of n:\n";
+    cin>>n;
+    recursion(n,4);
+}
+output:-
+Enter the value of n:
+6
+4 8 12 16 20 24 
+--------------------------------------------------------------------------------------------------------------
+q.5. Write a recursive function to calculate the sum of numbers from 1 to 15......
+
+#include<bits/stdc++.h>
+using namespace std;
+int sum(int n)
+{
+    if(n<=0)
+    return 0;
+    return sum(n-1)+n;
+}
+int main()
+{
+    int n=15;
+    int s=sum(n);
+    cout<<s; 
+}
+output:-
+120
+-------------------------------------------------------------------------------------------------------------------
+q.6. Create a recursive function that prints the square of numbers from 1 to 6.....
+
+#include<bits/stdc++.h>
+using namespace std;
+void power(int n)
+{
+    if(n<=0)
+    return;
+    power(n-1);
+    // cout<<pow(n,2)<<" ";
+    cout<<n*n<<" ";
+}
+int main()
+{
+    int n=5;
+    power(n);
+}
+output:-
+1 4 9 16 25 
+------------------------------------------------------------------------------------------------------------------
+q.7. Create a recursive function that prints factorial of 6....
+
+#include<bits/stdc++.h>
+using namespace std;
+int print(int num)
+{
+    if(num==0)
+    return 1;
+    return print(num-1)*num;
+    cout<<num<<" ";
+}
+int main()  
+{
+    int num=6;
+    int ans=print(num);
+    cout<<"factorial of 6 is :"<<ans<<" ";
+}
+output:-
+factorial of 6 is :720 
+----------------------------------------------------------------------------------------------
+q.8. Create a recursive function that prints the cube of numbers from 1 to 7......
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<" the cube is :"<<num*num*num<<"\n";
+}
+int main()  
+{
+    int num=7;
+    print(num);
+}
+output:-
+ the cube is :1
+ the cube is :8
+ the cube is :27
+ the cube is :64
+ the cube is :125
+ the cube is :216
+ the cube is :343
+----------------------------------------------------------------------------------------------------------
+q.9. Create a recursive function that prints the square of numbers from 1 to 12....
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<" the square is :"<<num*num<<"\n";
+}
+int main()  
+{
+    int num=12;
+    print(num);
+}
+output:-
+ the square is :1
+ the square is :4
+ the square is :9
+ the square is :16
+ the square is :25
+ the square is :36
+ the square is :49
+ the square is :64
+ the square is :81
+ the square is :100
+ the square is :121
+ the square is :144
+------------------------------------------------------------------------------------------------------------------
+q.10. Write a recursive function to print numbers from 1 to 25 in reverse order.....
+
+#include<bits/stdc++.h>
+using namespace std;
+void recursion(int n)
+{
+    if(n<=0)
+    return;
+    cout<<n<<" ";
+    recursion(n-1);
+}
+int main()
+{
+    int n;
+    cout<<"Enter the value of n:\n";
+    cin>>n;
+    recursion(n);
+}
+output:-
+Enter the value of n:
+25
+25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 
+------------------------------------------------------------------------------------------------------------------
+q.11. Create a recursive function that counts down from 25 to 1 and prints each number in reverse
+order.......
+
+#include<bits/stdc++.h>
+using namespace std;
+void recursion(int n)
+{
+    if(n<=0)
+    return;
+    cout<<n<<" ";
+    recursion(n-1);
+}
+int main()
+{
+    int n;
+    cout<<"Enter the value of n:\n";
+    cin>>n;
+    recursion(n);
+}
+output:-
+Enter the value of n:
+25
+25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
+------------------------------------------------------------------------------------------------------------------
+q.12. Write a recursive function to print odd numbers from 1 to 27........
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-2);
+    cout<<" odd number is :"<<num<<"\n";
+}
+int main()  
+{
+    int num=27;
+    print(num);
+}
+output:-
+ odd number is :1
+ odd number is :3
+ odd number is :5
+ odd number is :7
+ odd number is :9
+ odd number is :11
+ odd number is :13
+ odd number is :15
+ odd number is :17
+ odd number is :19
+ odd number is :21
+ odd number is :23
+ odd number is :25
+ odd number is :27
+------------------------------------------------------------------------------------------------------------------
+q.13. Create a recursive function to print the first 7 multiples of 5.....
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<" multipal is :"<<num*5<<"\n";
+}
+int main()  
+{
+    int num=7;
+    print(num);
+}
+output:-
+ multipal is :5
+ multipal is :10
+ multipal is :15
+ multipal is :20
+ multipal is :25
+ multipal is :30
+ multipal is :35
+--------------------------------------------------------------------------------------------------
+*****q.14. Write a recursive function to calculate the sum of numbers from 1 to 20...
+
+#include<bits/stdc++.h>
+using namespace std;
+int print(int num)
+{
+    if(num<1)
+    return 0;
+    return print(num-1)+num;
+    cout<<num<<"\n";
+}
+int main()  
+{
+    int num=20;
+    int ans=print(num);
+    cout<<"sum of 1 to 20 is :"<<ans;
+}
+output:-
+sum of 1 to 20 is :210
+--------------------------------------------------------------------------------------------------
+q.15. Create a recursive function that prints the square of numbers from 1 to 8.....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<"square is :"<<num*num<<"\n";
+}
+int main()  
+{
+    int num=8;
+    print(num);
+}
+output:-
+square is :1
+square is :4
+square is :9
+square is :16
+square is :25
+square is :36
+square is :49
+square is :64
+------------------------------------------------------------------------------------------------------
+q.16. Create a recursive function that prints factorial of 8.....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int print(int num)
+{
+    if(num<=0)
+    return 1;
+    return print(num-1)*num;
+    cout<<num<<" ";
+}
+int main()  
+{
+    int num=8;
+    int ans=print(num);
+    cout<<"factorial of 8 is :"<<ans<<" ";
+}
+output:-
+factorial of 8 is :40320 
+----------------------------------------------------------------------------------------
+q.17. Create a recursive function that prints the cube of numbers from 1 to 9....
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<" the cube is :"<<num*num*num<<"\n";
+}
+int main()  
+{
+    int num=9;
+    print(num);
+}
+output:-
+ the cube is :1
+ the cube is :8
+ the cube is :27
+ the cube is :64
+ the cube is :125
+ the cube is :216
+ the cube is :343
+ the cube is :512
+ the cube is :729
+-------------------------------------------------------------------------------------------------------
+q.18. Create a recursive function that prints the square of numbers from 1 to 18....
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<" the square is :"<<num*num<<"\n";
+}
+int main()  
+{
+    int num=18;
+    print(num);
+}
+output:-
+ the square is :1
+ the square is :4
+ the square is :9
+ the square is :16
+ the square is :25
+ the square is :36
+ the square is :49
+ the square is :64
+ the square is :81
+ the square is :100
+ the square is :121
+ the square is :144
+ the square is :169
+ the square is :196
+ the square is :225
+ the square is :256
+ the square is :289
+ the square is :324
+-------------------------------------------------------------------------------------------------------
+q.19. Write a recursive function to print numbers from 1 to 30 in reverse order....
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    cout<<num<<" ";
+    print(num-1);
+
+}
+int main()  
+{
+    int num=30;
+    print(num);
+}
+output:-
+30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1
+----------------------------------------------------------------------------------------------------
+q.20. Create a recursive function that counts down from 30 to 1 and prints each number in reverse
+order...
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    cout<<num<<" ";
+    print(num-1);
+
+}
+int main()  
+{
+    int num=30;
+    cout<<"the number is :";
+    print(num);
+}
+output:-
+the number is :30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 
+--------------------------------------------------------------------------------------------------------
+q.21. Write a recursive function to print even numbers from 2 to 24....
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-2);
+    cout<<num<<" ";
+
+}
+int main()  
+{
+    int num=24;
+    cout<<"the even number is :";
+    print(num);
+}
+output:-
+the even number is :2 4 6 8 10 12 14 16 18 20 22 24 
+------------------------------------------------------------------------------------------------
+q.22. Create a recursive function to print the first 8 multiples of 3.....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<" multipal is :"<<num*3<<"\n";
+}
+int main()  
+{
+    int num=8;
+    print(num);
+}
+output:-
+ multipal is :3
+ multipal is :6
+ multipal is :9
+ multipal is :12
+ multipal is :15
+ multipal is :18
+ multipal is :21
+ multipal is :24
+----------------------------------------------------------------------------------------------------
+q.23. Write a recursive function to calculate the sum of numbers from 1 to 25.....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int print(int num)
+{
+    if(num<=0)
+    return 0;
+    return print(num-1)+num;
+    cout<<num<<"\n";
+}
+int main()  
+{
+    int num=25;
+    int ans=print(num);
+    cout<<"sum of 1 to 25 is :"<<ans;
+}
+output:-
+sum of 1 to 25 is :325
+------------------------------------------------------------------------------------------------------
+q.24. Create a recursive function that prints the square of numbers from 1 to 9.....
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<"square is :"<<num*num<<"\n";
+}
+int main()  
+{
+    int num=9;
+    print(num);
+}
+output:-
+square is :1
+square is :4
+square is :9
+square is :16
+square is :25
+square is :36
+square is :49
+square is :64
+square is :81
+-------------------------------------------------------------------------------------------------------
+q.25. Create a recursive function that prints factorial of 9.......
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int print(int num)
+{
+    if(num==0)
+    return 1;
+    return print(num-1)*num;
+    cout<<num<<" ";
+}
+int main()  
+{
+    int num=9;
+    int ans=print(num);
+    cout<<"factorial of 9 is :"<<ans<<" ";
+}
+output:-
+factorial of 9 is :362880
+--------------------------------------------------------------------------------------------------
+q.26. Create a recursive function that prints the cube of numbers from 1 to 10.....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<" the cube is :"<<num*num*num<<"\n";
+}
+int main()  
+{
+    int num=10;
+    print(num);
+}
+output:-
+ the cube is :1
+ the cube is :8
+ the cube is :27
+ the cube is :64
+ the cube is :125
+ the cube is :216
+ the cube is :343
+ the cube is :512
+ the cube is :729
+ the cube is :1000
+------------------------------------------------------------------------------------------------------
+q.27. Create a recursive function that prints the square of numbers from 1 to 15....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<" the square is :"<<num*num<<"\n";
+}
+int main()  
+{
+    int num=15;
+    print(num);
+}
+output:-
+ the square is :1
+ the square is :4
+ the square is :9
+ the square is :16
+ the square is :25
+ the square is :36
+ the square is :49
+ the square is :64
+ the square is :81
+ the square is :100
+ the square is :121
+ the square is :144
+ the square is :169
+ the square is :196
+ the square is :225
+----------------------------------------------------------------------------------------------------------------
+q.28. Write a recursive function to print numbers from 1 to 35 in reverse order....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    cout<<num<<" ";
+    print(num-1);
+
+}
+int main()  
+{
+    int num=35;
+    cout<<"the number is :";
+    print(num);
+}
+output:-
+the number is :35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 
+------------------------------------------------------------------------------------------------------------------
+q.29. Create a recursive function that counts down from 35 to 1 and prints each number in reverse
+order.....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    cout<<num<<" ";
+    print(num-1);
+
+}
+int main()  
+{
+    int num=35;
+    cout<<"the number is :";
+    print(num);
+}
+output:-
+the number is :35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 
+----------------------------------------------------------------------------------------------------------------------
+q.30. Write a recursive function to print odd numbers from 1 to 37....
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-2);
+    cout<<" odd number is :"<<num<<"\n";
+}
+int main()  
+{
+    int num=37;
+    print(num);
+}
+output:-
+ odd number is :1
+ odd number is :3
+ odd number is :5
+ odd number is :7
+ odd number is :9
+ odd number is :11
+ odd number is :13
+ odd number is :15
+ odd number is :17
+ odd number is :19
+ odd number is :21
+ odd number is :23
+ odd number is :25
+ odd number is :27
+ odd number is :29
+ odd number is :31
+ odd number is :33
+ odd number is :35
+ odd number is :37
+--------------------------------------------------------------------------------------------------------
+q.31. Create a recursive function to print the first 9 multiples of 4.....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<" multipal is :"<<num*4<<"\n";
+}
+int main()  
+{
+    int num=9;
+    print(num);
+}
+output:-
+ multipal is :4
+ multipal is :8
+ multipal is :12
+ multipal is :16
+ multipal is :20
+ multipal is :24
+ multipal is :28
+ multipal is :32
+ multipal is :36
+-----------------------------------------------------------------------------------------------
+q.32. Write a recursive function to calculate the sum of numbers from 1 to 30...
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int print(int num)
+{
+    if(num<=0)
+    return 0;
+    return print(num-1)+num;
+    cout<<num<<"\n";
+}
+int main()  
+{
+    int num=30;
+    int ans=print(num);
+    cout<<"sum of 1 to 30 is :"<<ans;
+}
+output:-
+sum of 1 to 30 is :465
+----------------------------------------------------------------------------------------------
+q.33. Create a recursive function that prints the square of numbers from 1 to 10....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<"square is :"<<num*num<<"\n";
+}
+int main()  
+{
+    int num=10;
+    print(num);
+}
+output:-
+square is :1
+square is :4
+square is :9
+square is :16
+square is :25
+square is :36
+square is :49
+square is :64
+square is :81
+square is :100
+--------------------------------------------------------------------------------------------------
+q.34. Create a recursive function that prints factorial of 10.....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int print(int num)
+{
+    if(num==0)
+    return 1;
+    return print(num-1)*num;
+    cout<<num<<" ";
+}
+int main()  
+{
+    int num=10;
+    int ans=print(num);
+    cout<<"factorial of 10 is :"<<ans<<" ";
+}
+output:-
+factorial of 10 is :3628800 
+-------------------------------------------------------------------------------------------------
+q.35. Create a recursive function that prints the cube of numbers from 1 to 11....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<" the cube is :"<<num*num*num<<"\n";
+}
+int main()  
+{
+    int num=11;
+    print(num);
+}
+output:-
+ the cube is :1
+ the cube is :8
+ the cube is :27
+ the cube is :64
+ the cube is :125
+ the cube is :216
+ the cube is :343
+ the cube is :512
+ the cube is :729
+ the cube is :1000
+ the cube is :1331
+--------------------------------------------------------------------------------------------------------
+q.36. Create a recursive function that prints the square of numbers from 1 to 20......
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<"square is :"<<num*num<<"\n";
+}
+int main()  
+{
+    int num=20;
+    print(num);
+}
+output:-
+square is :1
+square is :4
+square is :9
+square is :16
+square is :25
+square is :36
+square is :49
+square is :64
+square is :81
+square is :100
+square is :121
+square is :144
+square is :169
+square is :196
+square is :225
+square is :256
+square is :289
+square is :324
+square is :361
+square is :400
+--------------------------------------------------------------------------------------------------------------------------------------
+q.37. Write a recursive function to print numbers from 1 to 40 in reverse order.....
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    cout<<num<<" ";
+    print(num-1);
+
+}
+int main()  
+{
+    int num=40;
+    cout<<"the number is :";
+    print(num);
+}
+output:-
+the number is :40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 
+----------------------------------------------------------------------------------------------------------------------------------------
+q.38. Create a recursive function that counts down from 40 to 1 and prints each number in reverse
+order......
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    cout<<num<<" ";
+    print(num-1);
+
+}
+int main()  
+{
+    int num=40;
+    cout<<"the number is in reverce order :";
+    print(num);
+}
+output:-
+the number is in reverce order :40 39 38 37 36 35 34 33 32 31 30 29 28 27 26 25 24 23 22 21 20 19 18 17 16 15 14 13 12 11 10 9 8 7 6 5 4 3 2 1 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+q.39. Write a recursive function to print even numbers from 2 to 28....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<1)
+    return;
+    print(num-2);
+    cout<<num<<" ";
+}
+int main()  
+{
+    int num=28;
+    cout<<"even number is :";
+    print(num);
+    
+}
+output:-
+even number is :2 4 6 8 10 12 14 16 18 20 22 24 26 28 
+--------------------------------------------------------------------------------------
+q.40. Create a recursive function to print the first 10 multiples of 5.....
+
+#include<bits/stdc++.h>
+using namespace std;
+void print(int num)
+{
+    if(num<=0)
+    return;
+    print(num-1);
+    cout<<" multipal is :"<<num*5<<"\n";
+}
+int main()  
+{
+    int num=10;
+    print(num);
+}
+output:-
+ multipal is :5
+ multipal is :10
+ multipal is :15
+ multipal is :20
+ multipal is :25
+ multipal is :30
+ multipal is :35
+ multipal is :40
+ multipal is :45
+ multipal is :50
+=======================================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
