@@ -1,56 +1,5 @@
 cpp assingment Recursion Basic date 28feb2024...
 =========================================================================================================
-1. Write a recursive function to print numbers from 1 to 15.
-2. Create a recursive function that counts down from 15 to 1 and prints each number.
-3. Write a recursive function to print even numbers from 2 to 22.
-4. Create a recursive function to print the first 6 multiples of 4.
-5. Write a recursive function to calculate the sum of numbers from 1 to 15.
-6. Create a recursive function that prints the square of numbers from 1 to 6.
-7. Create a recursive function that prints factorial of 6.
-
-
-
-
-8. Create a recursive function that prints the cube of numbers from 1 to 7.
-9. Create a recursive function that prints the square of numbers from 1 to 12.
-10. Write a recursive function to print numbers from 1 to 25 in reverse order.
-11. Create a recursive function that counts down from 25 to 1 and prints each number in reverse
-order.
-12. Write a recursive function to print odd numbers from 1 to 27.
-13. Create a recursive function to print the first 7 multiples of 5.
-14. Write a recursive function to calculate the sum of numbers from 1 to 20.
-15. Create a recursive function that prints the square of numbers from 1 to 8.
-16. Create a recursive function that prints factorial of 8.
-17. Create a recursive function that prints the cube of numbers from 1 to 9.
-18. Create a recursive function that prints the square of numbers from 1 to 18.
-19. Write a recursive function to print numbers from 1 to 30 in reverse order.
-20. Create a recursive function that counts down from 30 to 1 and prints each number in reverse
-order.
-21. Write a recursive function to print even numbers from 2 to 24.
-22. Create a recursive function to print the first 8 multiples of 3.
-23. Write a recursive function to calculate the sum of numbers from 1 to 25.
-24. Create a recursive function that prints the square of numbers from 1 to 9.
-25. Create a recursive function that prints factorial of 9.
-26. Create a recursive function that prints the cube of numbers from 1 to 10.
-27. Create a recursive function that prints the square of numbers from 1 to 15.
-28. Write a recursive function to print numbers from 1 to 35 in reverse order.
-
-29. Create a recursive function that counts down from 35 to 1 and prints each number in reverse
-order.
-30. Write a recursive function to print odd numbers from 1 to 37.
-31. Create a recursive function to print the first 9 multiples of 4.
-32. Write a recursive function to calculate the sum of numbers from 1 to 30.
-33. Create a recursive function that prints the square of numbers from 1 to 10.
-34. Create a recursive function that prints factorial of 10.
-35. Create a recursive function that prints the cube of numbers from 1 to 11.
-36. Create a recursive function that prints the square of numbers from 1 to 20.
-37. Write a recursive function to print numbers from 1 to 40 in reverse order.
-38. Create a recursive function that counts down from 40 to 1 and prints each number in reverse
-order.
-39. Write a recursive function to print even numbers from 2 to 28.
-40. Create a recursive function to print the first 10 multiples of 5.
-
-=========================================================================================================================
 q.1. Write a recursive function to print numbers from 1 to 15....
 
 #include<bits/stdc++.h>
