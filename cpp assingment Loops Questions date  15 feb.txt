@@ -1,0 +1,1475 @@
+cpp assingment Loops Questions date 15 feb 2024..........
+================================================================================================================
+q.1. Write a for loop that prints numbers from 1 to 10........
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    for(int i=1; i<=10; i++)
+    {
+        cout<<i<<"\n";
+    }
+    return 0;
+}
+----------------------------------------------------------------------
+q.2. Create a for loop that counts down from 10 to 1 and prints each
+number......
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    for(int i=10; i>=1; i--)
+    {
+        cout<<i<<"\n";
+    }
+    return 0;
+}
+-------------------------------------------------------------------------
+q.3. Write a for loop to print even numbers from 2 to 20.....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    for(int i=2; i<=20; i++)
+    if(i%2==0)
+    {
+        cout<<i<<"\n";
+    }
+    return 0;
+}
+-----------------------------------------------------------------------
+q.4. Create a for loop to print the first 5 multiples of 3.......
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    for(int i=1; i<=5; i++)
+    {
+        cout<<"3*" <<i <<"=" <<i*3<<"\n";
+    }
+    return 0;
+}
+---------------------------------------------------------------------------
+q.5. Write a for loop to calculate the sum of numbers from 1 to 10......
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() 
+   {
+    int sum = 0;
+
+    for (int i = 1; i <= 10; ++i) 
+    {
+        sum += i;
+    }
+
+    cout << "The sum of numbers from 1 to 10 is: " << sum << "\n";
+
+    return 0;
+}
+------------------------------------------------------------------------------------
+q.6. Create a for loop that prints the square of numbers from 1 to 5.....
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    for (int i = 1; i <= 5; i++) 
+    {
+        cout <<" square of " << i  << " is " <<i*i <<"\n";
+    }
+    return 0;
+}
+--------------------------------------------------------------------------------
+q.11. Write a for loop to find the factorial of a given number.....
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    double number;
+    cout << "Enter a number: ";
+    cin >> number;
+
+    double factorial = 1;
+    for (double i = 1; i <= number; i++) 
+    {
+        factorial *= i;
+    }
+    cout << "Factorial of " << number << " is: " << factorial ;
+
+    return 0;
+}
+---------------------------------------------------------------------------------
+q.12. Create a for loop to print the Fibonacci series up to 10 terms......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int n=10; 
+    int num1 = 0, num2 = 1, num3;
+
+    cout << "Fibonacci Series up to " << n << " terms:" << "\n";
+
+    for (int i = 0; i < n; ++i) 
+    {
+        if (i <= 1)
+           num3 = i;
+        else 
+        {
+            num3 = num1 + num2;
+            num1 = num2;
+            num2 = num3;
+        }
+        cout << num3 << " ";
+    }
+    return 0;
+}
+------------------------------------------------------------------------------------------
+q.13. Write a for loop to check if a number is prime or not.....
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int num, flag=1;
+    cout<<"enter a number :\n";
+    cin>>num;
+    for(int i=2;i<num;i++)
+    {
+    if(num%i==0)
+    {
+        flag=0;
+        break;
+    }
+    }
+    if(flag==1)
+    {
+        cout<<"this number is prime number \n";
+    }
+    else
+    {
+        cout<<"this number is not a prime number \n";
+    }
+    return 0;
+    
+}
+------------------------------------------------------------------------------------------------
+q.14. Create a for loop to print a multiplication table of a given number up to 10.......
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int number;
+    cout<<"Enter a number for print a multiplication table : ";
+    cin>>number;
+    
+    cout<<"Multiplication table of " << number << " is :\n";
+    for (int i = 1; i <= 10; i++)
+    {
+    cout<<number << " * " << i << " = " << number * i <<"\n";
+    }
+    return 0;
+}
+output:-
+Enter a number for print a multiplication table : 5
+Multiplication table of 5 is :
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+---------------------------------------------------------------------------------------
+q.16. Create a for loop to find the sum of digits of a given number.......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int number,num;
+    cout<< "Enter a number: ";
+    cin>> number;
+    int sum = 0;
+    for (int num = number; num != 0; num /= 10) 
+    {
+        sum += num % 10;
+    }
+    cout<< "Sum of digits of " << number << " is: " << sum <<"\n";
+    return 0;
+}
+output:-
+Enter a number: 55
+Sum of digits of 55 is: 10
+-------------------------------------------------------------------------------------------
+q.19. Write a for loop to find the GCD (Greatest Common Divisor) of two numbers......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int num1, num2;
+    int gcd = 1;
+    cout << "Enter two numbers: \n";
+    cin >> num1 >> num2;
+
+    int Number;
+    if (num1 < num2) 
+    {
+        Number = num1;
+    }
+    else 
+    {
+        Number = num2;
+    }
+    for (int i = 1; i <= Number; i++) 
+    {
+        if (num1 % i == 0 && num2 % i == 0)
+        {
+            gcd = i;
+        }
+    }
+    cout << "The GCD of " << num1 << " and " << num2 << " is: " << gcd << "\n";
+    return 0;
+}
+output:-
+Enter two numbers: 
+56
+54
+The GCD of 56 and 54 is: 2
+--------------------------------------------------------------------------------------------
+q.20. Create a for loop to find the LCM (Least Common Multiple) of two numbers.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int num1,num2,LCM=1;
+    cout<<"Enter the two numbers for LCM"<<endl;
+    cin>>num1>>num2;
+    int copy1=num1,copy2=num2;
+    for(int i=2; i<=num2; i++)
+    {
+       if( (num1%i==0)  && (num2%i==0)  )
+       {
+            LCM=LCM*i;
+            num1=num1/i;
+            num2=num2/i;
+       }
+       if( num1%i==0)       
+       {
+           LCM=LCM*i;
+           num1=num1/i;
+       }
+       if(num2%i==0)  
+       {
+           LCM=LCM*=i;
+           num2=num2/i;
+       }
+    }
+    cout<<"LCM of "<<copy1<<" and "<<copy2<<" is:"<<LCM;
+    return 0;
+}
+output:-
+Enter the two numbers for LCM
+45
+30
+LCM of 45 and 30 is:90
+------------------------------------------------------------------------------------------------------------
+q.21. Write a for loop to print the ASCII values of all lowercase letters.......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    cout << "Lowercase Letters with ASCII Values:\n";
+    for(int i=0;i<=25;i++) 
+    { 
+        char lowercaseLetter = char(i + 97);
+        int asciiValue = i + 97;
+        cout<<lowercaseLetter<<" : "<<asciiValue<<"\n";
+    }
+    return 0;
+}
+output:-
+Lowercase Letters with ASCII Values:
+a : 97
+b : 98
+c : 99
+d : 100
+e : 101
+f : 102
+g : 103
+h : 104
+i : 105
+j : 106
+k : 107
+l : 108
+m : 109
+n : 110
+o : 111
+p : 112
+q : 113
+r : 114
+s : 115
+t : 116
+u : 117
+v : 118
+w : 119
+x : 120
+y : 121
+z : 122
+-------------------------------------------------------------------------------------------------------------
+q.23. Write a for loop to print the first 10 terms of the geometric series with a common ratio of 2.......
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int terms = 10;
+    int commonratio = 2;
+    int term = 1;
+
+       cout << "The first " << terms <<" terms of the geometric series with a common ratio of "<< commonratio << " are:\n";
+
+    for (int i = 0; i < terms; i++) 
+    {
+        int termsvalue=term*pow(commonratio, i);
+           cout << termsvalue << " ";
+    }
+
+       cout <<"\n";
+
+    return 0;
+}
+output:-
+The first 10 terms of the geometric series with a common ratio of 2 are:
+1 2 4 8 16 32 64 128 256 512 
+------------------------------------------------------------------------------------------------------------------------------------------
+q.24. Create a for loop to print a pattern of stars in the shape of a right triangle.....
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int rows;
+    cout<<"Enter the number of rows for the right triangle: ";
+    cin >> rows;
+
+    for(int i=1;i<=rows;i++) 
+    {
+        for(int j=1;j<=i;j++)
+        {
+          cout<<"* ";
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+Enter the number of rows for the right triangle: 10
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+* * * * * * 
+* * * * * * * 
+* * * * * * * * 
+* * * * * * * * * 
+* * * * * * * * * * 
+---------------------------------------------------------------------------------------------------------------------
+q.25. Write a for loop to calculate the sum of the first 10 odd numbers....
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int sum=0;
+    int count=0;
+    cout << "Sum of the first 10 odd numbers : \n";
+    for (int i=1;count<10;i++) 
+    {
+        if(i%2!=0) 
+        {
+            sum+=i;
+            cout<<i<<" ";
+            count++;
+        }
+    }
+    cout<<"\nSum: "<<sum;
+    return 0;
+}
+output:-
+Sum of the first 10 odd numbers : 
+1 3 5 7 9 11 13 15 17 19 
+Sum: 100
+----------------------------------------------------------------------------------------------------------
+q.26. Create a for loop to find the product of numbers from 1 to 5....
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int product=1;
+    for (int i=1;i<=5;i++) 
+    {
+        product*=i;
+    }
+    cout << "The product of numbers from 1 to 5 is: " << product;
+    return 0;
+}
+output:-
+The product of numbers from 1 to 5 is: 120
+--------------------------------------------------------------------------------------------------------
+q.29. Write a for loop to print numbers from 1 to 100, but replace multiples of 3 with "Fizz" and
+multiples of 5 with "Buzz"......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    cout << "Printing numbers from 1 to 100 with replacements:\n";
+    for (int i = 1; i <= 100; i++) 
+    {
+        if (i % 3 == 0) 
+        {
+            cout << "Fizz ";
+        } 
+        else if (i % 5 == 0) 
+        {
+            cout << "Buzz ";
+        } 
+        else
+        {
+            cout << i << " ";
+        }
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+Printing numbers from 1 to 100 with replacements:
+1 2 Fizz 4 Buzz Fizz 7 8 Fizz Buzz 11 Fizz 13 14 Fizz 16 17 Fizz 19 Buzz Fizz 22 23 Fizz Buzz 26 Fizz 28 29 Fizz 31 32 Fizz 34 Buzz Fizz 37 38 Fizz Buzz 41 Fizz 43 44 Fizz 46 47 Fizz 49 Buzz Fizz 52 53 Fizz Buzz 56 Fizz 58 59 Fizz 61 62 Fizz 64 Buzz Fizz 67 68 Fizz Buzz 71 Fizz 73 74 Fizz 76 77 Fizz 79 Buzz Fizz 82 83 Fizz Buzz 86 Fizz 88 89 Fizz 91 92 Fizz 94 Buzz Fizz 97 98 Fizz Buzz 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+q.32. Create a for loop to print a pattern of numbers in a pyramid shape.....
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int rows;
+    cout << "Enter the number of rows for the pyramid: ";
+    cin >> rows;
+    for (int i = 1; i <= rows; i++) 
+    {
+        for (int j = 1; j <= rows - i; j++) 
+        {
+             cout << "  ";
+        }
+        for (int k = 1; k <= i; k++) 
+        {
+              cout << k << " ";
+        }
+        for (int l = i - 1; l >= 1; l--) 
+        {
+            cout << l << " ";
+        }
+         cout <<"\n";
+    }
+    return 0;
+}
+output:-
+Enter the number of rows for the pyramid: 10
+                  1 
+                1 2 1 
+              1 2 3 2 1 
+            1 2 3 4 3 2 1 
+          1 2 3 4 5 4 3 2 1 
+        1 2 3 4 5 6 5 4 3 2 1 
+      1 2 3 4 5 6 7 6 5 4 3 2 1 
+    1 2 3 4 5 6 7 8 7 6 5 4 3 2 1 
+  1 2 3 4 5 6 7 8 9 8 7 6 5 4 3 2 1 
+1 2 3 4 5 6 7 8 9 10 9 8 7 6 5 4 3 2 1 
+---------------------------------------------------------------------------
+q.33. Write a for loop to reverse the digits of a given number......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int number, rNumber = 0;
+    cout << "Enter a number: ";
+    cin >> number;
+
+    int oNumber = number;
+    int numDigits = 0;
+    int temp = number;
+    while (temp!=0) 
+    {
+        temp/=10;
+        numDigits++;
+    }
+    for (int i=0;i<numDigits;i++)
+    {
+        int digit=number%10;
+        rNumber=rNumber*10+digit;
+        number /= 10;
+    }
+    cout << "Original number: "<<oNumber<<"\n";
+    cout << "Reversed number: "<<rNumber<<"\n";
+
+    return 0;
+}
+output:-
+Enter a number: 5443573
+Original number: 5443573
+Reversed number: 3753445
+-------------------------------------------------------------------------------------
+q.35. Write a for loop to check if a given number is an Armstrong number....
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int number, originalNumber, remaindernum, result = 0, numDigits = 0;
+
+    cout << "Enter a number: ";
+    cin >> number;
+    originalNumber = number;
+
+    int temp = number;
+    while (temp != 0) 
+    {
+        temp /= 10;
+        ++numDigits;
+    }
+    while (originalNumber != 0) 
+    {
+        remaindernum = originalNumber % 10;
+        result+=pow(remaindernum,numDigits);
+        originalNumber /= 10;
+    }
+    if (result==number) 
+    {
+        cout<<number<<" is a Armstrong number.\n";
+    }
+    else 
+    {
+        cout << number << " is not a Armstrong number.\n";
+    }
+    return 0;
+}
+output:-
+Enter a number: 153
+153 is a Armstrong number.
+---------------------------------------------------------------------------------------------------
+q.36. Create a for loop to print the pattern of a hollow square using
+asterisks.....
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+int rows;
+
+    cout<<"Enter the number of rows for the hollow square: ";
+    cin>>rows;
+    for(int i=1;i<=rows;i++) 
+    {
+        if(i==1 || i==rows) 
+        {
+            for(int j=1;j<=rows;j++) 
+            {
+               cout<<"* ";
+            }
+        } 
+        else 
+        {
+            for(int j=1;j<=rows;j++)
+            {
+                if(j==1 || j==rows) 
+                {
+                    cout<<"* ";
+                }
+                else
+                {
+                     cout<<"  ";
+                }
+            }
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+Enter the number of rows for the hollow square: 10
+* * * * * * * * * * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+*                 * 
+* * * * * * * * * * 
+-----------------------------------------------------------------------------------------------
+q.37. Write a for loop to find the sum of digits of factorial of a given number.....
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+ int number;
+    cout << "Enter a number: ";
+    cin >> number;
+    unsigned long long factorial = 1;
+    for (int i = 2; i <= number; i++) 
+   {
+        factorial*=i;
+   }
+    int sum = 0;
+    unsigned long long temp = factorial;
+    while (temp!=0)
+    {
+        sum+=temp%10;
+        temp/=10;
+    }
+    cout << "Factorial of " << number << " is: " << factorial << "\n";
+    cout << "Sum of digits of the factorial: " << sum << "\n";
+
+    return 0;
+}
+output:-
+Enter a number: 44
+Factorial of 44 is: 2673996885588443136
+Sum of digits of the factorial: 105
+------------------------------------------------------------------------------------------------
+q.38. Create a for loop to print the pattern of a diamond using asterisks......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+ int rows;
+
+    cout<<"Enter the number of rows for the diamond: ";
+    cin>>rows;
+    for (int i = 1; i <= rows; i++)
+    {
+        for (int j = 1; j <= rows - i; j++) 
+        {
+             cout << " ";
+        }
+        for (int k = 1; k <= 2 * i - 1; k++) 
+        {
+             cout << "*";
+        }
+          cout <<"\n";
+    }
+    for (int i = rows - 1; i >= 1; i--)
+    {
+        for (int j=1;j<=rows-i;j++) 
+        {
+           cout << " ";
+        }
+        for (int k=1;k<=2*i-1;k++) 
+        {
+            cout<<"*";
+        }
+       cout<<"\n";
+    }
+    return 0;
+}
+output:-
+Enter the number of rows for the diamond: 5
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+--------------------------------------------------------------------------------------
+q.39. Write a for loop to print the pattern of a right triangle using numbers.....
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int rows;
+
+    cout<<"Enter the number of rows for the right triangle: ";
+    cin>>rows;
+    for(int i=1;i<=rows;i++) 
+    {
+        for(int j=1;j<=i;j++) 
+        {
+            cout<<j<<" ";
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+Enter the number of rows for the right triangle: 10
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+1 2 3 4 5 6 
+1 2 3 4 5 6 7 
+1 2 3 4 5 6 7 8 
+1 2 3 4 5 6 7 8 9 
+1 2 3 4 5 6 7 8 9 10 
+---------------------------------------------------------------------------------------------------
+q.41. Write a for loop to find the sum of all even numbers between 1 and 50......
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int sum=0;
+    for (int i=1;i<=50;i++) 
+    {
+        if(i%2==0)
+        {
+            sum=sum+i;
+        }
+    }
+    cout<<"Sum of even numbers between 1 and 50: " << sum <<"\n";
+    return 0;
+}
+output:-
+Sum of even numbers between 1 and 50: 650
+---------------------------------------------------------------------------------------------------
+q.42. Create a for loop to print the pattern of a pyramid using asterisks......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int rows;
+    cout<<"Enter the number of rows for the pyramid: ";
+    cin>>rows;
+    for (int i = 1; i <= rows; i++)
+    {
+        for (int j = 1; j <= rows - i; j++) 
+        {
+            cout << " ";
+        }
+        int asterisksCount = 2 * i - 1;
+        for (int k = 1; k <= asterisksCount; k++) 
+        {
+            cout << "*";
+        }
+        cout <<"\n";
+    }
+    return 0;
+}
+output:-
+Enter the number of rows for the pyramid: 10
+         *
+        ***
+       *****
+      *******
+     *********
+    ***********
+   *************
+  ***************
+ *****************
+*******************
+--------------------------------------------------------------------------------------------------
+q.43. Write a for loop to print the pattern of a right triangle using alphabets........
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+   int rows;
+   char alphabet = 'A';
+   cout<<"Enter the number of rows for the right triangle: ";
+   cin>>rows;
+
+    for (int i=1;i<=rows;i++)
+    {
+        for (int j=1;j<=i;j++) 
+        {
+            cout<<alphabet;
+            alphabet++;
+        }
+         cout << "\n";
+    }
+    return 0;
+}
+output:-
+Enter the number of rows for the right triangle: 6
+A
+BC
+DEF
+GHIJ
+KLMNO
+PQRSTU
+-----------------------------------------------------------------------------------------------------
+q.45. Write a for loop to print the pattern of a hollow diamond using asterisks.....
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n,i,j;
+    cout<<"Enter the number of rows (odd number): ";
+    cin>>n;
+    if (n % 2 == 0) 
+    {
+        cout<<"Please enter an odd number.\n";
+        return 1;
+    }
+    for(i = 0; i < n; i++) 
+    {
+        for(j = 0; j < n; j++) 
+        {
+            if(i + j == n / 2 || j - i == n / 2 || i - j == n / 2 || i + j == (n / 2) * 3)
+                cout<<"*";
+            else
+                cout<<" ";
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+Enter the number of rows (odd number): 9
+    *    
+   * *   
+  *   *  
+ *     * 
+*       *
+ *     * 
+  *   *  
+   * *   
+    *    
+-----------------------------------------------------------------------------------------------------
+q.50.Create a for loop to print the pattern(trainer will give).......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int choice, rows;
+
+    cout << "Now you are the trainer please Enter the number corresponding to the shape you want to draw:-\n";
+    cout << "1. Right Triangle\n";
+    cout << "2. pattern of numbers in a pyramid shape\n";
+    cout << "3. Hollow Square\n";
+    cout << "4. Diamond\n";
+    cout << "5. right triangle using numbers\n";
+    cout << "6. pattern of a pyramid\n";
+    cout << "7. Alphabet Triangle\n";
+    cout << "8. hollow diamond\n";
+    cout << "9. hollow square using numbers\n";
+    cout << "10.half pyramid using alphabets\n";
+    cout<<"please enter your choice trainer :-";
+    cin >> choice;
+
+    if (choice == 1) 
+    {
+        cout << "Enter the number of rows for the right triangle: ";
+        cin >> rows;
+        for (int i = 1; i <= rows; i++) 
+        {
+            for (int j = 1; j <= i; j++) 
+            {
+                cout << "* ";
+            }
+            cout << "\n";
+        }
+    }
+    else if (choice == 2) 
+    {
+        cout << "Enter the number of rows for the pyramid: ";
+        cin >> rows;
+        for (int i = 1; i <= rows; i++) 
+        {
+            for (int j = 1; j <= rows - i; j++) 
+            {
+                cout << "  ";
+            }
+            for (int k = 1; k <= i; k++) 
+            {
+                cout << k << " ";
+            }
+            for (int l = i - 1; l >= 1; l--)
+            {
+                cout << l << " ";
+            }
+            cout << "\n";
+        }
+    }
+    else if (choice == 3)
+    {
+        cout << "Enter the number of rows for the hollow square: ";
+        cin >> rows;
+        for (int i = 1; i <= rows; i++)
+        {
+            if (i == 1 || i == rows) 
+            {
+                for (int j = 1; j <= rows; j++) 
+                {
+                    cout << "* ";
+                }
+            }
+            else 
+            {
+                for (int j = 1; j <= rows; j++)
+                {
+                    if (j == 1 || j == rows) 
+                    {
+                        cout << "* ";
+                    }
+                    else 
+                    {
+                        cout << "  ";
+                    }
+                }
+            }
+            cout << "\n";
+        }
+    }
+    else if (choice == 4) 
+    {
+        cout << "Enter the number of rows for the diamond: ";
+        cin >> rows;
+        for (int i = 1; i <= rows; i++) 
+        {
+            for (int j = 1; j <= rows - i; j++) 
+            {
+                cout << " ";
+            }
+            for (int k = 1; k <= 2 * i - 1; k++)
+            {
+                cout << "*";
+            }
+            cout << "\n";
+        }
+        for (int i = rows - 1; i >= 1; i--)
+        {
+            for (int j = 1; j <= rows - i; j++) 
+            {
+                cout << " ";
+            }
+            for (int k = 1; k <= 2 * i - 1; k++) 
+            {
+                cout << "*";
+            }
+            cout << "\n";
+        }
+    }
+    else if (choice == 5)
+    {
+        cout<<"Enter the number of rows for the right triangle: ";
+        cin>>rows;
+        for(int i=1;i<=rows;i++) 
+        {
+            for(int j=1;j<=i;j++) 
+            {
+                cout<<j<<" ";
+            }
+            cout<<"\n";
+        }
+    }
+    else if (choice == 6)
+    {
+        cout<<"Enter the number of rows for the pyramid: ";
+        cin>>rows;
+        for (int i = 1; i <= rows; i++)
+        {
+            for (int j = 1; j <= rows - i; j++) 
+            {
+                cout << " ";
+            }
+            int asterisksCount = 2 * i - 1;
+            for (int k = 1; k <= asterisksCount; k++) 
+            {
+                cout << "*";
+            }
+            cout <<"\n";
+        }
+    }
+    else if (choice == 7) 
+    {
+        cout << "Enter the number of rows for the right triangle: ";
+        cin >> rows;
+        char alphabet = 'A';
+        for (int i = 1; i <= rows; i++) 
+        {
+            for (int j = 1; j <= i; j++)
+            {
+                cout << alphabet;
+                alphabet++;
+            }
+            cout << "\n";
+        }
+    }
+    else if (choice == 8) 
+        {
+            cout << "Enter the number of rows (odd number): ";
+            cin >> rows;
+            if (rows % 2 == 0) 
+            {
+                cout << "Please enter an odd number.\n";
+                return 1;
+            }
+            for (int i = 0; i < rows; i++) 
+            {
+                for (int j = 0; j < rows; j++) 
+                {
+                    if (i + j == rows / 2 || j - i == rows / 2 || i - j == rows / 2 || i + j == (rows / 2) * 3)
+                    {
+                        cout << "*";
+                    }
+                    else 
+                    {
+                        cout << " ";
+                    }
+                }
+                cout << "\n";
+            }
+        }
+        else if (choice == 9)
+        {
+            cout << "Enter the number of rows: ";
+            cin >> rows;
+            for (int i = 1; i <= rows; i++) 
+            {
+                for (int j = 1; j <= rows; j++)
+                {
+                    if (i == 1 || i == rows || j == 1 || j == rows)
+                        cout << j << " ";
+                    else
+                        cout << "  ";
+                }
+                cout << "\n";
+            }
+        }
+        else if (choice == 10)
+        {
+            char alphabet = 'A';
+            cout << "Enter the number of rows for the half pyramid: ";
+            cin >> rows;
+            for (int i = 1; i <= rows; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    cout<<alphabet;
+                    alphabet++;
+                    if (alphabet > 'Z')// if alphabet are reached to the "Z" then start again form "A":
+                        alphabet = 'A';
+                }
+                cout << "\n";
+            }
+        }
+        else 
+        {
+            cout << "Invalid choice.\n";
+        }
+    return 0;
+}
+output:-
+Now you are the trainer please Enter the number corresponding to the shape you want to draw:-
+1. Right Triangle
+2. pattern of numbers in a pyramid shape
+3. Hollow Square
+4. Diamond
+5. right triangle using numbers
+6. pattern of a pyramid
+7. Alphabet Triangle
+8. hollow diamond
+please enter your choice trainer :-1
+Enter the number of rows for the right triangle: 5
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+Now you are the trainer please Enter the number corresponding to the shape you want to draw:-
+1. Right Triangle
+2. pattern of numbers in a pyramid shape
+3. Hollow Square
+4. Diamond
+5. right triangle using numbers
+6. pattern of a pyramid
+7. Alphabet Triangle
+8. hollow diamond
+please enter your choice trainer :-2
+Enter the number of rows for the pyramid: 5
+        1 
+      1 2 1 
+    1 2 3 2 1 
+  1 2 3 4 3 2 1 
+1 2 3 4 5 4 3 2 1 
+Now you are the trainer please Enter the number corresponding to the shape you want to draw:-
+1. Right Triangle
+2. pattern of numbers in a pyramid shape
+3. Hollow Square
+4. Diamond
+5. right triangle using numbers
+6. pattern of a pyramid
+7. Alphabet Triangle
+8. hollow diamond
+please enter your choice trainer :-3
+Enter the number of rows for the hollow square: 5
+* * * * * 
+*       * 
+*       * 
+*       * 
+* * * * * 
+Now you are the trainer please Enter the number corresponding to the shape you want to draw:-
+1. Right Triangle
+2. pattern of numbers in a pyramid shape
+3. Hollow Square
+4. Diamond
+5. right triangle using numbers
+6. pattern of a pyramid
+7. Alphabet Triangle
+8. hollow diamond
+please enter your choice trainer :-4
+Enter the number of rows for the diamond: 5
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+Now you are the trainer please Enter the number corresponding to the shape you want to draw:-
+1. Right Triangle
+2. pattern of numbers in a pyramid shape
+3. Hollow Square
+4. Diamond
+5. right triangle using numbers
+6. pattern of a pyramid
+7. Alphabet Triangle
+8. hollow diamond
+please enter your choice trainer :-5
+Enter the number of rows for the right triangle: 5
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+Now you are the trainer please Enter the number corresponding to the shape you want to draw:-
+1. Right Triangle
+2. pattern of numbers in a pyramid shape
+3. Hollow Square
+4. Diamond
+5. right triangle using numbers
+6. pattern of a pyramid
+7. Alphabet Triangle
+8. hollow diamond
+please enter your choice trainer :-6
+Enter the number of rows for the pyramid: 5
+    *
+   ***
+  *****
+ *******
+*********
+Now you are the trainer please Enter the number corresponding to the shape you want to draw:-
+1. Right Triangle
+2. pattern of numbers in a pyramid shape
+3. Hollow Square
+4. Diamond
+5. right triangle using numbers
+6. pattern of a pyramid
+7. Alphabet Triangle
+8. hollow diamond
+please enter your choice trainer :-7
+Enter the number of rows for the right triangle: 5
+A
+BC
+DEF
+GHIJ
+KLMNO
+Now you are the trainer please Enter the number corresponding to the shape you want to draw:-
+1. Right Triangle
+2. pattern of numbers in a pyramid shape
+3. Hollow Square
+4. Diamond
+5. right triangle using numbers
+6. pattern of a pyramid
+7. Alphabet Triangle
+8. hollow diamond
+please enter your choice trainer :-8
+Enter the number of rows (odd number): 5
+  *  
+ * * 
+*   *
+ * * 
+  *  
+Now you are the trainer please Enter the number corresponding to the shape you want to draw:-
+1. Right Triangle
+2. pattern of numbers in a pyramid shape
+3. Hollow Square
+4. Diamond
+5. right triangle using numbers
+6. pattern of a pyramid
+7. Alphabet Triangle
+8. hollow diamond
+9. hollow square using numbers
+10.half pyramid using alphabets
+please enter your choice trainer :-9
+Enter the number of rows: 9
+1 2 3 4 5 6 7 8 9 
+1               9 
+1               9 
+1               9 
+1               9 
+1               9 
+1               9 
+1               9 
+1 2 3 4 5 6 7 8 9 
+Now you are the trainer please Enter the number corresponding to the shape you want to draw:-
+1. Right Triangle
+2. pattern of numbers in a pyramid shape
+3. Hollow Square
+4. Diamond
+5. right triangle using numbers
+6. pattern of a pyramid
+7. Alphabet Triangle
+8. hollow diamond
+9. hollow square using numbers
+10.half pyramid using alphabets
+please enter your choice trainer :-10
+Enter the number of rows for the half pyramid: 8
+A
+BC
+DEF
+GHIJ
+KLMNO
+PQRSTU
+VWXYZAB
+CDEFGHIJ
+----------------------------------------------------------------------------------------------------------------------------------------
+q.52. Create a for loop to print the pattern of a hollow square using numbers......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int rows;
+    cout << "Enter the number of rows: ";
+    cin >> rows;
+    for (int i = 1; i <= rows; i++) 
+    {
+        for (int j = 1; j <= rows; j++)
+        {
+            if (i == 1 || i == rows || j == 1 || j == rows)
+                cout << j << " ";
+            else
+                cout << "  ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
+output:-
+Enter the number of rows: 9
+1 2 3 4 5 6 7 8 9 
+1               9 
+1               9 
+1               9 
+1               9 
+1               9 
+1               9 
+1               9 
+1 2 3 4 5 6 7 8 9 
+-----------------------------------------------------------------------------------------------------------------
+q.53. Write a for loop to find the sum of the digits of each number in the Fibonacci series
+up to 10 terms........
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n = 10;
+    int num1 = 0,num2 = 1,num3;
+    cout << "Fibonacci Series up to " << n << " terms:" << "\n";
+    for (int i = 0; i < n; ++i) 
+    {
+        if (i <= 1)
+          num3 = i;
+        else 
+        {
+            num3 = num1 + num2;
+            num1 = num2;
+            num2 = num3;
+        }
+        cout << num3 << " ";
+        int sum = 0;
+        for (int num=num3;num!=0;num/=10)
+        {
+            sum += num % 10;
+        }
+        cout << "Sum of digits: " << sum << "\n";
+    }
+    return 0;
+}
+output:-
+Fibonacci Series up to 10 terms:
+0 Sum of digits: 0
+1 Sum of digits: 1
+1 Sum of digits: 1
+2 Sum of digits: 2
+3 Sum of digits: 3
+5 Sum of digits: 5
+8 Sum of digits: 8
+13 Sum of digits: 4
+21 Sum of digits: 3
+34 Sum of digits: 7
+---------------------------------------------------------------------------------------------------------
+q.55. Write a for loop to find the sum of all digits in a given range of numbers.....
+
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int sRange, eRange;
+    cout << "Enter the start range: ";
+    cin >> sRange;
+    cout << "Enter the end range: ";
+    cin >> eRange;
+    int totalSum = 0;
+    for (int num=sRange;num<=eRange;num++) 
+    {
+        int currentNumber=num;
+        int sumOftheDigits=0;
+        while(currentNumber!=0) 
+        {
+            sumOftheDigits+=currentNumber%10;
+            currentNumber/=10;
+        }
+        totalSum+=sumOftheDigits;
+    }
+    cout<<"Sum of digits in the range from "<<sRange<<" to "<<eRange<<" is: "<<totalSum<<"\n";
+    return 0;
+}
+output:-
+Enter the start range: 10
+Enter the end range: 20
+Sum of digits in the range from 10 to 20 is: 57
+----------------------------------------------------------------------------------------------------------------
+q.57. Write a for loop to check if a given number is a palindrome or not.....
+
+
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+    int number,originalNumber,reversedNumber = 0;
+    cout << "Enter a number: ";
+    cin >> number;
+    originalNumber = number;
+    for (int temp=number;temp!=0;temp/=10) 
+    {
+        reversedNumber=reversedNumber*10+temp%10;
+    }
+    // use ? and : for replace the if else and save memory:
+    cout <<originalNumber<<(originalNumber==reversedNumber ? " is a palindrome." : " is not a palindrome.\n");
+    return 0;
+}
+output:-
+Enter a number: 12321
+12321 is a palindrome.
+------------------------------------------------------------------------------------------------------------------------
+q.58. Create a for loop to print the pattern of a half pyramid using alphabets....
+
+
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int rows;
+    char alphabet = 'A';
+    cout << "Enter the number of rows for the half pyramid: ";
+    cin >> rows;
+    for (int i = 1; i <= rows; i++)
+    {
+        for (int j = 1; j <= i; j++)
+        {
+            cout<<alphabet;
+            alphabet++;
+            if (alphabet > 'Z')// if alphabet are reached to the "Z" then start again form "A":
+                alphabet = 'A';
+        }
+        cout << "\n";
+    }
+    return 0;
+}
+output:-
+Enter the number of rows for the half pyramid: 10
+A
+BC
+DEF
+GHIJ
+KLMNO
+PQRSTU
+VWXYZAB
+CDEFGHIJ
+KLMNOPQRS
+TUVWXYZABC
+==========================================================================================================================================================
