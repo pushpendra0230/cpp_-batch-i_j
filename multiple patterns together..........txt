@@ -21,6 +21,8 @@ int main()
     cout << "6. pattern of a pyramid\n";
     cout << "7. Alphabet Triangle\n";
     cout << "8. hollow diamond\n";
+    cout << "9. hollow square using numbers\n";
+    cout << "10.half pyramid using alphabets\n";
     cout<<"please enter your choice trainer :-";
     cin >> choice;
 
@@ -164,34 +166,67 @@ int main()
         }
     }
     else if (choice == 8) 
-    {
-        cout << "Enter the number of rows (odd number): ";
-        cin >> rows;
-        if (rows % 2 == 0) 
         {
-            cout << "Please enter an odd number.\n";
-            return 1;
-        }
-        for (int i = 0; i < rows; i++) 
-        {
-            for (int j = 0; j < rows; j++) 
+            cout << "Enter the number of rows (odd number): ";
+            cin >> rows;
+            if (rows % 2 == 0) 
             {
-                if (i + j == rows / 2 || j - i == rows / 2 || i - j == rows / 2 || i + j == (rows / 2) * 3)
-                {
-                    cout << "*";
-                }
-                else 
-                {
-                    cout << " ";
-                }
+                cout << "Please enter an odd number.\n";
+                return 1;
             }
-            cout << "\n";
+            for (int i = 0; i < rows; i++) 
+            {
+                for (int j = 0; j < rows; j++) 
+                {
+                    if (i + j == rows / 2 || j - i == rows / 2 || i - j == rows / 2 || i + j == (rows / 2) * 3)
+                    {
+                        cout << "*";
+                    }
+                    else 
+                    {
+                        cout << " ";
+                    }
+                }
+                cout << "\n";
+            }
         }
-    }
-    else 
-    {
-        cout << "Invalid choice.\n";
-    }
+        else if (choice == 9)
+        {
+            cout << "Enter the number of rows: ";
+            cin >> rows;
+            for (int i = 1; i <= rows; i++) 
+            {
+                for (int j = 1; j <= rows; j++)
+                {
+                    if (i == 1 || i == rows || j == 1 || j == rows)
+                        cout << j << " ";
+                    else
+                        cout << "  ";
+                }
+                cout << "\n";
+            }
+        }
+        else if (choice == 10)
+        {
+            char alphabet = 'A';
+            cout << "Enter the number of rows for the half pyramid: ";
+            cin >> rows;
+            for (int i = 1; i <= rows; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    cout<<alphabet;
+                    alphabet++;
+                    if (alphabet > 'Z')// if alphabet are reached to the "Z" then start again form "A":
+                        alphabet = 'A';
+                }
+                cout << "\n";
+            }
+        }
+        else 
+        {
+            cout << "Invalid choice.\n";
+        }
     return 0;
 }
 output:-
@@ -327,4 +362,47 @@ Enter the number of rows (odd number): 5
 *   *
  * * 
   *  
+Now you are the trainer please Enter the number corresponding to the shape you want to draw:-
+1. Right Triangle
+2. pattern of numbers in a pyramid shape
+3. Hollow Square
+4. Diamond
+5. right triangle using numbers
+6. pattern of a pyramid
+7. Alphabet Triangle
+8. hollow diamond
+9. hollow square using numbers
+10.half pyramid using alphabets
+please enter your choice trainer :-9
+Enter the number of rows: 9
+1 2 3 4 5 6 7 8 9 
+1               9 
+1               9 
+1               9 
+1               9 
+1               9 
+1               9 
+1               9 
+1 2 3 4 5 6 7 8 9 
+Now you are the trainer please Enter the number corresponding to the shape you want to draw:-
+1. Right Triangle
+2. pattern of numbers in a pyramid shape
+3. Hollow Square
+4. Diamond
+5. right triangle using numbers
+6. pattern of a pyramid
+7. Alphabet Triangle
+8. hollow diamond
+9. hollow square using numbers
+10.half pyramid using alphabets
+please enter your choice trainer :-10
+Enter the number of rows for the half pyramid: 8
+A
+BC
+DEF
+GHIJ
+KLMNO
+PQRSTU
+VWXYZAB
+CDEFGHIJ
 =======================================================================================================================================
