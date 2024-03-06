@@ -1,0 +1,100 @@
+cpp task date 6march2024.......
+===================================================================================
+q.1.n*n*n recursion .....
+
+#include <iostream>
+using namespace std;
+int power(int number,int a)
+{
+    if(number<=0)
+        return 1;
+    return power(number-1,a)*a;
+}
+int main()
+{
+    int a;
+    cout<<"enter valur: \n" ;
+    cin>>a;
+    int number;
+    cout<<"Enter the power of n:\n";
+    cin>>number;
+    int answer = power(number,a);
+    cout<<answer;
+}
+output:-
+enter valur:
+8
+Enter the power of n:
+3
+512
+----------------------------------------------------------
+q.2..factorial whith recursion ........
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int fact(int number)
+{
+    if(number==0)
+        return 1;
+    return fact(number-1)*number;
+}
+int main()
+{
+    int number;
+    cout<<"enter the number for factorail : \n";
+    cin>>number;
+    int answer=fact(number);
+    cout<<"factorial is : \n"<<answer;
+}
+output:-
+enter the number for factorail : 
+6
+factorial is : 
+720
+-------------------------------------------------------------
+q.3. armstorng number using loop .....
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int number,sum=0,last_digit;
+    cout<<"enter the number :\n";
+    cin>>number;
+    int temp=number;
+    while(number>0)
+    {
+        last_digit=number%10;
+        sum=sum+last_digit*last_digit*last_digit;
+        number=number/10;
+    }
+    if(temp==sum)
+    {
+        cout<<"this number is Armstrong";
+    }
+    else
+    {
+        cout<<"this number is Not a Armstrong";
+    }
+    return 0;
+}
+output:-
+enter the number :
+153
+this number is Armstrong
+===================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
