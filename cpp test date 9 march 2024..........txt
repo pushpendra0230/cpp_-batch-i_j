@@ -1,0 +1,71 @@
+cpp test date 9 march 2024..........
+====================================================================
+q.1. subtract the values.......
+#include <bits/stdc++.h>
+using namespace std;
+void diff_values(){
+    
+    int a,b,sub;
+    cin>>a>>b;
+    for(int i=1; i<=15; i++){
+        sub=a-b;
+        cout<<i<<" value: "<<a-b<<endl;
+        cin>>a>>b;
+    }
+}
+int main()
+{
+    diff_values();
+
+    return 0;
+} 
+---------------------------------------------------------------------
+q.2. sum the divide value .......
+
+#include <bits/stdc++.h>
+using namespace std;
+void factt() {
+    float factj = 1.0, factd = 1.0;
+    float fact_plus = 0;
+    for (float i = 1; i <= 3; i++) {
+        for (float j = 1; j <= 3; j++) {
+            factj = factj * i;
+        }
+        for (float d = 1; d <= 3; d++) {
+            factd = factd * d;
+        }
+        fact_plus = fact_plus + (factj / factd);
+    }
+    cout << fact_plus;
+}
+
+int main() {
+    factt();
+    return 0;
+}
+---------------------------------------------------------------------
+q.3 factorial with recurtion...............
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int factorial(int num)
+{
+    if (num <= 1)
+    return 1;
+    return factorial(num - 1)*num;
+}
+int main() 
+{
+    int num;
+    cout << "Enter the number for factorial: ";
+    cin >> num;
+    int fact = factorial(num);
+    cout << "The factorial of " << num << " is: " << fact;
+    return 0;
+}
+output:-
+Enter the number for factorial: 5
+The factorial of 5 is: 120
+==========================================================================
