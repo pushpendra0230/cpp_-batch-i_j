@@ -1188,7 +1188,32 @@ Enter number and power: 2
 q.33.Write a program to find the factorial of a large number using big integers.........
 
 
-
+#include<bits/stdc++.h>
+using namespace std;
+int factorial(int a);
+    int main()
+        {
+        int N; 
+        cout<<"Enter a intenger for factorial : \n";
+        cin>>N;
+        factorial(N);
+        return 0;
+        }
+    int factorial(int a)
+    {
+    int i, n;
+    long long int results = 1;//use long long int for big intenger.
+    for (i = 1; i<=a; i++)
+        {
+           results = results * i;
+        }
+    cout<<"Factorial of "<<a<<" is "<<results<<"\n";
+    return results;
+    }
+output:-
+Enter a intenger for factorial : 
+20
+Factorial of 20 is 2432902008176640000
 ---------------------------------------------------------------------------------------------------------------------
 q.34.Create a program to find the sum of the series: 1 + x^2/2! + x^3/3! + ... + x^n/n!.........
 
