@@ -1,0 +1,130 @@
+cpp assingnment Pointer Basics Questions date 6march2024.........
+====================================================================================================================
+q.1. Write a C++ program to declare a pointer variable and initialize it to point to a character variable.
+Print the value of the character variable using both the pointer and direct variable access..........
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    char character = 'A';
+    char *ptr =&character;
+    cout<<"Value of the character variable using direct variable access: "<<character<<"\n";
+    cout<<"Value of the character variable using pointer: "<<*ptr<<"\n";
+    return 0;
+}
+output:-
+Value of the character variable using direct variable access: A
+Value of the character variable using pointer: A
+-----------------------------------------------------------------------------------------------------------------------
+q.2. Develop a C++ program that multiplies two values using pointer variable concept..........
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a,b;
+    cout<<"enter the value of a for multiplication : ";
+    cin>>a;
+    cout<<"enter the value of b for multiplication : ";
+    cin>>b;
+    int * ptr;
+    ptr=&a;
+    ptr=&b;
+    cout<<"The multiplication of a and b is : ";
+    cout<<(*ptr)*(*ptr);
+    return 0;
+}    
+output:-
+enter the value of a for multiplication : 5
+enter the value of b for multiplication : 5
+The multiplication of a and b is : 25
+--------------------------------------------------------------------------------------------------------------------
+q.3. Create a C++ function that takes two double pointers as parameters and swaps the values pointed
+to by these pointers. Then, write a main program to demonstrate the functionality of the swap
+function by swapping two double values................
+
+
+#include <bits/stdc++.h>
+using namespace std;
+void swap(int *a,int *b,int temp)
+{
+    temp=*a;
+    *a=*b;
+    *b=temp;
+}
+int main()
+{
+    int a,b,temp;
+    cout<<"enter the value of a  : ";
+    cin>>a;
+    cout<<"enter the value of b  : ";
+    cin>>b;
+    swap(&a,&b,temp);
+    cout << "After swapping:\n";
+    cout << "Value of a: " << a <<"\n";
+    cout << "Value of b: " << b <<"\n";
+}
+enter the value of a  : 5
+enter the value of b  : 6
+After swapping:
+Value of a: 6
+Value of b: 5
+---------------------------------------------------------------------------------------------------------------------
+q.4. Implement a C++ program to declare and initialize a pointer to a string variable. Print the value of
+the string variable using both the pointer and direct variable access.......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    string str = "Hello, my name is pushpendra soni. ";
+    string *ptr = &str;
+    cout << "Value of the string variable using direct variable access: " << str <<"\n";
+    cout << "Value of the string variable using pointer: " << *ptr <<"\n";
+    return 0;
+}
+output:-
+Value of the string variable using direct variable access: Hello, my name is pushpendra soni. 
+Value of the string variable using pointer: Hello, my name is pushpendra soni. 
+-----------------------------------------------------------------------------------------------------------------------
+q.5. Design a C++ program that uses pointer arithmetic to compute the sum of elements in an integer......
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    int x;
+    cin>>x;
+    int*ptr;
+    ptr=&x;
+    cout<<pow(*ptr,1.0/2.0);
+    return 0;
+}
+---------------------------------------------
