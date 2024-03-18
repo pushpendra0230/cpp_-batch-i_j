@@ -293,6 +293,164 @@ output:-
 Enter any number for multipal : 9
 9 18 27 36 45 54 63 72 81 90 
 ----------------------------------------------------------------------------------------------------------
+q.13. Write a C++ program to declare a pointer variable and pointer variable should get value from
+direct variable and check whether the number is divisible of 5................
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int number;
+    cout<<"enter the number for check that the number is divisible of 5 or not :- ";
+    cin>>number;
+    int *p1;
+    p1=&number;
+    if(*p1%5==0)
+    {
+        cout<<"The number of " <<*p1  <<" is divisible by 5. \n";
+    }
+    else
+    {
+        cout<<"The number of " <<*p1  <<" is not divisible by 5. \n";
+    }
+}
+output:-
+enter the number for check that the number is divisible of 5 or not :- 55
+The number of 55 is divisible by 5. 
+---------------------------------------------------------------------------------------------------------
+q.14. Write a C++ program to declare a pointer variable and pointer variable should get value from
+direct variable and check whether the number is divisible of 15........
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int number;
+    cout<<"enter the number for check that the number is divisible of 15 or not :- ";
+    cin>>number;
+    int *p1;
+    p1=&number;
+    if(*p1%15==0)
+    {
+        cout<<"The number of " <<*p1  <<" is divisible by 15. \n";
+    }
+    else
+    {
+        cout<<"The number of " <<*p1  <<" is not divisible by 15. \n";
+    }
+}
+output:-
+enter the number for check that the number is divisible of 15 or not :- 30
+The number of 30 is divisible by 15. 
+-------------------------------------------------------------------------------------------------------------------
+q.15. Implement a C++ program to declare and initialize a pointer to a character variable. Print the
+value of the character variable using both the pointer and direct variable access.......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    char ctr = 'p';
+    char *ptr = &ctr;
+    cout << "Value of the string variable using direct variable access: " << ctr <<"\n";
+    cout << "Value of the string variable using pointer: " << *ptr <<"\n";
+    return 0;
+}
+output:-
+Value of the string variable using direct variable access: p
+Value of the string variable using pointer: p
+--------------------------------------------------------------------------------------------------------------------
+q.16. Design a C++ program that uses pointer variable to count the number of digits in the value
+entered by user.........
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int counttheDigits(int number) 
+{
+    int *p1;
+    p1 = &number;
+    int count = 0;
+    while (*p1 > 0) 
+    {
+        *p1 = *p1 / 10;
+        count++;
+    }
+    return count;
+}
+int main() 
+{
+    int number;
+    cout << "Enter number for count the number of digits in the value: ";
+    cin >> number;
+    int digitsCount = counttheDigits(number);
+    cout << "The number of digits in the value is: " << digitsCount << "\n";
+    return 0;
+}
+output:-
+Enter number for count the number of digits in the value: 76545790876
+The number of digits in the value is: 10
+-------------------------------------------------------------------------------------------------------------------
+17. Write a C++ program to declare a pointer variable and initialize it to point to a string variable.
+Print the value of the string variable using both the pointer and direct variable access......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    string str = "Hello , I am student of regex software . \n";
+    string *ptr = &str;
+    cout << "Value of the string variable using direct variable access: " << str <<"\n";
+    cout << "Value of the string variable using pointer: " << *ptr <<"\n";
+    return 0;
+}
+output:-
+Value of the string variable using direct variable access: Hello , I am student of regex software . 
+
+Value of the string variable using pointer: Hello , I am student of regex software . 
+---------------------------------------------------------------------------------------------------------------------
+q.18. Create a C++ function that accepts a pointer to from a double and prints the element of the
+double value stored.........
+
+
+----------------------------------------------------------------------------------------------------------------------
+q.19. Develop a C++ program and calculate area of triangle using pointer variables.......
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int a;
+    cout<<"enter the value of a : ";
+    cin>>a;
+    int *p1;
+    p1=&a;
+    int b;
+    cout<<"enter the value of b : ";
+    cin>>b;
+    int *p2;
+    p2=&b;
+    int c=(*p1**p2)/2;
+    cout<<"The area of triangle is : "<<c;
+}
+output:-
+enter the value of a : 10
+enter the value of b : 30
+The area of triangle is : 150
+-----------------------------------------------------------------------------------------------------------------------
+q.20. Implement a C++ function that takes two integer pointers as parameters and calculates the area
+of rectangle using pointer variables........
+
+
+
+
+
+
+
 
 
 
