@@ -470,6 +470,3 @@ of rectangle using pointer variables........
 
 
 
-
-
-s
