@@ -471,15 +471,5 @@ of rectangle using pointer variables........
 
 
 
-#include<bits/stdc++.h>
-using namespace std;
-int main ()
-{
-    int x;
-    cin>>x;
-    int*ptr;
-    ptr=&x;
-    cout<<pow(*ptr,1.0/2.0);
-    return 0;
-}
----------------------------------------------
+
+s
