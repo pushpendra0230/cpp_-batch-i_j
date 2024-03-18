@@ -94,8 +94,205 @@ Value of the string variable using pointer: Hello, my name is pushpendra soni.
 q.5. Design a C++ program that uses pointer arithmetic to compute the sum of elements in an integer......
 
 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int num1;
+    cout<<"enter the first number : ";
+    cin>>num1;
+    int *p1;
+    p1=&num1;
+    int num2;
+    cout<<"enter the second number : ";
+    cin>>num2;
+    int *p2;
+    p2=&num2;
+    int sum=*p1+*p2;
+    cout<<sum;
+}
+output:-
+enter the first number : 50
+enter the second number : 50
+100
+-----------------------------------------------------------------------------------------------------------------------------
+q.6. Develop a C++ function that accepts a pointer variable and perform cube..........
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int num1;
+    cout<<"enter the first number : ";
+    cin>>num1;
+    int *p1;
+    p1=&num1;
+    int cube=(*p1)*(*p1)*(*p1);
+    cout<<"The cube of "<<num1<<" is : "<<cube;
+}
+output:-
+enter the first number : 5
+The cube of 5 is : 125
+-----------------------------------------------------------------------------------------------------------------------------
+q.7. Write a C++ program to declare a pointer variable and initialize it to point to a boolean variable.
+Print the value of the boolean variable using both the pointer and direct variable access. Try to use if-else........
 
 
+------------------------------------------------------------------------------------------------------------------------------
+q.8.Create a C++ program that utilizes pointer to calculate simple interest using function and pointers........
+
+
+#include<bits/stdc++.h>
+using namespace std;
+float simpleinterest(float *principal,float *rate,float *timee)
+{
+    float interest=(*principal * *rate * *timee)/100.0;
+    cout<<interest;
+    return interest;
+}
+int main() 
+{
+    float principalamount;
+    cout << "Enter principal amount in rupees : ";
+    cin >> principalamount;
+    float *principal = &principalamount;
+
+    float interestrate;
+    cout << "Enter rate (in percentage): ";
+    cin >> interestrate;
+    float *rate = &interestrate;
+
+    float timeperiod;
+    cout << "Enter time (in years): ";
+    cin >>timeperiod;
+    float *timee = &timeperiod;
+
+    cout << "Simple interest for principal amount is : ";
+    simpleinterest(&principalamount, &interestrate, &timeperiod);
+    return 0;
+}
+output:-
+Enter principal amount in rupees : 50000
+Enter rate (in percentage): 8.74
+Enter time (in years): 5
+Simple interest for principal amount is : 21850
+-------------------------------------------------------------------------------------------------------------------------
+q.9.Develop a C++ function that accepts a pointer and perform reverse of number given by user.......
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int reversenum(int *number) 
+{
+    int sum = 0;
+    while (*number>0) 
+    {
+        int rem = *number % 10;
+        sum = sum * 10 + rem;
+        *number = *number / 10;
+    }
+    return sum;
+}
+int main() 
+{
+    int num;
+    cout<<"Enter any number: ";
+    cin>>num;
+    int reversed=reversenum(&num);
+    cout << "Reversed number is : "<<reversed <<"\n";
+    return 0;
+}
+output:-
+Enter any number: 67308532
+Reversed number is : 23580376
+----------------------------------------------------------------------------------------------------------------------------
+q.10. Implement a C++ program to declare a pointer variable and pointer variable should get value
+from direct variable and perform multiple of 5 to it.......
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void mul(int *p1) 
+{
+    for (int i=1;i<=10;i++) 
+    {
+        int result = *p1 * i;
+        cout << result << " ";
+    }
+}
+int main() 
+{
+    int n;
+    cout<<"Enter any number for multipal : ";
+    cin>>n;
+    mul(&n);
+    return 0;
+}
+-----------------------------------------------------------------------------------------------------------------------------
+q.11. Design a C++ function that takes a integer pointer as parameters and check whether the number is prime or not........
+
+
+#include <iostream>
+using namespace std;
+bool isPrimenum(int *num) 
+{
+    if (*num <= 1)
+        return false;
+    for (int i = 2;  i*i <= *num; ++i)
+    {
+        if (*num % i == 0)
+            return false;
+    }
+    return true;
+}
+int main() 
+{
+    int number;
+    cout << "Enter a number: ";
+    cin >> number ;
+    if (isPrimenum(&number)) 
+    {
+        cout << number << " is a prime number.\n";
+    }
+    else 
+    {
+        cout << number << " is not a prime number.\n";
+    }
+    return 0;
+}
+output:-
+Enter a number: 2
+2 is a prime number.
+-------------------------------------------------------------------------------------------------------------
+q.12. Write a C++ program to declare a pointer variable and pointer variable should get value from
+direct variable and perform multiple of 9 to it......................
+
+
+#include<bits/stdc++.h>
+using namespace std;
+void mul(int *p1) 
+{
+    for (int i=1;i<=10;i++) 
+    {
+        int result = *p1 * i;
+        cout << result << " ";
+    }
+}
+int main() 
+{
+    int n;
+    cout<<"Enter any number for multipal : ";
+    cin>>n;
+    mul(&n);
+    return 0;
+}
+output:-
+Enter any number for multipal : 9
+9 18 27 36 45 54 63 72 81 90 
+----------------------------------------------------------------------------------------------------------
 
 
 
