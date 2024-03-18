@@ -1,0 +1,104 @@
+cpp assingment date 18march2024............
+=================================================================================
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int arr[10];
+    
+    return 0;
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+int main() 
+{
+    char arr[]={'a','T','Z','Y','S'};
+    
+    return 0;
+}
+
+
+
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int arr[]{1,2,3,4,5,6,7,8,9,1};
+    
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+int main() 
+{
+    float arr[12]={7.8,8.9}; 
+    
+    return 0;
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+int main() 
+{
+    float arr[32]={7,9,8}; 
+    
+    return 0;
+}
+
+
+
+
+
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int arr[64]={7,9,8,4,6,7,6,6,7,8,5,4,6,7,7,5,4,3,6,7,6,3,4,6,7,6,5,4,4,7,8,6,5,6};//yha par 52 elements aayenge 
+    
+    return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int arr[15]={1,4,6};
+    
+    return 0;
+}
+
+
+
+
+#include <iostream>
+using namespace std;
+int main() 
+{
+    int arr[64]={1,4,6};// ese ye eliments 34 tak jayega .........34
+    
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
