@@ -1,0 +1,40 @@
+q.create a array program to make two numbers sum using refrence and size of the array...............
+=======================================================================================================
+#include<bits/stdc++.h>
+using namespace std;
+vector<int>twoSum(vector<int>&arr,int target)
+{
+    for(int i=0;i<arr.size();i++)
+    {
+        for(int j=i+1;j<arr.size();j++)
+        {
+            if(arr[i]+arr[j]==target)
+            {
+                return {arr[i],arr[j]};
+            }
+        }
+    }
+    return {};
+}
+int main()
+{
+    vector<int>arr={2,5,6,7,8,9,1,3,4};
+    int target;
+    cout<<"Enter target value for add two value and give target answer :\n";
+    cin>>target;
+    cout<<"original array:\n";
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+   vector<int>ans =  twoSum(arr,target);
+   if(ans.empty())
+   {
+       cout<<"No pairs found";
+   }
+   else
+   {
+       cout<<ans[0]<<" and "<< ans[1] <<" makes the target: "<<target;
+   }
+}
