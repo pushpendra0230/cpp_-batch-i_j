@@ -1,0 +1,31 @@
+q.reverce the row of a array..............
+================================================
+#include<bits/stdc++.h>
+using namespace std;
+void reverseArray(vector<int>&arr)
+{
+    int i=0;
+    int j=arr.size()-1;
+    while(i<j)
+    {
+        swap(arr[i],arr[j]);
+        i++;
+        j--;
+    }
+}
+int main()
+{
+    vector<int>arr={1,8,9,6,7,5,4,2};
+    cout<<"original array in the row :\n";
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    reverseArray(arr);
+    cout<<"\n"<<"reverseArray array in the row : \n";
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+}
+=================================================================
