@@ -298,12 +298,10 @@ q.8. Take 6 inputs from the user and calculate their average. If the average is 
 
 #include<bits/stdc++.h>
 using namespace std;
-
-
 // Function to find the maximum value in an index of array of integers
 int findMaxValue(vector<int>& arr) 
 {
-    int maxVal = INT_MIN;
+    int maxVal;
     for (int num : arr)
     {
         if (num > maxVal) 
@@ -314,10 +312,11 @@ int findMaxValue(vector<int>& arr)
     return maxVal;
 }
 
+
 // Function to find the minimum value in an index of  array of floats
 float findMinValue(vector<float>& arr) 
 {
-    float minVal = FLT_MAX;
+    float minVal;
     for (float num : arr) 
     {
         if (num < minVal)
@@ -366,8 +365,7 @@ int main()
     } 
     else
     {
-        vector<string> strArr = 
-        {"rahul", "rohan", "rakesh", "prajjal", "pushpendra"};
+        vector<string> strArr = {"rahul", "rohan", "rakesh", "prajjal", "pushpendra"};
         vector<int> lengths = getStringLengths(strArr);
         cout << "Lengths of each string: ";
         for (int len : lengths) 
@@ -683,11 +681,104 @@ Enter 5 integers:
 Sum of the 5 integers: 19
 Sum of first and last elements: 51
 ===============================================================================================
+q.12.Take 8 inputs from the user and calculate their average. If the average is greater than 40, call a function that counts the number of occurrences of a specific character in an array of strings. If the average is less than 40, call a function to find the last occurrence of a specific float in an array. If the average is exactly 40, call a function that takes an array of integers and returns an array containing only the even numbers......
+
+====================================================================================================
+q.20.Take an input from the user. If the input is a prime number, call a function that counts the number of occurrences of a specific string in an array of strings. If the input is not a prime number, call a function that finds the minimum value in an array of integers. If the input is zero, call a function that returns an array of integers squared.
 
 
+#include<bits/stdc++.h>
+using namespace std;
 
+// Function to find the minimum element in a vector 
+int minofarr(vector<int>& arr) 
+{
+    int min = arr[0];
+    for (int i = 1; i < arr.size(); i++) 
+    {
+        if (min > arr[i]) 
+        {
+            min = arr[i];
+        }
+    }
+    return min;
+}
 
+// prime number h ki nahi dekhne ke liye 
+bool isprime(int i) 
+{
+    if (i <= 1) return false;
+    for (int k = 2; k < i; k++) 
+    {
+        if (i % k == 0) 
+        {
+            return false;
+        }
+    }
+    return true;
+}
 
+// Function to count occurrences of a specific string in an array of strings
+// dekhne ke liye ki string m ek hi word kitni baar aaya h 
+int countOccurrences(vector<string>& arr, const string& result) 
+{
+    int count = 0;
+    for (const string& str : arr) 
+    {
+        if (str == result) 
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+// Function if user zero input deta h to  square each element in an array of integers
+vector<int> squareArray(vector<int>& arr) 
+{
+    vector<int> squared;
+    for (int num : arr)
+    {
+        squared.push_back(num * num);
+    }
+    return squared;
+}
+
+int main() 
+{
+    int input;
+    cout << "Enter a number: ";
+    cin >> input;
+
+    if (input == 0) 
+    {
+        vector<int> arr = {1, 2, 3, 4, 5};
+        vector<int> squared = squareArray(arr);
+        cout << "Squared array: ";
+        for (int num : squared) 
+        {
+            cout << num << " ";
+        }
+        cout << "\n";
+    }
+    else if (isprime(input)) 
+    {
+        vector<string> arr = {"prajjal", "pushpendra", "rahul", "prajjal", "pushpendra"};
+        string result = "prajjal";
+        int count = countOccurrences(arr, result);
+        cout << "The string '" << result << "' occurs " << count << " times." <<"\n";
+    }
+    else
+    {
+        vector<int> arr = {120, 138, 100, 500, 805, 399};
+        cout << "Minimum value in the array: " << minofarr(arr) <<"\n";
+    }
+    return 0;
+}
+output:-
+Enter a number: 16
+Minimum value in the array: 100
+============================================================================================================================================================================================
 
 
 
