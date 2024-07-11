@@ -703,6 +703,13 @@ q.12.Take 8 inputs from the user and calculate their average. If the average is 
 
 
 
+
+
+
+
+
+
+
 =========================================================================================================================
 q.13.Take 6 inputs from the user and calculate their sum. If the sum is greater than 60, call a function that counts the number of elements greater than a specified value in an array. If the sum is less than 60, call a function to find the minimum value in an array of integers. If the sum is exactly 60, call a function that takes an array of floats and returns the average of elements less than a specified value.......
 
@@ -967,6 +974,7 @@ Enter five numbers:
 Average: 15
 Concatenated string: ramrohanramanprajjalpushpendra
 ========================================================================================================================
+q.16.Take 4 inputs from the user and calculate their sum. If the sum is greater than 45, call a function that counts the number of elements divisible by 5 in an array of integers. If the sum is less than 45, call a function to find the last occurrence of a specific string in an array. If the sum is exactly 45, call a function that takes an array of floats and returns the sum of elements greater than a specified value.............
 
 
 
@@ -977,6 +985,203 @@ Concatenated string: ramrohanramanprajjalpushpendra
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+=========================================================================================================================
+q.17.Take an input from the user. If the input is a multiple of 3, call a function that finds the maximum value in an array of floats. If the input is a multiple of 4, call a function that counts the number of elements in an array of integers that are greater than a specified value. If the input is zero, call a function that returns the length of each string in an array of strings........
+
+#include <bits/stdc++.h>
+using namespace std;
+
+vector<int> stringlengtharr(vector<string>& arr)
+{
+    vector<int> ans(arr.size());
+    for (int i = 0; i < arr.size(); ++i)
+    {
+        ans[i] = arr[i].length(); 
+    }
+    return ans;
+}
+
+float maximumoffloat(vector<float>& arr)
+{
+    float maxi = arr[0];
+    for (auto it : arr)
+    {
+        if (maxi < it)
+        {
+            maxi = it;
+        }
+    }
+    return maxi;
+}
+
+int maximumofkeyarr(vector<float>& arr, float key)
+{
+    int count = 0;
+    for (auto it : arr)
+    {
+        if (key > it)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+bool ismultipleof(int n, int m)
+{
+    return (n % m == 0);
+}
+
+int main()
+{
+    int n;
+    cout << "Enter an integer value for n: ";
+    cin >> n;
+
+    if (n == 0)
+    {
+        vector<string> stringarr = {"Ram", "Shayam", "Hari", "Gopal", "Kishan", "Laxman", "Verma"};
+        vector<int> ans = stringlengtharr(stringarr);
+        cout << "Lengths of strings in the array: ";
+        for (auto it : ans)
+        {
+            cout << it << " ";
+        }
+        cout << "\n";
+    }
+    else if (ismultipleof(n, 4))
+    {
+        vector<float> arrfloat = {15.5, 22.5, 23.6, 0.5, 96.6, 0.2, 0.9};
+        float key;
+        cout << "Enter a float value for key: ";
+        cin >> key;
+        cout << "Count of elements less than key: " << maximumofkeyarr(arrfloat, key) << "\n";
+    }
+    else if (ismultipleof(n, 3))
+    {
+        vector<float> arrfloat = {14.5, 22.5, 23.6, 0.5, 96.6, 0.2, 0.9};
+        cout << "Maximum of float array: " << maximumoffloat(arrfloat) << "\n";
+    }
+    else
+    {
+        cout << "The value of n is not correct . \n";
+    }
+    return 0;
+}
+output:-
+Enter an integer value for n: 0
+Lengths of strings in the array: 3 6 4 5 6 6 5 
+=======================================================================================================================
+q.18.Take an input from the user. If the input is greater than 100, call a function that finds the first occurrence of a specific integer in an array. If the input is less than 100, call a function that counts the number of elements in an array of floats that are less than a specified value. If the input is exactly 100, call a function that returns an array of integers with each element incremented by 1......
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+// Function to find the first occurrence of a specific integer in an array
+int findFirstOccurrence(vector<int>& arr, int target)
+{
+    for (int i = 0; i < arr.size(); ++i)
+    {
+        if (arr[i] == target) 
+        {
+            return i; 
+        }
+    }
+    return -1; // Return -1 agar targetnahi milta h 
+}
+
+// Function to count elements in a float array that are less than a specified value
+int countElementsLessThan(vector<float>& arr, float value)
+{
+    int count = 0;
+    for (auto num : arr) 
+    {
+        if (num < value) 
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
+// har ek element ko 1 se Increment karna .
+vector<int> incrementArray(vector<int>& arr)
+{
+    vector<int> result;
+    for (int num : arr) 
+    {
+        result.push_back(num + 1); 
+    }
+    return result;
+}
+
+int main()
+{
+    int input;
+    cout << "Enter an integer value: ";
+    cin >> input;
+
+    if (input > 100)
+    {
+        // Call function to find first occurrence of a specific integer in an array
+        vector<int> arr = {10, 20, 30, 40, 50, 30, 70};
+        int target = 30;
+        int index = findFirstOccurrence(arr, target);
+        if (index != 0) 
+        {
+            cout << "First occurrence of " << target << " is at index: " << index << "\n";
+        }
+        else 
+        {
+            cout << "Target not found in the array.\n";
+        }
+    }
+    else if (input < 100)
+    {
+        // Call function to count elements in a float array that are less than a specified value
+        vector<float> floatArr = {14.5, 22.5, 23.6, 0.5, 96.6, 0.2, 0.9};
+        float value = 10.0;
+        int count = countElementsLessThan(floatArr, value);
+        cout << "Number of elements less than " << value << " in float array: " << count << "\n";
+    }
+    else if (input == 100)
+    {
+        // Call function to increment each element of an integer array by 1
+        vector<int> intArr = {44, 55, 66, 77, 88};
+        vector<int> result = incrementArray(intArr);
+        cout << "Array after incrementing each element by 1: ";
+        for (auto num : result)
+        {
+            cout << num << " ";
+        }
+        cout << "\n";
+    }
+    else
+    {
+        cout << "Invalid input! Please enter a valid integer for run the code .\n";
+    }
+
+    return 0;
+}
+
+output:-
+Enter an integer value: 100
+Array after incrementing each element by 1: 45 56 67 78 89 
 ========================================================================================================================
 q.19.Take an input from the user. If the input is even, call a function that counts the number of even numbers in an array of integers. If the input is odd, call a function that finds the last occurrence of a specific integer in an array. If the input is zero, call a function that returns an array of integers multiplied by 3................
 
