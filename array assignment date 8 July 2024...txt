@@ -692,24 +692,111 @@ The value of vowels in given array is : 8
 q.12.Take 8 inputs from the user and calculate their average. If the average is greater than 40, call a function that counts the number of occurrences of a specific character in an array of strings. If the average is less than 40, call a function to find the last occurrence of a specific float in an array. If the average is exactly 40, call a function that takes an array of integers and returns an array containing only the even numbers......
 
 
+#include<bits/stdc++.h> 
+using namespace std; 
 
+vector<int> lengtharr(vector<string>&arr,string &key)
+{
+    vector<int>newarr;
+    int count;
+    for(auto str:arr)
+    {
+        count=0;
+            for(auto it:str)
+            {
+                if(it=='p')
+                {
+                    count++;
+                }
+            }
+        newarr.push_back(count);
+    }
+    return newarr;
+}
+vector<int>evenarr(vector<int>&arr) 
+{ 
+    vector<int>newarr; 
+    int sum=0; 
+    int avrg=0; 
+    for(auto it: arr)
+    { 
+        sum+=it; 
+        avrg=sum/arr.size(); 
+    } 
+    for(auto it: arr)
+    { 
+        if(it%2==0)
+        { 
+            newarr.push_back(it); 
+        } 
+    } 
+    return newarr; 
+} 
+int lastoccurrence(vector<float>&arr,float &key)
+{ 
+    int findex = -1; 
+    for(int i = 0 ; i<arr.size() ; i++)
+    { 
+        if(arr[i]==key)
+        { 
+            findex = i; 
+        } 
+    } 
+    return findex; 
+} 
 
+int main()
+{
+    float sum=0.0,avrg=0.0; 
+    vector<int>arr(8);
+    cout<<"Enter the number :\n";
+    for(auto &it:arr)
+    {
+        cin>>it;
+    }    
+    for(auto it:arr)
+    {
+        sum=sum+it;
+        avrg=sum/arr.size();
+    }
+    if(avrg>40)
+    {
+        vector<string>arr={"prajjal","rahul","prajjal","pushpendra","rakhi"};
+        string key="h";
+        vector<int>newarr=lengtharr(arr,key);
+        for(auto it:newarr)
+        {
+            cout<<it<<" ";
+        }
+    }
+    else if(avrg<40)
+    {
+        vector<float>arr = {14.5,14.5,14.5,76.5,88.5,14.5,77.8,34.8,14.5}; 
+        float key  = 14.5; 
+        cout<<"last occurrence : "<<lastoccurrence(arr,key);
+    }
+    else
+    {
+        vector<int>arr = {48,4,3,56,78,77,65,89,98,99,23}; 
+        vector<int>ary=evenarr(arr); 
+        for(auto it:ary)
+        { 
+            cout<<it<<" "; 
+        } 
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+output:-
+Enter the number :
+2
+3
+2
+3
+2
+3
+2
+3
+last occurrence : 8
 =========================================================================================================================
 q.13.Take 6 inputs from the user and calculate their sum. If the sum is greater than 60, call a function that counts the number of elements greater than a specified value in an array. If the sum is less than 60, call a function to find the minimum value in an array of integers. If the sum is exactly 60, call a function that takes an array of floats and returns the average of elements less than a specified value.......
 
@@ -976,29 +1063,85 @@ Concatenated string: ramrohanramanprajjalpushpendra
 ========================================================================================================================
 q.16.Take 4 inputs from the user and calculate their sum. If the sum is greater than 45, call a function that counts the number of elements divisible by 5 in an array of integers. If the sum is less than 45, call a function to find the last occurrence of a specific string in an array. If the sum is exactly 45, call a function that takes an array of floats and returns the sum of elements greater than a specified value.............
 
+#include<bits/stdc++.h>
+using namespace std;
 
+int divisible(vector<int>&arr)
+{
+    int count=0;
+    for(int num: arr)
+    {
+        if(num%5==0)
+        {
+            count++;
+        }
+    }
+    return count;
+} 
 
+float sumofElement(vector<float>&arr,float &key)
+{
+    float sum=0.0;
+    for(auto it: arr)
+    {
+        if(it > key)
+        {
+            sum+=it;
+        }
+    }
+    return sum;
+}
+int lastocc(vector<string>&arr,string key)
+{
+    int lindex=-1;
+    for(int i=1;i<arr.size();i++)
+    {
+        if(arr[i]==key)
+        {
+            lindex=i;
+        }
+    }
+    return lindex;
+}
+int main()
+{
+    int sum=0;
+    vector<int>arr(4);
+    cout<<"Enter the numbers : ";
+    for(auto &it:arr)
+    {
+        cin>>it;
+    }
+    for(auto it:arr)
+    {
+        sum=sum+it;
+    }
+    if(sum==45)
+    {
+        vector<float>arr={1.1,2.2,3.3,4.4,5.5,6.6,7.7,8.8,9.9};
+        float key=1.1;
+        cout<<"Sum of elements is : "<<sumofElement(arr,key);
+    }
+    else if(sum<45)
+    {
+        vector<string>arr={"prajjal","Ravi","pushpendra","prajjal","Mohit","prajjal","pushpendra","prajjal","pushpendra"};
+        string key="prajjal";
+        cout<<"The last occurence is : "<<lastocc(arr,key);
+    }
+    else if(sum>45) 
+    {
+    vector<int>arr={11,33,45,55,65,34,77,75,8,85,99,95};
+    cout<<"count of number which are divisible by 5 is : "<<divisible(arr);
+    }
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=========================================================================================================================
+output:-
+Enter the numbers : 2
+3
+2
+3
+The last occurence is : 7
+===========================================================================================================================================
 q.17.Take an input from the user. If the input is a multiple of 3, call a function that finds the maximum value in an array of floats. If the input is a multiple of 4, call a function that counts the number of elements in an array of integers that are greater than a specified value. If the input is zero, call a function that returns the length of each string in an array of strings........
 
 #include <bits/stdc++.h>
