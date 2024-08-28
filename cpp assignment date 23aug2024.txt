@@ -1,0 +1,184 @@
+cpp assignment date 23aug2024
+=======================================================
+q.1.1. 1 1 2 3 5 8 13 .....
+    a=1 b=1 c =a+b 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the number of terms: ";
+    cin >> n;
+
+    int a = 1, b = 1, c;
+    cout << a << " " << b << " ";
+    for (int i = 3; i <= n; i++) 
+    {
+        c = a + b; 
+        cout << c << " ";
+        a = b;
+        b = c; 
+    }
+    cout <<"\n";
+    return 0;
+}
+output:-
+Enter the number of terms: 10
+1 1 2 3 5 8 13 21 34 55 
+================================================================
+q.2.2. 1 2 2 4 8 32 ....
+   a=1 b=2 c =a*b
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the number of terms: ";
+    cin >> n;
+
+    int a = 1, b = 2, c;
+    cout << a << " " << b << " ";
+
+    for (int i = 3; i <= n; i++) 
+    {
+        c = a * b;
+        cout << c << " ";
+        a = b;
+        b = c;
+    }
+    cout <<"\n";
+    return 0;
+}
+output:-
+Enter the number of terms: 10
+1 2 2 4 8 32 256 8192 2097152 0 
+================================================================================
+q.3. 1 2 3 6 11 20 ....
+     a=1 b=2 c=3  d =a+b+c
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the number of terms: ";
+    cin >> n;
+    if (n < 1) 
+    {
+        cout << "Please enter a positive integer.\n";
+        return 0;
+    }
+    int a = 1, b = 2, c = 3, d;
+    cout << a << " " << b << " " << c << " ";
+
+    for (int i = 4; i <= n; i++) 
+    {
+        d = a + b + c;
+        cout << d << " ";
+        a = b;
+        b = c;
+        c = d;
+    }
+    cout <<"\n";
+    return 0;
+}
+output:-
+Enter the number of terms: 8
+1 2 3 6 11 20 37 68 
+========================================================================
+
+q.4. 1 2 4 8 32 ....
+     a=1 b=2 c= power of 2
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the number of terms: ";
+    cin >> n;
+
+    if (n <= 0) 
+    {
+        cout << "Please enter a positive integer.\n";
+        return 0;
+    }
+
+    for (int i = 0; i < n; i++) 
+    {
+        int term = pow(2, i);
+        cout << term << " ";
+    }
+
+    cout <<"\n";
+    return 0;
+}
+output:-
+Enter the number of terms: 10
+1 2 4 8 16 32 64 128 256 512 
+==================================================================================
+q.5. 1 2 3 6 18 .....
+     a =1 b=2 c=3 d =c*b 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the number of terms: ";
+    cin >> n;
+    if (n < 1) 
+    {
+        cout << "Please enter a positive integer.\n";
+        return 0;
+    }
+    int a = 1, b = 2, c = 3, d;
+    cout << a << " " << b << " " << c << " ";
+    for (int i = 4; i <= n; ++i) 
+    {
+        d = c * b; 
+        cout << d << " ";
+        a = b;
+        b = c;
+        c = d;
+    }
+    cout <<"\n";
+    return 0;
+}
+output:-
+Enter the number of terms: 8
+1 2 3 6 18 108 1944 209952 
+===============================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
