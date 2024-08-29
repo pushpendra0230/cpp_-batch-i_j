@@ -1,0 +1,432 @@
+cpp assignment date 26 aug 2024
+=========================================================
+q.1. 1 1 2 3 5 8 13 .....
+    a=1 b=1 c =a+b 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the number : ";
+    cin >> n;
+
+    if (n < 1) 
+    {
+        cout << "Please enter a positive number.\n";
+        return 0;
+    }
+    int arr[n];
+    arr[0] = 1;
+    arr[1] = 1;
+    for (int i = 2; i < n; i++) 
+    {
+        arr[i] = arr[i - 1] + arr[i - 2];
+    }
+    for (int i = 0; i < n; ++i) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+Enter the number : 10
+1 1 2 3 5 8 13 21 34 55 
+====================================================================
+q.2. 1 2 2 4 8 32 ....
+   a=1 b=2 c =a*b
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the value of n: ";
+    cin >> n;
+
+    if (n <= 0) 
+    {
+        cout << "Please enter a positive integer.\n";
+        return 0;
+    }
+    int arr[n];
+    arr[0] = 1; 
+    arr[1] = 2; 
+    arr[2] = 2;
+    for (int i = 3; i < n; i++) 
+    {
+        arr[i] = arr[i-1] * arr[i-2];
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+
+    return 0;
+}
+output:-
+Enter the value of n: 8
+1 2 2 4 8 32 256 8192 
+=====================================================================================
+q.3. 1 2 3 6 11 20 ....
+     a=1 b=2 c=3  d =a+b+c
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the value : ";
+    cin >> n;
+
+    if (n <= 0) 
+    {
+        cout << "Please enter a positive number.\n";
+        return 0;
+    }
+    int arr[n];
+    if (n > 0) arr[0] = 1; 
+    if (n > 1) arr[1] = 2; 
+    if (n > 2) arr[2] = 3; 
+    for (int i = 3; i < n; i++) 
+    {
+        arr[i] = arr[i-1] + arr[i-2] + arr[i-3];
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+Enter the value : 10
+1 2 3 6 11 20 37 68 125 230 
+==================================================================
+q.4. 1 2 4 8 32 ....
+     a=1 b=2 c= power of 2
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the number : ";
+    cin >> n;
+
+    if (n <= 0) 
+    {
+        cout << "Please enter a positive number.\n";
+        return 0;
+    }
+    int arr[n];
+    arr[0] = 1; 
+    arr[1] = 2; 
+    arr[2] = 4;
+
+    for (int i = 3; i < n; i++) 
+    {
+        arr[i] = arr[i-1] * arr[i-2];
+    }
+
+    for (int i = 0; i < n; i++) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+
+    return 0;
+}
+output:-
+Enter the number of elements: 8
+1 2 4 8 32 256 8192 2097152 
+====================================================================
+q.5. 1 2 3 6 18 .....
+     a =1 b=2 c=3 d =c*b 
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the number : ";
+    cin >> n;
+
+    if (n <= 0) 
+    {
+        cout << "Please enter a positive number.\n";
+        return 0;
+    }
+    int arr[n];
+    arr[0] = 1; 
+    arr[1] = 2; 
+    arr[2] = 3; 
+
+    for (int i = 3; i < n; i++) 
+    {
+        arr[i] = arr[i-1] * arr[i-2];
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+Enter the number : 8
+1 2 3 6 18 108 1944 209952 
+=============================================================================
+q.6. there are four variables a = 1 b= 2 c= 3 c=4
+   formulate  1 2 3 4 5 7 9 12 16  and so on
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the value : ";
+    cin >> n;
+
+    if (n <= 0) 
+    {
+        cout << "Please enter a positive number.\n";
+        return 0;
+    }
+    int arr[n];
+    arr[0] = 1;
+    arr[1] = 2;
+    arr[2] = 3;
+    arr[3] = 4;
+    int increment = 1;
+    for (int i = 4; i < n; i++) 
+    {
+        arr[i] = arr[i-1] + increment;
+        increment++;
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+Enter the value : 11
+1 2 3 4 5 7 10 14 19 25 32 
+============================================================================
+q.7.1 2 4 7 12 20...
+Variables: a=1, b=2, c=a+b+1
+Formula: The additon between consecutive terms increases by 1.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the value of n: ";
+    cin >> n;
+
+    if (n <= 0) 
+    {
+        cout << "Please enter a positive integer.\n";
+        return 0;
+    }
+    int arr[n] = {1, 2};
+    cout << "1 2 ";
+    for (int i = 2; i < n; i++) 
+    {
+        arr[i] = arr[i-2] + arr[i-1] + 1;
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+Enter the number: 10
+1 2 4 7 12 20 33 54 88 143 
+=============================================================================================
+q.8.Modified Tribonacci Sequence
+Sequence: 1, 1, 2, 4, 7, 13, ...
+Formulation: a = 1, b = 1, c = 2, d = a + b + c
+DP Problem: Solve for the nth term where each term is the sum of the previous three terms.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the value : ";
+    cin >> n;
+
+    if (n <= 0) 
+    {
+        cout << "Please enter a positive number.\n";
+        return 0;
+    }
+    int arr[n];
+    
+    // we have to print 3 number first to count next 3 plus
+    arr[0] = 1;
+    arr[1] = 1;
+    arr[2] = 2;
+
+    for (int i = 3; i < n; i++) 
+    {
+        arr[i] = arr[i-1] + arr[i-2] + arr[i-3];
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+Enter the number: 10
+1 1 2 4 7 13 24 44 81 149 
+======================================================================================================
+q.9.Sum of Odd and Even Index Terms
+Sequence: 1, 2, 5, 10, 17, 26, ...
+Formulation: a = 1, b = a + even index numbers
+DP Problem: Use dynamic programming to calculate the nth term where the pattern is determined by the sum of even and odd indexed numbers.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the value : ";
+    cin >> n;
+
+    if (n <= 0) 
+    {
+        cout << "Please enter a positive number.\n";
+        return 0;
+    }
+    int arr[n];
+    arr[0] = 1;
+    for (int i = 1; i < n; i++) 
+    {
+        arr[i] = arr[i-1] + (2 * i - 1);
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+Enter the value : 10
+1 2 5 10 17 26 37 50 65 82 
+======================================================================
+q.10.Double Product Sequence
+Sequence: 1, 3, 6, 36 ...
+Formulation: a = 1, b = 3, c = a * b * 2
+Problem: Find the nth term where each term is the product of the previous two, doubled.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the value : ";
+    cin >> n;
+
+    if (n <= 0) 
+    {
+        cout << "Please enter a positive number.\n";
+        return 0;
+    }
+    long long arr[n];
+    arr[0] = 1;
+    arr[1] = 3;
+
+    for (int i = 2; i < n; i++) 
+    {
+        arr[i] = arr[i-1] * arr[i-2] * 2;
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+
+    return 0;
+}
+output:-
+Enter the value : 8
+1 3 6 36 432 31104 26873856 1671768834048 
+==================================================================================================
+q.11. Geometric Progression
+Sequence: 1, 3, 9, 27, 81, ...
+Formulation: a = 1, b = a * 3
+Problem: Calculate the nth term where each term is triple the previous.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the value : ";
+    cin >> n;
+
+    if (n <= 0) 
+    {
+        cout << "Please enter a positive number.\n";
+        return 0;
+    }
+    long long arr[n];
+    
+    arr[0] = 1;
+    for (int i = 1; i < n; i++) 
+    {
+        arr[i] = arr[i-1] * 3;
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        cout << arr[i] << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+Enter the value : 10
+1 3 9 27 81 243 729 2187 6561 19683 
+===============================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
