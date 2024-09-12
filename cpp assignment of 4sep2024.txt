@@ -34,9 +34,197 @@ int main()
 output:-
 Vector 5 elements: empty. empty. empty. empty. empty. 
 ================================================================================================
+q.3.Initialize a vector with the values {1, 2, 3, 4, 5}....
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<int> arr={1,2,3,4,5};
+    cout<<"the vector values is : ";
+    for (auto it : arr)
+    {
+        cout<< it << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+the vector values is : 1 2 3 4 5 
+================================================================================================
+q.4.Create a vector of floating-point numbers and fill it with 10 values entered by the user...
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<float> arr{};
+    float value;
+    cout << "Enter 10 float type value : ";
+    for (int i=0; i <10; i++)
+    {
+        cin >> value;
+        arr.push_back(value);
+    }
+    cout << "The value is : \n";
+    for (auto it : arr)
+    {
+        cout << it << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+Enter 10 float type value : 1.1
+2.2
+3.3 
+4.4
+5.5
+6.6
+7.7
+8.8
+9.9
+3.6
+The value is : 
+1.1 2.2 3.3 4.4 5.5 6.6 7.7 8.8 9.9 3.6 
+================================================================================================
+q.5.Print all elements of a vector of integers...
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<float>arr{33,55,44,77,66,55,3,4,6,22,8,7,6,55,34,23};
+    cout<<"the all vector integers is : ";
+    for (auto it : arr)
+    {
+        cout << it << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+the all vector integers is : 33 55 44 77 66 55 3 4 6 22 8 7 6 55 34 23 
+===============================================================================================
 q.6.Find the size of a vector of doubles and display it.....
 
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<double> arr = {1.1, 2.2, 3.3, 4.4, 5.5,6.7,8.8,9.9,3.2};
+    cout << "The size of the vector is: " << arr.size() <<"\n";
+    return 0;
+}
+output:-
+The size of the vector is: 9
+================================================================================================
+q.7.Check if a vector of integers is empty and print the result.....
 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<int> arr={1,3,5,5,6,3,4,3};
+    if (arr.empty())
+    {
+        cout << "The vector is empty.\n";
+    }
+    else
+    {
+        cout << "The vector is not empty.\n";
+    }
+    return 0;
+}
+output:-
+The vector is not empty.
+=================================================================================================
+q.8.Add an element to the end of a vector of strings and print the updated vector.....
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<string>arr={"pushpendra", "soni"};
+    arr.push_back("are in regex. ");
+    cout << "new vector is : \n";
+    for (const auto& str : arr)
+    {
+        cout << str << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+new vector is : 
+pushpendra soni are in regex.  
+=================================================================================================
+q.9.Remove the last element from a vector of integers and print the vector.....
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr = {10, 20, 30, 40, 50};
+    arr.pop_back();
+    cout << "the last remove itme are removed and remaining answer is : \n";
+     for(auto it : arr)
+    {
+        cout<<it<<" ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+the last remove itme are removed and remaining answer is : 
+10 20 30 40 
+=================================================================================================
+q.10.Clear all elements from a vector of characters and check if it is empty....
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<char> arr = {'a', 'b', 'c', 'd', 'e'};
+    arr.clear();
+    if (arr.empty())
+    {
+        cout << "The vector is empty.\n";
+    }
+    else
+    {
+        cout << "The vector is not empty.\n";
+    }
+    return 0;
+}
+output:-
+The vector is empty.
+=================================================================================================
+q.11.Initialize a vector of integers with values from 10 to 19.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr;
+    for (int i=10;i<=19; i++)
+    {
+        arr.push_back(i);
+    }
+    for (auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+10 11 12 13 14 15 16 17 18 19 
 =================================================================================================
 q.12.Create a vector of vectors (2D vector) and initialize it with 3 rows and 4 columns of zeros.
 
@@ -47,10 +235,9 @@ int main()
 {
     vector<vector<int>>arr=
     {
-        {1,2,3},
-        {4,5,6},
-        {5,6,7},
-        {8,9,10}
+        {1,2,3,4},
+        {5,6,7,8},
+        {9,10,11,12}
     };
     for (auto it : arr)
     {
@@ -68,6 +255,200 @@ output:-
 5 6 7 
 8 9 10 
 ===========================================================================================================
+q.13.Copy all elements from one vector of floats to another vector....
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<float>arr1={1.5, 2.5, 3.5, 4.5, 5.5};
+    vector<float>arr2{};
+    for(int i = 0; i < arr1.size(); i++)
+    {
+        arr2.push_back(arr1[i]);
+    }
+    cout << "output is : ";
+    for(auto it : arr2)
+    {
+        cout << it << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+output is : 1.5 2.5 3.5 4.5 5.5 
+===========================================================================================================
+q.14.Use the assign function to set a vector of integers to 10 elements, all initialized to 7.....
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<int> arr;
+    // assingn function ka use karenge sabhi elements ko 7 se repersent karne ke liye 
+    arr.assign(10,7);
+    cout << "thye number is  : ";
+    for(auto it : arr)
+    {
+        cout << it << " ";
+    }
+    cout << "\n";
+    return 0;
+}
+output:-
+thye number is  : 7 7 7 7 7 7 7 7 7 7 
+=============================================================================================================
+q.15.Create a vector and use push_back to add 5 elements to it. Then, use pop_back to remove 2 elements....
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr ={1, 2, 3, 4, 5};
+    cout << "Original vector : ";
+    for (auto it : arr)
+    {
+        cout << it << " ";
+    }
+    cout<<"\n";
+    int n;
+    cout << "Enter the number : ";
+    for (int i = 0; i < 5; i++)
+    {
+        cin >> n;
+        arr.push_back(n);
+    }
+    cout <<"new vector after add 5 numbers in it : ";
+    for (auto it : arr)
+    {
+        cout << it << " ";
+    }
+    cout << "\n";
+    for (int i = 0; i < 2; i++)
+    {
+        arr.pop_back();
+    }
+    cout << "new vector after remove 2 numbers : ";
+    for (auto it : arr)
+    {
+        cout << it << " ";
+    }
+    return 0;
+}
+output:-
+Original vector : 1 2 3 4 5 
+Enter the number : 77
+66
+55
+66
+77
+new vector after add 5 numbers in it : 1 2 3 4 5 77 66 55 66 77 
+new vector after remove 2 numbers : 1 2 3 4 5 77 66 55 
+===========================================================================================================
+q.16.Access and print the third element of a vector of strings....
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<string> arr = {"hello","my","name","pushpendra","soni"};
+    cout<<arr[3];
+    return 0;
+}
+output:-
+pushpendra
+===========================================================================================================
+q.17.Modify the value of the fifth element in a vector of integers..
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr = {1,2,3,4,5,6,7};
+    arr[5]=1080;
+    cout<<"new value is : ";
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    return 0;
+}
+output:-
+new value is : 1 2 3 4 5 1080 7 
+===========================================================================================================
+q.18.Use the at method to safely access the 7th element of a vector of doubles...
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<double> arr = {162.222, 228.333, 344.338, 287.444, 599.777, 764.000, 197.777, 89.444, 96.111};
+    cout << "7th Element of given vector is : " << arr.at(7);
+    return 0;
+}
+output:-
+7th Element of given vector is : 89.444
+===========================================================================================================
+q.19.Check if a vector contains a specific value using the find function.
+
+#include<bits/stdc++.h>
+using namespace std;
+void printarr(vector<int>& arr)
+{
+    for (auto it : arr)
+    {
+        cout <<it << " ";
+    }
+    cout <<"\n";
+}
+int main()
+{
+    vector<int> arr = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+    int key = 50;
+    auto it = find(arr.begin(), arr.end(), key);
+    if (it != arr.end())
+    {
+        cout << "Element found at array index : "<<distance(arr.begin(), it)<<"\n";
+    }
+    else
+    {
+        cout <<"Element not found\n";
+    }
+    return 0;
+}
+output:-
+Element found at array index : 4
+===============================================================================================================
+q.20.Use a loop to iterate over and print all elements of a vector of integers.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr = {10, 24, 35, 43,56};
+    for(int i=0;i<arr.size();i++)
+    {
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
+output:-
+10 24 35 43 56
+===============================================================================================================
+q.21.ind the capacity of a vector of integers and print it.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr = {1,2,3,4,5,6,7,8,9};
+    cout<<"Capacity of given vector : "<<arr.capacity();
+    return 0;
+}
+output:-
+Capacity of given vector : 9
+===============================================================================================================
 q.22.Shrink the vector to fit its current size and print the new capacity......
 
 
@@ -102,60 +483,55 @@ output:-
 10
 2
 =========================================================================================================
-q.19.Check if a vector contains a specific value using the find function.
+q.23.Check if a vector’s size is equal to a specific number and print a message.
 
-
-
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
-void printarr(vector<int>& arr)
-{
-    for (auto it : arr)
-    {
-        cout <<it << " ";
-    }
-    cout <<"\n";
-}
 int main()
 {
-    vector<int> arr = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
-    int key = 50;
-    auto it = find(arr.begin(), arr.end(), key);
-    if (it != arr.end())
-    {
-        cout << "Element found at array index : "<<distance(arr.begin(), it)<<"\n";
-    }
-    else
-    {
-        cout <<"Element not found\n";
-    }
+    vector<int> arr = {};
+    int size=arr.size();
+    if(size>0){cout<<"Valid size";}
+    else{cout<<"Invalid size";}
     return 0;
 }
 output:-
-Element found at array index : 4
-===============================================================================================================
+Invalid size
+=========================================================================================================
+q.24.Determine if the vector is at its maximum size using max_size().
 
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int> arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    double maxSize = arr.max_size();
+    cout << "The maximum size of the vector is: " << maxSize <<"\n";
+    return 0;
+}
+output:-
+The maximum size of the vector is: 2.30584e+18
+=========================================================================================================
+q.25.Resize a vector of doubles to hold 15 elements and initialize them with 0.0.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#include <bits/stdc++.h>
+using namespace std;
+void arrr(vector<double> &arr)
+{
+    for (auto it : arr)
+    {
+        cout << it << " ";
+    }
+}
+int main()
+{
+    vector<double> arr = {1.222, 2.3333, 3.4444, 4.55555};
+    cout<<arr.size()<<"\n";
+    arr.resize(15,0.00);
+    arrr(arr);
+    return 0;
+}
+output:-
+4
+1.222 2.3333 3.4444 4.55555 0 0 0 0 0 0 0 0 0 0 0 
+=========================================================================================================
