@@ -11,7 +11,7 @@ string add(string,string);
 int main() 
 {
     cout << add(1,5)<<"\n";                
-    cout << add(2.5f, 3.7f)<<"\n"; 
+    cout << add(2.5, 3.7)<<"\n"; 
     cout << add("pushpendra"," soni")<<"\n";
     return 0;
 }
@@ -35,10 +35,104 @@ pushpendra soni
 q.2.Create a function calculateArea that is overloaded to compute the area of a circle, rectangle, and triangle. Use appropriate arguments to represent each shape’s dimensions.
 ==============================================================================================
 q.3.Overload a max function to return the maximum of two integers, two floats, and two strings (lexicographically). Demonstrate its usage in a program.
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int max(int, int); 
+float max(float, float);
+string max(string, string);
+int main() 
+{
+    cout <<max(1287,5432)<<"\n";                 
+    cout <<max(44.567, 254.888)<<"\n";              
+    cout <<max("rajesh","kumar");       
+    return 0;
+}
+int max(int a, int b)
+{
+    if (a > b)
+        return a;
+    else
+        return b;
+}
+float max(float a, float b) 
+{
+    if (a > b)
+        return a;
+    else
+        return b;
+}
+string max(string a, string b) 
+{
+    if (a > b)
+        return a;
+    else
+        return b;
+}
+output:-
+5432
+254.888
+rajesh
 ===============================================================================================
 q.4.Implement an overloaded function print that prints an integer, a float, and a string. Write a program to test it with different data types.
+
+#include <bits/stdc++.h>
+using namespace std;
+void print(int x) 
+{
+    cout <<"Integer:"<<x<<"\n";
+}
+void print(float x) 
+{
+    cout << "Float: "<<x<<"\n";
+}
+void print(string x) 
+{
+    cout <<"String: "<<x<<"\n";
+}
+int main() 
+{
+    print(188);            
+    print(6.77f);//yha par number ko float se consider karne ke liye f ka use karenge jiss number float se hi consider ho na ki double se          
+    print("pushpendra");
+    return 0;
+}
+output:-
+Integer:188
+Float: 6.77
+String: pushpendra
 ==================================================================================================
 q.5.Create an overloaded function multiply that multiplies two integers, two floats, and an integer with a float. Write a test program to verify the result of all overloaded functions.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int multiply(int a, int b) 
+{
+    return a * b;
+}
+float multiply(float a, float b)
+{
+    return a * b;
+}
+float multiply(int a, float b) 
+{
+    return a * b;
+}
+int main() 
+{
+    cout << "Multiply (int, int): "<<multiply(50,10)<<"\n";          
+    cout << "Multiply (float, float): "<<multiply(3.8f,2.6f) << "\n"; 
+    cout << "Multiply (int, float): "<<multiply(4,5.88f);
+    return 0;
+}
+output:-
+Multiply (int, int): 500
+Multiply (float, float): 9.88
+Multiply (int, float): 23.52
 ===================================================================================================
 q.6.Overload a function swapValues to swap two integers, two floats, and two characters. Write a program that demonstrates swapping of these data types.
 ========================================================================================================
