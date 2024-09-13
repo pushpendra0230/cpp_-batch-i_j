@@ -135,10 +135,55 @@ Multiply (float, float): 9.88
 Multiply (int, float): 23.52
 ===================================================================================================
 q.6.Overload a function swapValues to swap two integers, two floats, and two characters. Write a program that demonstrates swapping of these data types.
+
+
 ========================================================================================================
 q.7.Define a function compare that is overloaded to compare two integers, two floats, and two characters, returning the greater value in each case. Test the overloaded functions with appropriate examples.
+
+#include<bits/stdc++.h>
+using namespace std ;
+int compare(int a,int b)
+{
+    if(a>b)
+    return a;
+    else
+    return b;
+}
+float compare(float a,float b)
+{
+    if(a>b)
+    return a;
+    else
+    return b;
+}
+char compare(char a,char b)
+{
+    if(a>b)
+    return a;
+    else
+    return b;
+}
+int main()
+{
+   int intanswer=compare(133,104);
+   cout <<intanswer<<"\n";
+   
+   float floatanswer=compare(5.77f,8.33f);
+   cout <<floatanswer<<"\n";
+   
+   char charanswer=compare('a','q');
+   cout<<charanswer<<"\n";
+   return 0;
+}
+output:-
+133
+8.33
+q
 =========================================================================================================
 q.8.Write a program that demonstrates function overloading by creating overloaded functions for subtract that subtract two integers, two floats, and two long integers.
+
+
+
 ==========================================================================================================
 q.9.Create an overloaded findAverage function that calculates the average of two integers, three integers, and four integers. Write a program to test the overloaded functions.
 ===========================================================================================================
