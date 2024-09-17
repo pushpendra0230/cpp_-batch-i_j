@@ -5,6 +5,18 @@ Story: A delivery agent wants to extract the postal code (last 6 digits) from a 
 Goal: Extract a substring using the last 6 characters of the string.
 
 
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    string number ="ORD12345098765";
+    string postalCode = number.substr(number.size()-6);
+    cout << postalCode;
+    return 0;
+}
+output:-
+098765
 ===================================================================================================
 q.2. String to Integer Conversion
 Story: The total order amount for a customer is stored as "5000" in string format. Convert it to an integer to perform further calculations.
@@ -86,68 +98,255 @@ int main()
 output:-
 34.56
 ===================================================================================================
-
 q.7. Extract Decimal Part from String as Float
 Story: In a receipt, the price "34.56" is stored as a string. Extract the decimal part (.56) and convert it into a float.
 Goal: Convert the string "34.56" into the float 0.56.
-======================================================================================================
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string str="34.56";
+    string desimal="0"+str.substr(2);
+    float f=stof(desimal);
+    cout<<f;
+}
+output:-
+0.56
+============================================================================================================
 q.8. Find Character at Specific Index
 Story: A professor needs to find the 5th character of a student's ID, which is a string like "STUD98765".
 Goal: Print the character at index 4.
-===================================================================================================
 
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string studentid = "STUD98765";
+    cout<<studentid[4];
+    return 0;
+}
+output:-
+9
+=============================================================================================================
 q.9. Concatenate Substrings
 Story: A customer service system needs to concatenate the first 3 letters of the first name and the last 4 digits of a phone number to generate a unique code.
 Goal: Extract and concatenate substrings from two strings.
-===================================================================================================
 
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    string firstName = "pushpendra";
+    string phoneNumber = "6350247952";
+    string newcode = firstName.substr(0,3)+phoneNumber.substr(6);
+    cout<<newcode;
+    return 0;
+}
+output:-
+pus7952
+==============================================================================================================
 q.10. Convert Comma-Separated String to Integer List
 Story: A software receives a list of sales numbers as a comma-separated string: "1000,2000,3000". Convert it to a list of integers.
 Goal: Parse the string and convert each part to an integer.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string number="1000,2000,3000";
+    number.erase(remove(number.begin(),number.end(),','),number.end());
+    long long software = stoll(number);
+    cout<<software;
+}
+output:-
+100020003000
+===============================================================================================================
 q.11. Convert Time in String to Float Hours
 Story: A company stores working hours like "08:30" as strings. Convert it to the float 8.5 representing the total hours worked.
 Goal: Convert a time string to a float value.
-===================================================================================================
 
+#include <bits/stdc++.h>
+using namespace std;
+float timeinstring(string&timeStr) 
+{
+    int hours = stoi(timeStr.substr(0,2));
+    int minutes = stoi(timeStr.substr(3,2)); 
+    return hours + minutes / 60.0;            
+}
+int main() 
+{
+    string timeStr = "08:30";
+    float hours = timeinstring(timeStr);
+    cout << hours;
+    return 0;
+}
+output:-
+8.5
+=================================================================================================================
 q.12 Convert Product ID from String to Integer
 Story: A warehouse stores product IDs as strings, such as "PROD12345". Extract the numeric part and convert it to an integer.
 Goal: Extract and convert the number from the string.
+
+#include <bits/stdc++.h>
+using namespace std;
+int extractPro(string&pro) 
+{
+    return stoi(pro.substr(4));
+}
+int main() 
+{
+    string pro ="PROD12345";
+    cout <<extractPro(pro);
+    return 0;
+}
+output:-
+12345
+=================================================================================================================
 q.13. Find the First Occurrence of a Character in a String
 Story: A search engine needs to find the first occurrence of the character "@" in an email ID like "john.doe@example.com".
 Goal: Find and return the index of the first occurrence of the "@" character.
-===================================================================================================
 
+#include <bits/stdc++.h>
+using namespace std;
+int find(string& email) 
+{
+    return email.find('@');
+}
+int main() 
+{
+    string email = "john.doe@example.com";
+    cout << find(email);
+    return 0;
+}
+output:-
+8
+=================================================================================================================
 q.14. Convert Integer List to Comma-Separated String
 Story: A shipping company needs to store a list of package weights [10, 20, 30] as a comma-separated string for their records.
 Goal: Convert a list of integers to a single comma-separated string.
-===================================================================================================
 
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    vector<int> weight = {10, 20, 30}; 
+    string number = to_string(weight[0])+ to_string(weight[1])+to_string(weight[2]);
+    number.erase(remove(number.begin(),number.end(),','),number.end());
+    cout<<number;
+    return 0;
+}
+output:-
+102030
+=================================================================================================================
 q.15. Extract and Reverse Substring
 Story: A ticket booking system stores ticket numbers like "ABC123XYZ". Extract the middle numeric part ("123") and reverse it.
 Goal: Extract and reverse a substring.
-===================================================================================================
 
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    string ticket ="ABC123XYZ";
+    string numericPart = ticket.substr(3, 3);
+    reverse(numericPart.begin(), numericPart.end());
+    cout <<numericPart;
+    return 0;
+}
+output:-
+321
+==================================================================================================================
 q.16. Convert String of Decimal Number to Float
 Story: An e-commerce website stores product ratings as strings like "4.85". Convert it to a float for further calculations.
 Goal: Convert the string "4.85" to a float.
-===================================================================================================
 
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    string ratingpro = "4.85";
+    float ratingprofloat= stof(ratingpro);
+    cout << ratingprofloat;
+    return 0;
+}
+output:-
+4.85
+===================================================================================================
 q.17. Extract Day from Date String
 Story: A delivery tracking system stores delivery dates as "15-09-2024". Extract the day (15) and convert it to an integer.
 Goal: Extract and convert the day from the date string.
-===================================================================================================
 
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    string date = "15-09-2024";
+    string day=date.substr(0,2);
+    int dayint=stoi(day);
+    cout << dayint;
+    return 0;
+}
+output:-
+15
+===================================================================================================
 q.18. Round a Float to 2 Decimal Places and Convert to String
 Story: A payment system calculates interest rates and needs to round 2.4567 to 2 decimal places and convert it back to a string.
 Goal: Round a float and convert it to a string with 2 decimal places.
-===================================================================================================
 
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    float number=2.4567;
+    string roundstring = to_string(number).substr(0, 4);
+    cout <<roundstring;
+    return 0;
+}
+output:-
+2.45
+===================================================================================================
 q.19. Extract First Word from a Sentence
 Story: A chatbot receives messages like "Hello, how can I help you?". Extract the first word ("Hello") from the message.
 Goal: Extract the first word from a string.
-===================================================================================================
 
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    string message = "Hello , how can I help you?";
+    string firstWord = message.substr(0,5);
+    cout << firstWord;
+    return 0;
+}
+output:-
+Hello
+===================================================================================================
 q.20. Remove Decimal Part from Float and Convert to String
 Story: A bakery receives orders in float format like 23.50 and needs to convert it to the string "23", removing the decimal part.
 Goal: Convert a float to a string and remove the decimal part.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+string floattostring(float number) 
+{
+    int integerPart =(int)number;
+    return to_string(integerPart);
+}
+int main() 
+{
+    float number = 23.50;
+    string result=floattostring(number);
+    cout<< result;
+    return 0;
+}
+output:-
+23
 ===================================================================================================
