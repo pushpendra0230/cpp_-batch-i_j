@@ -1,0 +1,153 @@
+cpp assignment date 16sep2024
+================================================================================================
+q.1. Substring Extraction
+Story: A delivery agent wants to extract the postal code (last 6 digits) from a shipment tracking number, which is a string like "ORD12345098765". Write code to extract only the postal code.
+Goal: Extract a substring using the last 6 characters of the string.
+
+
+===================================================================================================
+q.2. String to Integer Conversion
+Story: The total order amount for a customer is stored as "5000" in string format. Convert it to an integer to perform further calculations.
+Goal: Convert the string "5000" to the integer 5000.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string s="5000";
+    int num=stoi(s);
+    cout<<num;
+}
+output:-
+5000
+===================================================================================================
+q.3. Extract Numbers from a String
+Story: An app developer needs to extract the phone number from a string "Contact: 123-456-7890" and convert it into an integer without the dashes.
+Goal: Extract and convert the phone number from the string to an integer.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    string contact="Contact: 123-456-7890";
+    string number=contact.substr(9);
+    // cout<<number;
+    number.erase(remove(number.begin(),number.end(),'-'),number.end());
+    long long phonenumber = stoll(number);
+    cout<<phonenumber;
+}
+output:-
+1234567890
+===================================================================================================
+q.4. Integer to Float Conversion
+Story: A bank needs to convert the amount "5000" (as an integer) to a float to calculate interest.
+Goal: Convert the integer 5000 to the float 5000.0.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int number=5000;
+    float f = static_cast<float>(number);
+    cout<<f+.10;
+}
+output:-
+5000.1
+=================================================================================================
+q.5. Float to String Conversion
+Story: A gas station records fuel prices as floats, such as 45.67. The system requires them in string format for logging purposes.
+Goal: Convert the float 45.67 to the string "45.67".
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    float f = 45.67;  
+    string gasprice = to_string(f);
+    cout<< gasprice.substr(0, gasprice.find('.')+3);
+}
+output:-
+45.66
+=====================================================================================================
+q.6. String to Float Conversion
+Story: A coffee shop has prices stored as strings, like "34.56". The manager needs them in float format to perform calculations.
+Goal: Convert the string "34.56" to the float 34.56.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    string sprice = "34.56"; 
+    float price = stof(sprice);
+    cout << price <<"\n";
+    return 0;
+}
+output:-
+34.56
+===================================================================================================
+
+q.7. Extract Decimal Part from String as Float
+Story: In a receipt, the price "34.56" is stored as a string. Extract the decimal part (.56) and convert it into a float.
+Goal: Convert the string "34.56" into the float 0.56.
+======================================================================================================
+q.8. Find Character at Specific Index
+Story: A professor needs to find the 5th character of a student's ID, which is a string like "STUD98765".
+Goal: Print the character at index 4.
+===================================================================================================
+
+q.9. Concatenate Substrings
+Story: A customer service system needs to concatenate the first 3 letters of the first name and the last 4 digits of a phone number to generate a unique code.
+Goal: Extract and concatenate substrings from two strings.
+===================================================================================================
+
+q.10. Convert Comma-Separated String to Integer List
+Story: A software receives a list of sales numbers as a comma-separated string: "1000,2000,3000". Convert it to a list of integers.
+Goal: Parse the string and convert each part to an integer.
+q.11. Convert Time in String to Float Hours
+Story: A company stores working hours like "08:30" as strings. Convert it to the float 8.5 representing the total hours worked.
+Goal: Convert a time string to a float value.
+===================================================================================================
+
+q.12 Convert Product ID from String to Integer
+Story: A warehouse stores product IDs as strings, such as "PROD12345". Extract the numeric part and convert it to an integer.
+Goal: Extract and convert the number from the string.
+q.13. Find the First Occurrence of a Character in a String
+Story: A search engine needs to find the first occurrence of the character "@" in an email ID like "john.doe@example.com".
+Goal: Find and return the index of the first occurrence of the "@" character.
+===================================================================================================
+
+q.14. Convert Integer List to Comma-Separated String
+Story: A shipping company needs to store a list of package weights [10, 20, 30] as a comma-separated string for their records.
+Goal: Convert a list of integers to a single comma-separated string.
+===================================================================================================
+
+q.15. Extract and Reverse Substring
+Story: A ticket booking system stores ticket numbers like "ABC123XYZ". Extract the middle numeric part ("123") and reverse it.
+Goal: Extract and reverse a substring.
+===================================================================================================
+
+q.16. Convert String of Decimal Number to Float
+Story: An e-commerce website stores product ratings as strings like "4.85". Convert it to a float for further calculations.
+Goal: Convert the string "4.85" to a float.
+===================================================================================================
+
+q.17. Extract Day from Date String
+Story: A delivery tracking system stores delivery dates as "15-09-2024". Extract the day (15) and convert it to an integer.
+Goal: Extract and convert the day from the date string.
+===================================================================================================
+
+q.18. Round a Float to 2 Decimal Places and Convert to String
+Story: A payment system calculates interest rates and needs to round 2.4567 to 2 decimal places and convert it back to a string.
+Goal: Round a float and convert it to a string with 2 decimal places.
+===================================================================================================
+
+q.19. Extract First Word from a Sentence
+Story: A chatbot receives messages like "Hello, how can I help you?". Extract the first word ("Hello") from the message.
+Goal: Extract the first word from a string.
+===================================================================================================
+
+q.20. Remove Decimal Part from Float and Convert to String
+Story: A bakery receives orders in float format like 23.50 and needs to convert it to the string "23", removing the decimal part.
+Goal: Convert a float to a string and remove the decimal part.
+===================================================================================================

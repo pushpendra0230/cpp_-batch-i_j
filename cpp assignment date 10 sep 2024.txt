@@ -183,11 +183,81 @@ q
 q.8.Write a program that demonstrates function overloading by creating overloaded functions for subtract that subtract two integers, two floats, and two long integers.
 
 
+#include <bits/stdc++.h>
+using namespace std;
 
+//function ko ek dusre se subtract karne ke liye 
+int subtract(int a, int b) 
+{
+    return a - b;
+}
+float subtract(float a, float b) 
+{
+    return a - b;
+}
+long subtract(long a, long b) 
+{
+    return a - b;
+}
+
+int main() 
+{
+    int intans = subtract(233, 104);
+    cout<< intans << "\n";
+
+    float floatans = subtract(16.77f, 4.63f);
+    cout<< floatans << "\n";
+
+    long longans = subtract(18906856789678L, 567484685L);
+    cout<< longans;
+    return 0;
+}
+output:-
+129
+12.14
+18906289304993
 ==========================================================================================================
 q.9.Create an overloaded findAverage function that calculates the average of two integers, three integers, and four integers. Write a program to test the overloaded functions.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+//function ko ek dusre se subtract karne ke liye 
+int average(int a, int b) 
+{
+    return (a + b)/2;
+}
+int average(int a, int b,int c) 
+{
+    return (a + b + c)/3;
+}
+int average(int a, int b,int c,int d) 
+{
+    return (a + b + c + d)/4;
+}
+int main() 
+{
+    int average2 = average(234, 104);
+    cout<< average2 << "\n";
+
+    int average3 = average(234, 104 ,108);
+    cout<< average3 << "\n";
+
+    int average4 = average(234, 104 ,444 ,666);
+    cout<< average4 << "\n";
+
+    return 0;
+}
+output:-
+169
+148
+362
 ===========================================================================================================
 q.10.Overload the power function to compute the power of an integer raised to another integer, a float raised to an integer, and an integer raised to a float.
+
+
+
 ===========================================================================================================
 q.11.Write a program to overload the reverse function, which reverses an integer, a float, and a string. Demonstrate how function overloading works with each data type.
 =============================================================================================================
