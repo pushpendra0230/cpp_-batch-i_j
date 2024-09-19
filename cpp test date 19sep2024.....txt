@@ -1,0 +1,115 @@
+cpp test date 19sep2024....
+===================================================================================================
+q.1.input is :-
+red , blue , red , blue ,red , blue ,red , blue ,red , blue ,red , blue  
+output:
+red red red red red red blue blue blue blue blue 
+
+answer....
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the number for printing partern : ";
+    cin >> n;
+    for (int i=1;i<=n;i++) 
+    {
+        cout<<"red ";
+    }
+    {        
+        for (int j=1;j<=n;j++) 
+        {       
+            cout <<"blue ";
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+Enter the number for printing partern : 10
+red red red red red red red red red red blue blue blue blue blue blue blue blue blue blue 
+=====================================================================================================
+q.2.// parttern qution 
+// {1,2,3,4,5}
+// make parttern like this in cpp with array
+// 12345
+// 1234
+// 123
+// 12
+// 1
+
+answer...
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int n;
+    cout << "Enter the number for printing partern : ";
+    cin >> n;
+    for (int i=0;i<=n;i++) 
+    {        
+        for (int j=1;j<=n-i;j++) 
+        {       
+            cout << j;
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+Enter the number for printing partern : 5
+12345
+1234
+123
+12
+1
+===============================================================================
+q.3. 
+ 1
+ 12
+ 123
+ 1234
+ 12345
+
+
+answer.....
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int n;
+    cout << "Enter the number for printing partern : ";
+    cin >> n;
+    for (int i = 1; i <= n;i++) 
+    {    
+        for (int j=1;j<=i;j++) 
+        {      
+            cout << j;
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+Enter the number for printing partern : 5
+1
+12
+123
+1234
+12345
+==========================================================================================
+q.4.
+
+12346789  find the missing number
+
+answer......
+
+
+

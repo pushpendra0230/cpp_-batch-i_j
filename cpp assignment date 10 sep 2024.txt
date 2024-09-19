@@ -31,9 +31,9 @@ output:-
 6
 6.2
 pushpendra soni
-=====================================================================================
+========================================================================================================
 q.2.Create a function calculateArea that is overloaded to compute the area of a circle, rectangle, and triangle. Use appropriate arguments to represent each shape’s dimensions.
-==============================================================================================
+========================================================================================================
 q.3.Overload a max function to return the maximum of two integers, two floats, and two strings (lexicographically). Demonstrate its usage in a program.
 
 
