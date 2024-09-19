@@ -112,4 +112,88 @@ q.4.
 answer......
 
 
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int sumofall,suminsequence;
+    int sequence[] = {1, 2, 3, 4, 6, 7, 8, 9};
+    //1 se 9 tak ka sum karne ke liye 
+    for (int i=1;i<=9;i++) 
+    {
+        sumofall += i;
+    }
+    //sequence ka sum karne ke liye 
+    for (int i=0;i<=7;i++) 
+    {
+        suminsequence += sequence[i];
+    }
+    // The missing number is the difference of sumof all numbers and sum of sequence : like 45-40
+    cout << "The missing number is: "<<sumofall - suminsequence;
+    return 0;
+}
+output:-
+The missing number is: 5
+===============================================================================================
+q.5.a, b, c, d, e, f, h, i, jWhat is the missing number in the sequence?  
+
+answer.....
+
+===============================================================================================
+q.6. make this pattern
+
+
+2
+2 4
+2 4 6
+2 4 6 8
+2 4 6 8 10  
+7 6 5 4 3
+7 6 5 4
+7 6 5
+7 6
+7
+
+
+answer......
+
+#include <iostream>
+using namespace std;
+int main() 
+{
+    for (int i=1;i<=5;i++) 
+    {
+        for (int j=1;j<=i;j++) 
+        {
+            cout << j*2; //even number print karne ke liye 
+        }
+        cout<<"\n";
+    }
+    // row
+    for (int i=5;i>=1;i--) 
+    {
+        for(int j=7;j>=7-i+1;j--)
+        {
+            cout<<j;
+        }
+        cout <<"\n";
+    }
+    return 0;
+}
+output:-
+2
+24
+246
+2468
+246810
+76543
+7654
+765
+76
+7
+===================================================================================
+
+
+
+
 
