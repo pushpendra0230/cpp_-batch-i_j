@@ -1,0 +1,187 @@
+cpp assignment date 30sep2024..............
+====================================================================================================================================
+q.1.A vending machine only accepts coins of 10, 5, and 1 rupees. Write a program that takes any amount X and returns the fewest number of coins needed to make the amount.
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int amount;
+    cout <<"Enter the amount in rupees for coin : ";
+    cin>>amount;
+    int coinsof10=amount/10;
+    amount%=10;                
+    int coinsof5=amount/5;
+    amount%=5;                
+    int coinsof1=amount;
+    int totalcoins=coinsof10+coinsof5+coinsof1;
+    cout<<"Minimum number of coins required: "<<totalcoins<<"\n";
+    cout<<"Coins used: "<<coinsof10<<" (10 rupee), "<<coinsof5<<" (5 rupee),"<<coinsof1<<" (1 rupee)"<<"\n";
+    return 0;
+}
+output:-
+Enter the amount in rupees for coin : 199
+Minimum number of coins required: 24
+Coins used: 19 (10 rupee), 1 (5 rupee),4 (1 rupee)
+====================================================================================================================================
+q.2.A person wants to save a total of X rupees by depositing an amount that doubles every day, starting from 1 rupee. Write a program to find out how many days it will take to save at least X rupees.
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int x;
+    cout<<"Enter the total amount you want to save in rupees : ";
+    cin >> x;
+    int totalamount=0;
+    int dailyamount=1;
+    int days=0;
+    while(totalamount<x) 
+    {
+        totalamount+=dailyamount;
+        dailyamount*=2;
+        days++;
+    }
+    cout<<"It will take "<<days<<" days to save "<<x<<" rupees . "<<"\n";
+    return 0;
+}
+output:-
+Enter the total amount you want to save in rupees : 100
+It will take 7 days to save 100 rupees . 
+====================================================================================================================================
+q.3.You have N chocolates, and you want to distribute them among M children. Each child must get at least 1 chocolate. Distribute the chocolates in a way that the difference between the child who gets the most chocolates and the child who gets the fewest is minimized. Write a loop-based solution to distribute the chocolates.
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int totalchocolates,numberofchildren;
+    cout<<"Enter the number of chocolates: ";
+    cin>>totalchocolates;
+    cout<<"Enter the number of children: ";
+    cin>>numberofchildren;
+    if (numberofchildren>totalchocolates)
+    {
+        cout <<"Not enough chocolates " <<"\n";
+        return 0;
+    }
+    vector<int>chocolates(numberofchildren, 1);
+    totalchocolates-=numberofchildren;
+    for (int i=0;totalchocolates>0;i=(i+1)%numberofchildren) 
+    {
+        chocolates[i]++;
+        totalchocolates--;
+    }
+    cout<<"Distribution of chocolates among children:"<<"\n";
+    for (int i = 0; i <numberofchildren; i++) 
+    {
+        cout<<"Child "<<(i+1)<<": "<<chocolates[i]<<" chocolates"<<"\n";
+    }
+    return 0;
+}
+output:-
+Enter the number of chocolates: 5
+Enter the number of children: 4
+Distribution of chocolates among children:
+Child 1: 2 chocolates
+Child 2: 1 chocolates
+Child 3: 1 chocolates
+Child 4: 1 chocolates
+====================================================================================================================================
+q.4.A person runs N kilometers every day, but their speed decreases by 10% every day. Write a program that calculates how many days it will take for the person’s daily distance to be less than K kilometers.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    double N, K;
+    cout << "Enter the initial distance in kilometers the person runs daily: ";
+    cin >> N;
+    cout << "Enter the minimum distance in kilometers threshold: ";
+    cin >> K;
+    int days = 0;
+    while (N >= K)
+    {
+        days++;
+        N=N*0.9;
+    }
+    cout<<"It will take "<<days<<" days for the daily distance to be less than "<<K<<" kilometers."<<"\n";
+    return 0;
+}
+output:-
+Enter the initial distance in kilometers the person runs daily: 110
+Enter the minimum distance in kilometers threshold: 10
+It will take 23 days for the daily distance to be less than 10 kilometers.
+====================================================================================================================================
+q.5.Write a program to calculate the factorial of a number N using loops, but the twist is that the program should skip calculating the factorial for all numbers divisible by 3.
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int N;
+    cout << "Enter a number to calculate it's factorial: ";
+    cin >> N;
+    long long factorial = 1;
+    for (int i=1;i<=N;i++) 
+    {
+        if (i % 3 == 0) 
+        {
+            break;
+        }
+        factorial *= i;
+    }
+    cout<<"Factorial of "<<N<<" skipping multiples of 3 is: "<<factorial<<"\n";
+    return 0;
+}
+output:-
+Enter a number to calculate it's factorial: 6
+Factorial of 6 skipping multiples of 3 is: 2
+====================================================================================================================================
+q.6.A shop sells books, where each book costs either 120, 50, or 20 rupees. For a given amount X, use loops to find how many books the person can buy with an exact match of the amount using any combination of these prices.
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int X;
+    cout<<"Enter the total amount in rupees: ";
+    cin>>X;
+    int maxBooks = 0;
+    for (int count120=0;count120<=X/120;count120++) 
+    {
+        for (int count50=0;count50<=(X-count120*120)/50;count50++) 
+        {
+            int remainingAmount=X-(count120*120+count50*50);
+            if (remainingAmount%20==0)
+            {
+                int count20=remainingAmount/20;
+                int totalBooks = count120 + count50 + count20;
+                if (totalBooks > maxBooks) 
+                {
+                    maxBooks = totalBooks;
+                }
+            }
+        }
+    }
+    cout << "Maximum number of books you can buy: "<<maxBooks<<"\n";
+    return 0;
+}
+output:-
+Enter the total amount in rupees: 1090
+Maximum number of books you can buy: 53
+====================================================================================================================================
