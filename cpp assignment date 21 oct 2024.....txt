@@ -1,0 +1,457 @@
+cpp assignment date 21 oct 2024..................................
+=================================================================================================================================
+q.1.convert vector to set and remove all the duplicates.
+
+#include<bits/stdc++.h>
+using namespace std;
+void insert(vector<int>&element,int ele) 
+{
+    element.push_back(ele);
+}
+int main() 
+{
+    vector<int>element;
+    int ele;
+    for(int i=0;i<10;i++) 
+    {
+        cin>>ele;
+        insert(element,ele);
+    }
+    set<int>s(element.begin(),element.end());
+    for(auto it:s) 
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n"<<s.size();
+}
+output:-
+22
+55
+44
+33
+77
+77
+66
+66
+55
+55
+22 33 44 55 66 77 
+6
+=================================================================================================================================
+q.2. convert vector to  set and find the element present or not.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    vector<int>element;
+    int ele;
+    for(int i=0;i<10;i++) 
+    {
+        cin>>ele;
+        element.push_back(ele);
+    }
+    set<int>s(element.begin(),element.end());
+    cout<<"Enter the element that you want to search: ";
+    cin>>ele;
+    if(s.find(ele) != s.end()) 
+    {
+        cout<<ele<<" element is present in the set.\n";
+    }
+    else 
+    {
+        cout<<ele<<" element is not present in the set.\n";
+    }
+    for(auto it:s)
+    {
+        cout<<it<<" ";
+    }
+}
+output:-
+55
+76
+98
+98
+78
+67
+55
+00
+98
+34
+Enter the element that you want to search: 00
+0 element is present in the set.
+0 34 55 67 76 78 98 
+=================================================================================================================================
+q.3. convert vector to set and check if set is empty or not.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    vector<int>arr={13, 24, 35, 43, 65, 23, 37};
+    set<int> s(arr.begin(), arr.end());
+    if(s.empty()) 
+    {
+        cout<<"The set is empty.\n";
+    }
+    else 
+    {
+        cout<<"The set is not empty.\n";
+        cout<<"Elements in the set: ";
+        for(auto it :s) 
+        {
+            cout<<it<<" ";
+        }
+    }
+    return 0;
+}
+output:-
+The set is not empty.
+Elements in the set: 13 23 24 35 37 43 65 
+=================================================================================================================================
+q.4. calculate the occurrence of and element inside set.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    set<int>s={15, 27, 53, 64, 85};
+    int element = 27;
+    int occurrence=s.count(element);
+    if(occurrence>0) 
+    {
+        cout<<"Element "<<element<<" is present in the set.\n";
+    }
+    else 
+    {
+        cout<<"Element "<<element<<" is not present in the set.\n";
+    }
+    return 0;
+}
+output:-
+Element 27 is present in the set.
+=================================================================================================================================
+q.5. take two vectors and find the common elements from them.
+
+#include <bits/stdc++.h>
+using namespace std;
+bool linearsearch(vector<int>& arr, int ele) 
+{
+    for (auto it : arr) 
+    {
+        if (it == ele) 
+        {
+            return true;
+        }
+    }
+    return false;
+}
+vector<int> findCommonElements(vector<int>& arr1, vector<int>& arr2) 
+{
+    vector<int> res;
+    for (auto it : arr1) 
+    {
+        if (linearsearch(arr2, it) && !linearsearch(res, it)) 
+        {
+            res.push_back(it);
+        }
+    }
+    return res;
+}
+void removeduplicate(vector<int>& arr, int ele) 
+{
+    if (!linearsearch(arr, ele)) 
+    {
+        arr.push_back(ele);
+    }
+}
+void insertintonew(vector<int>& arr1, vector<int>& arr2) 
+{
+    vector<int> resarr1;
+    vector<int> resarr2;
+    for (auto it : arr1) 
+    {
+        removeduplicate(resarr1, it);
+    }
+    for (auto it : arr2) 
+    {
+        removeduplicate(resarr2, it);
+    }
+    for (auto it : resarr1) 
+    {
+        cout << it << " ";
+    }
+    cout << "\n";
+    for (auto it : resarr2) 
+    {
+        cout << it << " ";
+    }
+    cout << "\n";
+    vector<int> res = findCommonElements(resarr1, resarr2);
+    cout << "Common elements in this two vectors: ";
+    for (auto it : res)
+    {
+        cout << it << " ";
+    }
+    cout <<"\n";
+}
+int main()
+{
+    vector<int> arr1 = {1, 1, 2, 2, 3, 3, 4, 4, 55, 43, 23, 67, 43, 88, 76};
+    vector<int> arr2 = {4, 6, 55, 3, 56, 34, 78, 93, 45, 56, 78, 54, 22, 12};
+    insertintonew(arr1, arr2);
+}
+output:-
+1 2 3 4 55 43 23 67 88 76 
+4 6 55 3 56 34 78 93 45 54 22 12 
+Common elements in this two vectors: 3 4 55 
+=================================================================================================================================
+q.6. take 3 vectors and merge them without duplicates.
+
+#include <bits/stdc++.h>
+using namespace std;
+bool linearsearch(vector<int>& arr, int ele)
+{
+    for (auto it : arr) 
+    {
+        if (it == ele) 
+        {
+            return true;
+        }
+    }
+    return false;
+}
+vector<int> mergeThreeVectors(vector<int>& arr1, vector<int>& arr2, vector<int>& arr3) 
+{
+    vector<int> res;
+    for (auto it : arr1) 
+    {
+        if (!linearsearch(res, it)) 
+        {
+            res.push_back(it);
+        }
+    }
+    for (auto it : arr2) 
+    {
+        if (!linearsearch(res, it)) 
+        {
+            res.push_back(it);
+        }
+    }
+    for (auto it : arr3) 
+    {
+        if (!linearsearch(res, it)) 
+        {
+            res.push_back(it);
+        }
+    }
+    return res;
+}
+int main() 
+{
+    vector<int> arr1 = {1, 1, 2, 3, 4, 5};
+    vector<int> arr2 = {3, 5, 6, 7, 8};
+    vector<int> arr3 = {7, 9, 10, 2, 11};
+    vector<int> mergedVector = mergeThreeVectors(arr1, arr2, arr3);
+    cout << "Merged 3 vector without duplicates: ";
+    for (auto it : mergedVector) 
+    {
+        cout << it << " ";
+    }
+    cout<<"\n";
+    return 0;
+}
+output:-
+Merged 3 vector without duplicates: 1 2 3 4 5 6 7 8 9 10 11 
+=================================================================================================================================
+q.7. take 2 vectors and find the duplicates.
+
+#include<bits/stdc++.h>
+using namespace std;
+bool linearsearch(vector<int>&arr,int ele)
+{
+    for(auto it:arr)
+    {
+        if(it == ele)
+        {
+            return true;
+        }
+    }
+    return false;
+}
+vector<int> removeduplicate2(vector<int>&arr1,vector<int>&arr2)
+{
+    vector<int>res;
+    for(auto it:arr1)
+    {
+            if(!linearsearch(arr2,it))
+            {
+                res.push_back(it);
+            }
+    }
+    for(auto it:arr2)
+    {
+            if(!linearsearch(arr1,it))
+            {
+                res.push_back(it);
+            }
+    }
+   
+    return res;
+
+}
+void removeduplicate(vector<int>&arr,int ele)
+{
+    for(auto it:arr)
+    {
+        if(it==ele)
+        {
+            return;
+        }
+    }
+    arr.push_back(ele);
+}
+void insertintonew(vector<int>&arr1,vector<int>&arr2)
+{
+    vector<int>resarr1;
+    vector<int>resarr2;
+    for(auto it:arr1)
+    {
+        removeduplicate(resarr1,it);
+    }
+    for(auto it:arr2)
+    {
+        removeduplicate(resarr2,it);
+    }
+    for(auto it:resarr1)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    for(auto it:resarr2)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    vector<int>res = removeduplicate2(resarr1,resarr2);
+    for(auto it:res)
+    {
+        cout<<it<<" ";
+    }
+}
+int main()
+{
+    vector<int>arr1= {1,1,2,2,3,3,4,4,55,43,23,67,43,88,76};
+    vector<int>arr2= {4,6,55,3,56,34,78,93,45,56,78,54,22,12};
+    insertintonew(arr1,arr2);
+}
+output:-
+1 2 3 4 55 43 23 67 88 76 
+4 6 55 3 56 34 78 93 45 54 22 12 
+1 2 43 23 67 88 76 6 56 34 78 93 45 54 22 12 
+=================================================================================================================================
+q.8. take 3 vectors and make a set having elements that are present on vector 1 but vector2 and common elements from vector 3.
+
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> merge(vector<int>&res,vector<int>&arr1,vector<int>&arr2)
+{
+    int i=0,j=0;
+    while(i<arr1.size() && j<arr2.size())
+    {
+
+        if(arr1[i]<=arr2[j])
+        {
+            res.push_back(arr1[i]);
+            i++;
+        }
+        else
+        {
+            res.push_back(arr2[j]);
+            j++;
+        }
+    }
+    if(i<arr1.size())
+    {
+        for(i; i<arr1.size(); i++)
+        {
+            res.push_back(arr1[i]);
+        }
+    }
+    if(j<arr2.size())
+    {
+        for(j; j<arr2.size(); j++)
+        {
+            res.push_back(arr2[j]);
+        }
+    }
+    return res;
+}
+void removeduplicate(vector<int>&arr,int ele)
+{
+    for(auto it:arr)
+    {
+        if(it==ele)
+        {
+            return;
+        }
+    }
+    arr.push_back(ele);
+}
+void insertintonew(vector<int>&arr1,vector<int>&arr2,vector<int>&arr3)
+{
+    vector<int>resarr1;
+    vector<int>resarr2;
+    vector<int>resarr3;
+    vector<int>res;
+    vector<int>res2;
+    for(auto it:arr1)
+    {
+        removeduplicate(resarr1,it);
+    }
+    for(auto it:arr2)
+    {
+        removeduplicate(resarr2,it);
+    }
+    for(auto it:arr3)
+    {
+        removeduplicate(resarr3,it);
+    }
+    for(auto it:resarr1)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    for(auto it:resarr2)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    for(auto it:resarr3)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+    vector<int>a = merge(res,resarr1,resarr2);
+    vector<int>b = merge(res2,a,resarr3);
+    for(auto it:res2)
+    {
+        cout<<it<<" ";
+    }
+}
+int main()
+{
+    vector<int>arr1= {1,2,2,2,2,4,4,4,56,56};
+    vector<int>arr2= {5,5,5,5,6,6,6,6,7,7,7,8,8,8,21,21,33,33,34,100};
+    vector<int>arr3= {12,16,17,19,25,29,29,29,36};
+    //23 13 4 5 6 7
+    insertintonew(arr1,arr2,arr3);
+
+}
+output:-
+1 2 4 56 
+5 6 7 8 21 33 34 100 
+12 16 17 19 25 29 36 
+1 2 4 5 6 7 8 12 16 17 19 21 25 29 33 34 36 56 100 
+=================================================================================================================================
