@@ -32,40 +32,43 @@ output:-
 =========================================================================================================================
 q.2.
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 int main()
 {
-    vector<vector<string>>fruits
+    vector<string>heading{"SR","NAME","AGE","MARKS"};
+    vector<string> name{"Prajjal", "Ajay", "Shivam"};
+    vector<int> age{20, 96, 69};
+    vector<vector<int>> marks
     {
-        {"Pineapple", "Strawberry", "Peach"},
-        {"Blueberry", "Blackberry", "Raspberry"},
-        {"Lemon", "Lime", "Pomegranate"}
+        {26, 96, 89, 79}, 
+        {76, 96, 99, 95}, 
+        {99, 98, 86, 75}
     };
-    vector<float>price{200, 100, 50};
-    vector<int>quantity{3, 4, 5};
-    vector<float>total_price;
-    for (int i=0;i<price.size();i++)
+    for (auto it:heading)
     {
-        float value = price[i] * quantity[i];
-        total_price.push_back(value);
+        cout<<it<<" ";
     }
-    for(int i = 0; i < total_price.size(); i++)
+    cout<<"\n";
+    for (int i=0;i<name.size();i++)
     {
-        cout<<i+1<<"  [";
-        for(int j=0;j<fruits[i].size();j++)
+        cout<<i+1<<" ";
+        cout<<name[i]<<" "<<age[i]<<" ";
+        cout << "[";
+        for (int j=0;j<marks.size();j++)
         {
-            cout<<fruits[i][j];
+            cout<<marks[i][j]<<",";
         }
-        cout<<"]  "<<price[i]<<"  "<<quantity[i]<<"  "<<total_price[i];
+        cout<<"]";
         cout<<"\n";
     }
-    return 0;
+return 0;
 }
 output:-
-1  [PineappleStrawberryPeach]  200  3  600
-2  [BlueberryBlackberryRaspberry]  100  4  400
-3  [LemonLimePomegranate]  50  5  250
+SR NAME AGE MARKS 
+1 Prajjal 20 [26,96,89,]
+2 Ajay 96 [76,96,99,]
+3 Shivam 69 [99,98,86,]
 ==============================================================================================================================
 q.3.
 
@@ -75,7 +78,7 @@ int main()
 {
     vector<vector<string>>fruits=
     {
-        {"Apple", "Banana", "Kiwi"},
+        {"Apple", "Banana", "Kiwi    "},
         {"Pineapple", "Mango", "Jackfruit"},
         {"Choco", "WaterMelon", "Naspati"},
         {"Grapes", "Tomato", "Coconut"}
@@ -101,8 +104,9 @@ int main()
     }
 }
 output:-
-1 Apple Banana Kiwi             200.5           5               1002.5 
+1 Apple Banana Kiwi                     200.5           5               1002.5 
 2 Pineapple Mango Jackfruit             150             4               600 
 3 Choco WaterMelon Naspati              300.95          3               902.85 
 4 Grapes Tomato Coconut                 250.26          5               1251.3 
 ===============================================================================================================================
+q.4.
