@@ -1,0 +1,108 @@
+cpp assignment 4th Nov 2024 Assignment on HOD...........
+============================================================================================================================
+q.1.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<string> classes{"ClassA", "ClassB", "ClassC"};
+    vector<vector<float>> marks
+    {
+        {86.75, 68.55, 54.77},
+        {45.75, 43.56, 78.29}, 
+        {43.87, 28.99, 34.89}
+    };
+    for (int i=0;i<classes.size();i++)
+    {
+        cout<<i+1<<" "<<classes[i]<<" "<<"[";
+        for (int j=0;j<marks.size();j++)
+        {
+            cout<<marks[i][j]<<",";
+        }
+        cout<<"]";
+        cout<<"\n";
+    }
+return 0;
+}
+output:-
+1 ClassA [86.75,68.55,54.77,]
+2 ClassB [45.75,43.56,78.29,]
+3 ClassC [43.87,28.99,34.89,]
+=========================================================================================================================
+q.2.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<vector<string>>fruits
+    {
+        {"Pineapple", "Strawberry", "Peach"},
+        {"Blueberry", "Blackberry", "Raspberry"},
+        {"Lemon", "Lime", "Pomegranate"}
+    };
+    vector<float>price{200, 100, 50};
+    vector<int>quantity{3, 4, 5};
+    vector<float>total_price;
+    for (int i=0;i<price.size();i++)
+    {
+        float value = price[i] * quantity[i];
+        total_price.push_back(value);
+    }
+    for(int i = 0; i < total_price.size(); i++)
+    {
+        cout<<i+1<<"  [";
+        for(int j=0;j<fruits[i].size();j++)
+        {
+            cout<<fruits[i][j];
+        }
+        cout<<"]  "<<price[i]<<"  "<<quantity[i]<<"  "<<total_price[i];
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+1  [PineappleStrawberryPeach]  200  3  600
+2  [BlueberryBlackberryRaspberry]  100  4  400
+3  [LemonLimePomegranate]  50  5  250
+==============================================================================================================================
+q.3.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<vector<string>>fruits=
+    {
+        {"Apple", "Banana", "Kiwi"},
+        {"Pineapple", "Mango", "Jackfruit"},
+        {"Choco", "WaterMelon", "Naspati"},
+        {"Grapes", "Tomato", "Coconut"}
+    };
+    vector<float>price={200.50,150.00,300.95,250.26};
+    vector<int>quantity={5,4,3,5};
+    vector<float>totalprice;
+    for(int i=0;i<price.size();i++)
+    {
+        totalprice.push_back(price[i]*quantity[i]);
+    }
+    for(int i=0;i<price.size();i++)
+    {
+        cout<<i+1<<" ";
+        for(int j=0;j<price.size()-1;j++)
+        {
+            cout<<fruits[i][j]<<" ";
+        }
+        cout<<"\t\t"<<price[i]<<" ";
+        cout<<"\t\t"<<quantity[i]<<" ";
+        cout<<"\t\t"<<totalprice[i]<<" ";
+        cout<<"\n";
+    }
+}
+output:-
+1 Apple Banana Kiwi             200.5           5               1002.5 
+2 Pineapple Mango Jackfruit             150             4               600 
+3 Choco WaterMelon Naspati              300.95          3               902.85 
+4 Grapes Tomato Coconut                 250.26          5               1251.3 
+===============================================================================================================================
