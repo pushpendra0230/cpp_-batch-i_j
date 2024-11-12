@@ -110,3 +110,152 @@ output:-
 4 Grapes Tomato Coconut                 250.26          5               1251.3 
 ===============================================================================================================================
 q.4.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<vector<vector<string>>>items
+    {
+        {{"Apple", "Banana"},
+         {"Kiwi", "Orange"}},
+        {{"Potato", "Onion"},
+         {"Garlic", "Cabbage"}}};
+
+    vector<string> descriptions{"Fruits are very healthy", "Vegetables are good for health"};
+    vector<int> quantity{3, 2};
+    vector<float> price{200.50, 400.00};
+    vector<float> total;
+    int final_total = 0;
+    for (int i=0;i<quantity.size();i++)
+    {
+        total.push_back(quantity[i]*price[i]);
+    }
+    vector<string>headers={"S/No", "Item(s)", "Description", "Quantity", "Price", "Total"};
+    //table headers ko for loop se Display karna 
+    for (const string& header : headers)
+    {
+        cout<<header<<"     ";
+    }
+    cout<<"\n";
+    cout << "-----------------------------------------------------------------------------"<<"\n";
+    for(int i=0;i<descriptions.size();i++)
+    {
+        cout<<i+1<<"     ";
+        for (int j = 0; j < items[i].size(); j++)
+        {
+            for(int k=0;k<items[i][j].size();k++)
+            {
+                cout << items[i][j][k];
+                if(k!=items[i][j].size()-1)cout<<", ";
+            }
+            if(j!=items[i].size()-1)cout<<" | ";
+        }
+        cout<< "     "<<descriptions[i] 
+             << "     "<<quantity[i] 
+             << "     "<<price[i] 
+             << "     "<<total[i] 
+             <<"\n";
+        final_total+=total[i];
+    }
+    //final total Display karne ke liye 
+    cout << "-----------------------------------------------------------------------------"<<"\n";
+    cout << "                                           Final Total: "<<final_total<<"\n";
+    return 0;
+}
+output:-
+S/No     Item(s)     Description     Quantity     Price     Total     
+-----------------------------------------------------------------------------
+1     Apple, Banana | Kiwi, Orange     Fruits are very healthy     3     200.5     601.5
+2     Potato, Onion | Garlic, Cabbage     Vegetables are good for health     2     400     800
+-----------------------------------------------------------------------------
+                                           Final Total: 1401
+=====================================================================================================================
+q.5.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<vector<vector<string>>> subject
+    {
+        {{"Hindi", "Maths"},
+         {"English", "Science"}},
+        {{"PoliticalScience", "Geography"},
+         {"Sanskrit", "SocialStudies"}}
+    };
+    vector<vector<vector<float>>> marks
+    {
+        {{98.50, 75.25},
+         {48.50, 56.50}},
+        {{78.50, 46.50},
+         {42.50, 98.50}}
+    };
+    vector<vector<float>> average_marks;
+    for (int i = 0; i < marks.size();i++)
+    {
+        vector<float> values;
+        for (int j = 0; j < marks[i].size(); j++)
+        {
+            float sum_of_num = 0;
+            for (int k = 0; k < marks[i][j].size(); k++)
+            {
+                sum_of_num += marks[i][j][k];
+            }
+            float avg = sum_of_num / marks[i][j].size();
+            values.push_back(avg);
+        }
+        average_marks.push_back(values);
+    }
+    vector<string> headers = {"S/No", "Subjects", "Marks", "Average"};
+    for (const string& header : headers)
+    {
+        cout << header << "\t";
+    }
+    cout<<"\n---------------------------------------------------------------------------------------------------\n";
+
+    //subjects, marks, and average marks ko Display karne ke liye 
+    for (int i = 0; i < subject.size(); i++)
+    {
+        cout << i + 1 << "\t"; // S/No
+
+        // Display subjects
+        for (int j = 0; j < subject[i].size(); j++)
+        {
+            cout << "[ ";
+            for (int k = 0; k < subject[i][j].size(); k++)
+            {
+                cout << subject[i][j][k] << " ";
+            }
+            cout << "] ";
+        }
+        cout << "\t";
+
+        // Display marks
+        for (int j = 0; j < marks[i].size(); j++)
+        {
+            cout << "[ ";
+            for (int k = 0; k < marks[i][j].size(); k++)
+            {
+                cout << marks[i][j][k] << " ";
+            }
+            cout << "] ";
+        }
+        cout << "\t";
+
+        // Display average marks
+        for (int j = 0; j < average_marks[i].size(); j++)
+        {
+            cout << "[" << average_marks[i][j] << "] ";
+        }
+        cout << "\n";
+    }
+    return 0;
+}
+output:-
+S/No    Subjects        Marks   Average
+---------------------------------------------------------------------------------------------------
+1       [ Hindi Maths ] [ English Science ]     [ 98.5 75.25 ] [ 48.5 56.5 ]    [86.875] [52.5] 
+2       [ PoliticalScience Geography ] [ Sanskrit SocialStudies ]       [ 78.5 46.5 ] [ 42.5 98.5 ]     [62.5] [70.5] 
+====================================================================================================================================================

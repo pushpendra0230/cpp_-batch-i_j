@@ -1,0 +1,101 @@
+cpp assignment date 6nov2024........
+================================================================
+q.1.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<vector<string>>genderandtheDisease
+    {
+        {"female", "cancer"}, 
+        {"female", "hypothesis A"}, 
+        {"male", "cough"}, 
+        {"female", "cough"}, 
+        {"male", "cancer"}, 
+        {"male", "hypothesis A"}
+    };
+    map<string, int>genderMapping
+    {
+        {"female",0},
+        {"male",1}
+    };
+    map<string, int>diseaseMapping
+    {
+        {"cancer",0},
+        {"hypothesis A",1},
+        {"cough",2}
+    };
+    vector<vector<int>>result;
+    for (auto v1:genderandtheDisease)
+    {
+        int gender_code = genderMapping[v1[0]];
+        int disease_code = diseaseMapping[v1[1]];
+        result.push_back({gender_code, disease_code});
+    }
+    for(auto v1:result)
+    {
+        cout<<v1[0]<<" | "<<v1[1];
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+0 | 0
+0 | 1
+1 | 2
+0 | 2
+1 | 0
+1 | 1
+==========================================================================================
+q.2.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<vector<string>>animalHabitat
+    {
+        {"Loin","Savannah"}, 
+        {"Penguien","Antartica"}, 
+        {"Shark","Ocean"}, 
+        {"Elephant","Savannah"}, 
+        {"Polar Bear","Antartica"}
+    };
+    map<string,int>animalMapping
+    {
+        {"Loin",0},
+        {"Penguien",1},
+        {"Shark",2},
+        {"Elephant",3},
+        {"Polar Bear",4}
+    };
+    map<string,int>habitatMapping
+    {
+        {"Savannah",0},
+        {"Antartica",1},
+        {"Ocean",2},
+        {"Savannah",0},
+        {"Antartica",1}
+    };
+    vector<vector<int>>result;
+    for (auto v1:animalHabitat)
+    {
+        int animalcode = animalMapping[v1[0]];
+        int habitatcode = habitatMapping[v1[1]];
+        result.push_back({animalcode,habitatcode});
+    }
+    for (auto v1:result)
+    {
+        cout<<v1[0]<<" | "<<v1[1];
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+0 | 0
+1 | 1
+2 | 2
+3 | 0
+4 | 1
+====================================================================================================
