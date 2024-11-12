@@ -1,0 +1,157 @@
+cpp assignment date 8nov2024............
+=====================================================================================
+q.1.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+void displayInfo(map<string, vector<pair<int,string>>>&personWithAgeandfood)
+{
+    cout<<"Name"<<"|  "<<"Category"<<"  "<<"Food"<<"\n";
+    
+    for(auto outerIt:personWithAgeandfood)
+    {
+        cout<<outerIt.first<<"| "<<"{";
+        for(auto innerIt:outerIt.second) 
+        {
+            cout<<innerIt.first<<" "<<innerIt.second<<" ";
+        }
+        cout<<"}";
+        cout <<"\n";
+    }
+}
+int main()
+{
+    map<string, vector<pair<int,string>>>personWithAgeandfood
+    {
+        {"Alice", {{25, "Apple"}, {28, "Orange"}}},
+        {"Bob", {{36,"Kiwi"}, {19, "Mango"}}}
+    };
+    displayInfo(personWithAgeandfood);
+    return 0;
+}
+output:-
+Name|  Category  Food
+Alice| {25 Apple 28 Orange }
+Bob| {36 Kiwi 19 Mango }
+=================================================================================================
+q.2.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    map<string,float>studentMarks
+    {
+        {"Prajjal",48.50},
+        {"Anuj",45.50},
+        {"Vijay",29.50}
+    };
+    cout<<"name"<<"  "<<"score"<<"\n";
+    for(auto outerIt:studentMarks)
+    {
+        cout<<outerIt.first<<"  "<<outerIt.second;
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+name  score
+Anuj  45.5
+Prajjal  48.5
+Vijay  29.5
+==========================================================================================================
+q.3.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    map<string, pair<int, vector<float>>>studentInfo
+    {
+        {"Prajjal", {20, {45.56,45.52,29.55,85.56}}},
+        {"Anuj", {96, {78.56,45.56,98.56,56.89}}},
+        {"Shivam", {69, {45.56,48.56,53.56,75.65}}}
+    };
+    cout<<"Name "<<"Age "<<"Marks"<<"\n";
+    for(auto outerIt:studentInfo)
+    {
+        cout<<outerIt.first<<" "<<outerIt.second.first<<"  ";
+        for(auto innerIt:outerIt.second.second)
+        {
+            cout<<innerIt<<" ";
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+Name Age Marks
+Anuj 96  78.56 45.56 98.56 56.89 
+Prajjal 20  45.56 45.52 29.55 85.56 
+Shivam 69  45.56 48.56 53.56 75.65 
+========================================================================================================
+q.4.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    map<string, vector<float>>classMarks
+    {
+        {"Class A", {98.52, 56.56, 78.56,45.56}},
+        {"Class B", {45.56, 45.56,29.56,78.50}},
+        {"Class C", {52.56, 45.23, 48.56, 47.25}}
+    };
+    cout<<"Class "<<"Marks"<<"\n";
+    for(auto outerIt:classMarks) 
+    {
+        cout<<outerIt.first<<" ";
+        for(auto innerIt:outerIt.second)
+        {
+            cout<<innerIt<<" ";
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+Class Marks
+Class A 98.52 56.56 78.56 45.56 
+Class B 45.56 45.56 29.56 78.5 
+Class C 52.56 45.23 48.56 47.25 
+================================================================================================================
+q.5.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    map<string,vector<int>>stateWeight
+    {
+        {"Anuj", {65,36,95,85}},
+        {"Punjab", {90,87,86,66}},
+        {"Vijay", {26,36,99,79}}
+    };
+    cout<<"state"<<"  "<<"weight"<<"\n";
+    for(auto outerIt:stateWeight)
+    {
+        cout<<outerIt.first<<"  ";
+        for(auto innerIt:outerIt.second) 
+        {
+            cout<<innerIt<<" ";
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
+output:-
+state  weight
+Anuj  65 36 95 85 
+Punjab  90 87 86 66 
+Vijay  26 36 99 79 
+=============================================================================================================
