@@ -1,0 +1,477 @@
+cpp assignment date 20 nov 2024................
+=====================================================================================================
+1. Gender
+Categories: Male, Female, Non-binary, Other
+Conversion: Assign numerical values, e.g., Male=0, Female=1, Non-binary=2, Other=3.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    vector<string>genders= 
+    {"male","male","female",
+    "others", "female", "female", 
+    "male", "female", "others", 
+    "others", "nonbinary","nonbinary", "female"};
+    map<string,int>gendercode = 
+    {
+        {"male",0},
+        {"female",1},
+        {"nonbinary",2},
+        {"others",3}
+    };
+    cout<<"gender (categorical)=> gender (numerical)"<<"\n";
+    for(auto it:genders) 
+    {
+        cout<<it<<" <----------------> "<<gendercode[it]<<"\n";
+    }
+    return 0;
+}
+output:-
+gender (categorical)=> gender (numerical)
+male <----------------> 0
+male <----------------> 0
+female <----------------> 1
+others <----------------> 3
+female <----------------> 1
+female <----------------> 1
+male <----------------> 0
+female <----------------> 1
+others <----------------> 3
+others <----------------> 3
+nonbinary <----------------> 2
+nonbinary <----------------> 2
+female <----------------> 1
+======================================================================================================
+2. Marital Status
+Categories: Single, Married, Divorced, Widowed
+Conversion: Assign values like Single=0, Married=1, Divorced=2, Widowed=3.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    vector<string>maritalStatus= 
+    {"single","married","divorced","widowed",
+    "single","widowed","divorced","married",
+    "single","divorced","widowed","married"};
+    map<string,int>statusCode=
+    {
+        {"single",0},
+        {"married",1},
+        {"divorced",2},
+        {"widowed",3}
+    };
+    cout << "Marital Status (categorical) => Marital Status (numerical)"<<"\n";
+    for (auto it:maritalStatus) 
+    {
+        cout<<it<<" <----------------> "<<statusCode[it]<<"\n";
+    }
+    return 0;
+}
+output:-
+Marital Status (categorical) => Marital Status (numerical)
+single <----------------> 0
+married <----------------> 1
+divorced <----------------> 2
+widowed <----------------> 3
+single <----------------> 0
+widowed <----------------> 3
+divorced <----------------> 2
+married <----------------> 1
+single <----------------> 0
+divorced <----------------> 2
+widowed <----------------> 3
+married <----------------> 1
+======================================================================================================
+3. Education Level
+Categories: High School, Bachelor's, Master's, PhD
+Conversion: Encode as High School=0, Bachelor's=1, Master's=2, PhD=3.
+======================================================================================================
+4. Employment Type
+Categories: Full-Time, Part-Time, Freelance, Unemployed
+Conversion: Assign values such as Full-Time=0, Part-Time=1, Freelance=2, Unemployed=3.
+======================================================================================================
+5. Region
+Categories: North, South, East, West
+Conversion: Use North=0, South=1, East=2, West=3.
+======================================================================================================
+6. Customer Feedback
+Categories: Very Unsatisfied, Unsatisfied, Neutral, Satisfied, Very Satisfied
+Conversion: Encode feedback as Very Unsatisfied=0, ..., Very Satisfied=4.
+======================================================================================================
+7. Vehicle Type
+Categories: Sedan, SUV, Truck, Convertible
+Conversion: Assign values like Sedan=0, SUV=1, Truck=2, Convertible=3.
+======================================================================================================
+8. Payment Method
+Categories: Cash, Credit Card, Debit Card, Online Wallet
+Conversion: Encode as Cash=0, Credit Card=1, Debit Card=2, Online Wallet=3.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    vector<string>paymentMethods=
+    {"cash","credit card","debit card","online wallet", 
+    "online wallet","cash","credit card","debit card", 
+    "debit card","cash","online wallet","credit card"};
+    map<string,int>paymentCode=
+    {
+        {"cash ",0},
+        {"credit card",1},
+        {"Debit Card",2},
+        {"online wallet",3}
+    };
+    cout<<"Payment Method (categorical) => Payment Method (numerical)"<<"\n";
+    for(auto it:paymentMethods) 
+    {
+        cout<<it<<" <----------------> "<<paymentCode[it]<<"\n";
+    }
+    return 0;
+}
+output:-
+Payment Method (categorical) => Payment Method (numerical)
+cash <----------------> 0
+credit card <----------------> 1
+debit card <----------------> 0
+online wallet <----------------> 3
+online wallet <----------------> 3
+cash <----------------> 0
+credit card <----------------> 1
+debit card <----------------> 0
+debit card <----------------> 0
+cash <----------------> 0
+online wallet <----------------> 3
+credit card <----------------> 1
+======================================================================================================
+9. Subscription Plan
+Categories: Free, Basic, Premium, Enterprise
+Conversion: Use values Free=0, Basic=1, Premium=2, Enterprise=3.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    vector<string>subscription_plans=
+    {"free", "premium", "basic", "enterprise", 
+    "premium", "free", "enterprise", "basic",
+    "free", "enterprise", "premium", "basic"};
+    map<string,int>plan_code=
+    {
+        {"free",0},
+        {"basic",1},
+        {"premium",2},
+        {"enterprise",3}
+    };
+    cout<<"subscription plan (categorical) => subscription plan (numerical)"<<"\n";
+    for (auto it:subscription_plans) 
+    {
+        cout<<it<<" <----------------> "<<plan_code[it]<<"\n";
+    }
+    return 0;
+}
+output:-
+subscription plan (categorical) => subscription plan (numerical)
+free <----------------> 0
+premium <----------------> 2
+basic <----------------> 1
+enterprise <----------------> 3
+premium <----------------> 2
+free <----------------> 0
+enterprise <----------------> 3
+basic <----------------> 1
+free <----------------> 0
+enterprise <----------------> 3
+premium <----------------> 2
+basic <----------------> 1
+======================================================================================================
+10. Job Role
+Categories: Developer, Designer, Manager, Analyst
+Conversion: Assign values like Developer=0, Designer=1, Manager=2, Analyst=3.
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    vector<string>job_roles = 
+    {"developer", "designer", "manager", "analyst", 
+    "developer", "manager", "designer", "analyst",
+    "developer", "manager", "designer", "analyst"};
+    map<string,int>role_code=
+    {
+        {"developer",0},
+        {"designer",1},
+        {"manager",2},
+        {"analyst",3}
+    };
+    cout<<"job role (categorical) => job role (numerical)"<<"\n";
+    for (auto it:job_roles) 
+    {
+        cout<<it<<" <----------------> "<<role_code[it]<<"\n";
+    }
+    return 0;
+}
+output:-
+job role (categorical) => job role (numerical)
+developer <----------------> 0
+designer <----------------> 1
+manager <----------------> 2
+analyst <----------------> 3
+developer <----------------> 0
+manager <----------------> 2
+designer <----------------> 1
+analyst <----------------> 3
+developer <----------------> 0
+manager <----------------> 2
+designer <----------------> 1
+analyst <----------------> 3
+======================================================================================================
+11. Convert them to numerical dataset:
+
+City	Transport Mode
+Delhi	Bus
+Mumbai	Train
+Kolkata	Auto
+Chennai	Metro
+Delhi	Metro
+
+
+1. City (Categorical)
+Categories: Delhi, Mumbai, Kolkata, Chennai
+Numerical Encoding: Delhi=0, Mumbai=1, Kolkata=2, Chennai=3
+2. Transport Mode (Categorical)
+Categories: Bus, Train, Auto, Metro
+Numerical Encoding: Bus=0, Train=1, Auto=2, Metro=3
+
+Dataset 1: Name & Gender
+Name
+Gender
+Alex
+Male
+Emma
+Female
+John
+Male
+Lily
+Female
+Chris
+Non-binary
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<pair<string,string>>genders= 
+    {
+        {"Alex","male"},
+        {"Emma","female"},
+        {"John","male"},
+        {"Lily","female"},
+        {"Chris","nonbinary"},
+        {"Alex","male"},
+    };
+    map<string,int>gendercode= 
+    {
+        {"male",0},
+        {"female",1},
+        {"others",2},
+        {"nonbinary",3}
+    };
+    map<string,int>namecode= 
+    {
+        {"Alex",0},
+        {"Emma",1},
+        {"John",2},
+        {"Lily",3},
+        {"Chris",4}
+    };
+    cout<<"Name\t\tGender(NumericalData)\n";
+    for(auto it:genders)
+    {
+        cout<<namecode[it.first]<<"\t\t";
+        cout<<gendercode[it.second]<<"\n";
+    }
+}
+output:-
+Name            Gender(NumericalData)
+0               0
+1               1
+2               0
+3               1
+4               3
+0               0
+=================================================================================================
+Dataset 3: City & Weather
+City
+Weather
+New York
+Sunny
+Mumbai
+Rainy
+Tokyo
+Cloudy
+Paris
+Snowy
+Sydney
+Windy
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<pair<string,string>>cityWeather= 
+    {
+        {"new york","sunny"},
+        {"mumbai","rainy"},
+        {"tokyo","cloudy"},
+        {"paris","snowy"},
+        {"sydney","windy"},
+    };
+    map<string,int>weatherCode= 
+    {
+        {"sunny",0},
+        {"rainy",1},
+        {"cloudy",2},
+        {"snowy",3},
+        {"windy",4}
+    };
+    map<string,int>cityCode= 
+    {
+        {"new york",0},
+        {"mumbai",1},
+        {"tokyo",2},
+        {"paris",3},
+        {"sydney",4}
+    };
+    cout<<"city\t\tweather(numericaldata)\n";
+    for(auto it:cityWeather)
+    {
+        cout<<cityCode[it.first]<<"\t\t";
+        cout<<weatherCode[it.second]<<"\n";
+    }
+}
+output:-
+city            weather(numericaldata)
+0               0
+1               1
+2               2
+3               3
+4               4
+==================================================================================================
+Dataset 4: Vehicle & Fuel Type
+Vehicle
+Fuel Type
+Sedan
+Petrol
+SUV
+Diesel
+Truck
+Diesel
+Cycle
+Electric
+Bike
+Petrol
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<pair<string,string>>vehicleFuel= 
+    {
+        {"sedan","petrol"},
+        {"suv","diesel"},
+        {"truck","diesel"},
+        {"cycle","electric"},
+        {"bike","petrol"},
+    };
+    map<string,int>fuelTypeCode= 
+    {
+        {"petrol",0},
+        {"diesel",1},
+        {"electric",2}
+    };
+    map<string,int>vehicleCode= 
+    {
+        {"sedan",0},
+        {"suv",1},
+        {"truck",2},
+        {"cycle",3},
+        {"bike",4}
+    };
+    cout<<"vehicle\t\tfuel type(numericaldata)\n";
+    for(auto it:vehicleFuel)
+    {
+        cout<<vehicleCode[it.first]<<"\t\t";
+        cout<<fuelTypeCode[it.second]<<"\n";
+    }
+}
+output:-
+vehicle         fuel type(numericaldata)
+0               0
+1               1
+2               1
+3               2
+4               0
+===================================================================================================
+Dataset 5: Skill & Proficiency Level
+Skill
+Proficiency
+Python
+Beginner
+JS
+Intermediate
+Java
+Advanced
+C++
+Intermediate
+SQL
+Beginner
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<pair<string,string>>skillProficiency= 
+    {
+        {"python","beginner"},
+        {"js","intermediate"},
+        {"java","advanced"},
+        {"c++","intermediate"},
+        {"sql","beginner"},
+    };
+    map<string,int>proficiencyCode= 
+    {
+        {"beginner",0},
+        {"intermediate",1},
+        {"advanced",2}
+    };
+    map<string,int>skillCode= 
+    {
+        {"python",0},
+        {"js",1},
+        {"java",2},
+        {"c++",3},
+        {"sql",4}
+    };
+    cout<<"skill\t\tproficiency level(numericaldata)\n";
+    for(auto it:skillProficiency)
+    {
+        cout<<skillCode[it.first]<<"\t\t";
+        cout<<proficiencyCode[it.second]<<"\n";
+    }
+}
+output:-
+skill           proficiency level(numericaldata)
+0               0
+1               1
+2               2
+3               1
+4               0
+======================================================================================================
