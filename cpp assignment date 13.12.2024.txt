@@ -1,0 +1,317 @@
+cpp assignment date 13.12.2024
+===========================================================================================================
+1.Write a program that takes an integer array as input and finds the sum of all even numbers in the array.
+
+#include<bits/stdc++.h>
+using namespace std;
+int sumofeven(int arr[],int n)
+{
+    int sum=0;
+    for(int i=0;i<n;i++)
+    {
+      if(arr[i]%2==0)
+      {
+          sum+=arr[i];
+      }
+    }
+    return sum;
+}
+int main()
+{
+    int arr[]={1,2,3,4,5,6,7,8,9,10,12,11,13,14,15,16};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    cout<<sumofeven(arr,size);
+}
+===========================================================================================================
+2.Write a function that takes an array and returns both the largest and smallest elements in the array.
+
+#include<bits/stdc++.h>
+using namespace std;
+void largestandsmallest(int arr[],int n)
+{
+   int largest = arr[0];
+   int smallest =arr[0];
+   for(int i=0;i<n;i++)
+   {
+       if(largest<arr[i])
+       {
+           largest=arr[i];
+       }
+       if(smallest>arr[i])
+       {
+           smallest=arr[i];
+       }
+   }
+   cout<<smallest<<" "<<largest;
+}
+int main()
+{
+    int arr[]={1,2,3,4,5,6,7,8,9,10,12,11,13,14,15,16};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    largestandsmallest(arr,size);
+}
+===========================================================================================================
+3.Write a function to reverse the elements of an array. The function should modify the array in place.
+
+#include<bits/stdc++.h>
+using namespace std;
+void reversearray(int arr[],int n)
+{
+   int i=0,j=n-1;
+   while(i<j)
+   {
+       swap(arr[i],arr[j]);
+       i++;
+       j--;
+   }
+   for(int i=0;i<n;i++)
+   {
+       cout<<arr[i]<<" ";
+   }
+}
+int main()
+{
+    int arr[]={1,2,3,4,5,6,7,8,9,10,12,11,13,14,15,16};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    reversearray(arr,size);
+}
+===========================================================================================================
+4.Given an array of integers, write a program to count the frequency of each element in the array.
+
+#include<bits/stdc++.h>
+using namespace std;
+void freqarr(int arr[], int n) 
+{
+    int res[100];
+    for(int i=0;i<n;i++) 
+    {
+        res[arr[i]]++;
+    }
+    for(int i=0;i<100;i++) 
+    {
+        if(res[i]!=0)
+        {
+            cout<<i<<" "<<res[i]<<"\n";
+        }
+    }
+}
+int main() 
+{
+    int arr[]={1,2,3,2,4,1,5,2};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    freqarr(arr, n);
+    return 0;
+}
+===========================================================================================================
+5.Write a function to find the second largest element in an array.
+
+#include<bits/stdc++.h>
+using namespace std;
+void secondlargest(int arr[],int n)
+{
+  int largest =arr[0];
+  int secondlargestele;
+  for(int i=0;i<n;i++)
+  {
+      if(largest<arr[i])
+      {
+          secondlargestele = largest;
+          largest=arr[i];
+      }
+      else if(secondlargestele<arr[i] && arr[i]!=largest)
+      {
+          secondlargestele=arr[i];
+      }
+  }
+  cout<<largest<<" "<<secondlargestele;
+}
+int main()
+{
+    int arr[]={1,2,2,1,2,2,2,3,4,5,6,6,77,88,9,69,72,78,81,29};
+    int size = sizeof(arr)/sizeof(arr[0]);
+    secondlargest(arr,size);
+}
+===========================================================================================================
+6.Write a function to check if the array is a palindrome (i.e., it reads the same forward and backward).
+
+#include <bits/stdc++.h>
+using namespace std;
+bool isPalindrome(int arr[], int n)
+{
+    int i=0,j=n-1;
+    while(i<j) 
+    {
+        if(arr[i]!=arr[j])
+        {
+            return false;
+        }
+        i++;
+        j--;
+    }
+    return true;
+}
+int main()
+{
+    int arr[]={1,2,3,2,1};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    if(isPalindrome(arr,size))
+    {
+        cout<<"The array is a palindrome.";
+    }
+    else
+    {
+        cout<<"The array is not a palindrome.";
+    }
+    return 0;
+}
+===========================================================================================================
+8.Write a function that merges two sorted arrays into a single sorted array.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    vector<int> arr1 = {1, 3, 5, 7};
+    vector<int> arr2 = {2, 4, 6, 8};
+    vector<int> res;
+    int i = 0, j = 0;
+
+    while (i < arr1.size() && j < arr2.size())
+    {
+        if (arr1[i] <= arr2[j])
+        {
+            res.push_back(arr1[i]);
+            i++;
+        }
+        else
+        {
+            res.push_back(arr2[j]);
+            j++;
+        }
+    }
+
+    // Exhaust for i
+    while (i < arr1.size())
+    {
+        res.push_back(arr1[i]);
+        i++;
+    }
+
+    // Exhaust for j
+    while (j < arr2.size())
+    {
+        res.push_back(arr2[j]);
+        j++;
+    }
+
+    for (auto it : res)
+    {
+        cout << it << " ";
+    }
+
+    return 0;
+}
+===========================================================================================================
+10.Write a function that checks whether the given array is sorted in ascending order.
+
+#include <bits/stdc++.h>
+using namespace std;
+bool isSorted(int arr[],int n)
+{
+    for(int i=1;i<n;i++)
+    {
+        if(arr[i]<arr[i-1])
+        {
+            return false;
+        }
+    }
+    return true;
+}
+int main()
+{
+    int arr[]={1,2,3,4,5,6};
+    int size=sizeof(arr)/sizeof(arr[0]);
+    if(isSorted(arr,size))
+    {
+        cout<<"The array is sorted.\n";
+    }
+    else
+    {
+        cout<<"The array is not sorted.\n";
+    }
+    return 0;
+}
+===========================================================================================================
+11.Write a function to remove duplicate elements from an array and return the updated array.
+
+#include<bits/stdc++.h>
+using namespace std;
+int removeDuplicates(int arr[], int n) 
+{
+    if(n==0)return 0;
+    int uniqueIndex=1;
+    for(int i=1;i<n;i++) 
+    {
+        bool isDuplicate=false;
+        for(int j=0;j<i;j++) 
+        {
+            if(arr[i]==arr[j]) 
+            {
+                isDuplicate=true;
+                break;
+            }
+        }
+        if(!isDuplicate) 
+        {
+            arr[uniqueIndex]=arr[i];
+            uniqueIndex++;
+        }
+    }
+    return uniqueIndex;
+}
+int main() 
+{
+    int arr[]={3,5,2,4,5,2,7,3};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int newLength=removeDuplicates(arr,n);
+    for(int i=0;i<newLength;i++) 
+    {
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
+===========================================================================================================
+12.Write a program to identify duplicate elements in an array.
+
+#include <bits/stdc++.h>
+using namespace std;
+void findDuplicates(int arr[], int n) 
+{
+    bool foundDuplicate = false;
+    for(int i=0;i<n;i++) 
+    {
+        bool isDuplicate=false;
+        for (int j=i+1;j<n;j++) 
+        {
+            if(arr[i]==arr[j]) 
+            {
+                if (!isDuplicate) 
+                {
+                    cout<<arr[i]<<" ";
+                    foundDuplicate=true;
+                    isDuplicate=true;
+                }
+                break;
+            }
+        }
+    }
+}
+int main() 
+{
+    int arr[]={3,5,2,4,5,2,7,3};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    findDuplicates(arr,n);
+    return 0;
+}
+===========================================================================================================
