@@ -1,0 +1,280 @@
+cpp assignment date 12.12.2024............
+============================================================================================
+1.
+Given an array of integers, find the first duplicate element and return it. If no duplicate exists, return -1.
+Example:
+Input: [3, 5, 2, 4, 5, 2]
+Output: 5
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int findduplicate(int arr[],int n)
+{
+    for(int i=0;i<n;i++)
+    {
+        for(int j=i+1;j<n;j++)
+        {
+            if(arr[i]==arr[j])
+            {
+                return arr[i];
+            }
+        }
+    }
+    return -1;
+}
+int main()
+{
+    int arr[]={3, 5, 2, 4, 5, 2};
+    int n = sizeof(arr)/sizeof(int);
+    cout<<findduplicate(arr,n);
+}
+============================================================================================
+2.Write a function that counts and returns the number of unique elements in an array.
+Example:
+Input: [1, 2, 2, 3, 4, 4, 5]
+Output: 3 (Unique elements are 1, 3, and 5)
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int countunique(int arr[],int n) 
+{
+    int uqcount=0;
+    bool isunique;
+    for (int i=0;i<n;i++) 
+    {
+        isunique=true;
+        for(int j=0;j<n;j++) 
+        {
+            if(i!=j&&arr[i]==arr[j]) 
+            {
+                isunique=false;
+                break;
+            }
+        }
+        if(isunique) 
+        {
+            uqcount++;
+        }
+    }
+    return uqcount;
+}
+int main() 
+{
+    int nums[] = {1, 2, 2, 3, 4, 4, 5};
+    int n = sizeof(nums) / sizeof(nums[0]);
+    cout << countunique(nums, n);
+    return 0;
+}
+============================================================================================
+3.Given an array of integers, return an array of all the duplicate elements.
+Example:
+Input: [7, 3, 5, 7, 3, 8]
+Output: [7, 3]
+
+#include<bits/stdc++.h>
+using namespace std;
+void findallduplicate(int arr[],int n)
+{
+    int uqcount=0;
+    int res[100];
+    int k=0;
+    bool isunique = true;
+    for(int i=0; i<n; i++)
+    {
+        isunique = true;
+        for(int j=0; j<n; j++)
+        {
+            if(i!=j && arr[i]==arr[j])
+            {
+                isunique = false;
+                break;
+            }
+        }
+        if(isunique==false) {
+            res[k]=arr[i];
+            k++;
+        }
+    }
+    for(auto it:res)
+    {
+      if(it!=0)
+      {
+          cout<<it<<" ";
+      }
+    }
+}
+int main()
+{
+    int arr[]= {7, 3, 5, 7, 3, 8};
+    int n = sizeof(arr)/sizeof(int);
+    findallduplicate(arr,n);
+}
+============================================================================================
+4.Given an array where all elements appear twice except for one, find the unique element.
+Example:
+Input: [2, 3, 5, 2, 5]
+Output: 3
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int countunique(int arr[],int n)
+{
+    bool isunique=true;
+    for(int i=0;i<n;i++)
+    {
+        isunique=true;
+        for(int j=0;j<n;j++)
+        {
+            if(i!=j&& arr[i]==arr[j])
+            {
+                isunique = false;
+                break;
+            }
+        }
+        if(isunique) 
+        {
+          return arr[i];
+        }
+    }
+    return -1;
+}
+int main()
+{
+    int arr[]= {2, 3, 5, 2, 5};
+    int n = sizeof(arr)/sizeof(int);
+    cout<<countunique(arr,n);
+}
+============================================================================================
+5.Given a sorted array, remove the duplicates in-place such that each unique element appears only once. Return the new length of the array.
+Example:
+Input: [1, 1, 2, 2, 3, 4]
+Output: 4 (Array becomes [1, 2, 3, 4])
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int removedu(int arr[], int n) 
+{
+    int index = 0;
+    for (int i=1;i<n;i++) 
+    {
+        if (arr[index]!=arr[i]) 
+        {
+            index++;
+            arr[index]=arr[i];
+        }
+    }
+    return index+1;
+}
+int main() 
+{
+    int array[]={1,1,2,2,3,4};
+    int n = sizeof(array) / sizeof(array[0]);
+    int newlength=removedu(array,n);
+    cout<<newlength<<"\n";
+    for (int i=0;i<newlength;i++) 
+    {
+        cout<<array[i];
+    }
+    return 0;
+}
+============================================================================================
+6.Write a function that returns true if all elements in the array are unique, otherwise false.
+Example:
+Input: [6, 2, 4, 9]
+Output: true
+Input: [1, 2, 3, 1]
+Output: false
+
+
+#include<bits/stdc++.h>
+using namespace std;
+bool unique(int arr[],int n) 
+{
+    for(int i=0;i<n;i++) 
+    {
+        for(int j=i+1;j<n;j++) 
+        {
+            if(arr[i]==arr[j]) 
+            {
+                return false;
+            }
+        }
+    }
+    return true;
+}
+int main() 
+{
+    int num[] = {6, 2, 4, 9};
+    int n=sizeof(num)/sizeof(num[0]);
+    if(unique(num,n)) 
+    {
+        cout<<"true";
+    } 
+    else 
+    {
+        cout<<"false";
+    }
+    return 0;
+}
+============================================================================================
+8.Given an array of numbers from 1 to n with one number missing, find the missing number.
+Example:
+Input: [1, 2, 4, 5] (n = 5)
+Output: 3
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int findMissingNumber(int arr[], int n) 
+{
+    int expectedSum=n*(n+1)/2;
+    int actualSum = 0;
+    for(int i=0;i<n-1;i++) 
+    {
+        actualSum+=arr[i];
+    }
+    return expectedSum - actualSum;
+}
+int main() 
+{
+    int arr[]={1,2,4,5};
+    int n=5;
+    int missingNumber=findMissingNumber(arr,n);
+    cout<<missingNumber;
+    return 0;
+}
+===========================================================================================
+9.Given an array containing numbers from 1 to n, where n is the length of the array, find all duplicate numbers.
+Example:
+Input: [3, 1, 2, 3, 4, 2]
+Output: [3, 2]
+
+#include <bits/stdc++.h>
+using namespace std;
+void findDuplicates(int arr[],int n) 
+{
+    bool visited[n+1]={false};
+    for(int i=0;i<n;i++)
+    {
+        if(visited[arr[i]]) 
+        {
+            cout<<arr[i]<<" ";
+        }
+        else
+        {
+            visited[arr[i]] = true;
+        }
+    }
+}
+int main() 
+{
+    int arr[]={3,1,2,3,4,2};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    findDuplicates(arr, n);
+    return 0;
+}
+============================================================================================
