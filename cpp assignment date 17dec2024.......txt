@@ -1,0 +1,196 @@
+cpp assignment date 17dec2024...................
+========================================================================================================
+q.1.Given an array of integers, write a program to square each element and print the resulting array.
+
+Input: [2, 3, 4, 5]
+Output: [4, 9, 16, 25]
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[]={2,3,4,5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int res[n];
+    for(int i=0;i<n;i++)
+    {
+        res[i]=arr[i]*arr[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<res[i];
+    }
+    
+}
+========================================================================================================
+q.2.Given an array of integers, cube each element and return the modified array.
+
+Input: [1, -2, 3, -4]
+Output: [1, -8, 27, -64]
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[]={1,-2,3,-4};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int res[n];
+    for(int i=0;i<n;i++)
+    {
+        res[i]=arr[i]*arr[i]*arr[i];
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<res[i];
+    }
+}
+========================================================================================================
+q.3.Write a program to swap adjacent elements in the array. If the array length is odd, leave the last element unchanged.
+
+Input: [1, 2, 3, 4, 5]
+Output: [2, 1, 4, 3, 5]
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[]={1,2,3,4,5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    for(int i=0;i<n-1;i+=2)
+    {
+        swap(arr[i],arr[i+1]);
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i];
+    }
+}
+========================================================================================================
+q.4.Given an array, write a program to reverse its elements.
+
+Input: [10, 20, 30, 40]
+Output: [40, 30, 20, 10]
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[]={10,20,30,40};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    for(int i=0;i<n/2;i++)
+    {
+        swap(arr[i],arr[n-i-1]);
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<arr[i];
+    }
+}
+========================================================================================================
+q.5.Write a program to find the maximum element in an array.
+
+Input: [5, 12, 3, 19, 7]
+Output: 19
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[]={5,12,3,19,7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int maxele=arr[0];
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]>maxele)
+        {
+            maxele=arr[i];
+        }
+    }
+        cout<<maxele;
+}
+========================================================================================================
+q.6.Given an array of integers, find all pairs of elements whose sum is equal to a given target k.
+
+Array: [2, 4, 3, 7, 1]
+Target: 6
+Output: (2, 4), (3, 3)
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    vector<int>arr={2,4,3,7,1};
+    int target=6;
+    int key;
+    for(int i=0;i<arr.size();i++)
+    {
+     
+      for(int j=i;j<arr.size();j++)
+      {
+          if(arr[i]+arr[j]==target)
+          {
+              cout<<"("<<arr[i]<<","<<arr[j]<<")"<<"\n";
+          }
+      }
+    }
+}
+========================================================================================================
+q.7.Write a program to count the number of even and odd numbers in an array.
+
+Input: [1, 2, 3, 4, 5, 6]
+Output: Even: 3, Odd: 3
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+	int arr[]= {1,2,3,4,5,6};
+	int n = sizeof(arr)/sizeof(arr[0]);
+	int even=0,odd=0;
+	for (int i = 0; i < n; i++) 
+	{
+        if(arr[i]%2==0) 
+        {
+            even++;
+        }
+        else 
+        {
+            odd++;
+        }
+    }
+    cout<<even<<"\n"<<odd;
+}
+========================================================================================================
+8.Given an array and a target element, find the index of the first occurrence of the target element.
+
+Array: [4, 5, 2, 8, 2]
+Target: 2
+Output: 2
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[]={4,5,2,8,2};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int target=2;
+    int index=0;
+    for (int i=0;i<n;i++) 
+    {
+        if(arr[i]==target) 
+        {
+            index=i;
+        }
+    }
+    cout<<target;
+}
+========================================================================================================

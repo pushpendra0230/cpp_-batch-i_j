@@ -1,0 +1,143 @@
+cpp assignment date 18dec2024..........
+====================================================================================================================
+q.1.Initialize an integer array arr of size 5 with values 1, 2, 3, 4, 5.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int arr[5]={1,2,3,4,5};
+    for(int i=0;i<5;i++) 
+    {
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
+====================================================================================================================
+q.2.Create an integer array arr of size 6 where only the first 3 elements are initialized to 10, 20, 30. What are the remaining elements initialized to?
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int arr[6]={10,20,30};
+    for(int i = 0; i < 6; i++) 
+    {
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
+====================================================================================================================
+q.3.Declare and initialize a character array chars with the string "Hello" and print each character individually.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    char arr[]={'h','e','l','l','o'};
+    for(int i = 0; i < 5; i++) 
+    {
+        cout << arr[i];
+    }
+    return 0;
+}
+====================================================================================================================
+q.4.Take an integer n from the user and initialize an integer array of size n with the squares of the numbers 1 to n.
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++) 
+    {
+        arr[i] =(i+1)*(i+1);
+    }
+    for(auto it:arr) 
+    {
+        cout<<it<<" ";
+    }
+    return 0;
+}
+====================================================================================================================
+q.5.Create an integer array arr of size 5 and initialize it with numbers 5, 10, 15, 20, 25 using a loop.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int arr[5];
+    for(int i=0;i<5;i++) 
+    {
+        arr[i]=(i+1)*5;
+    }
+    for(int i=0;i<5;i++) 
+    {
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
+====================================================================================================================
+q.6.Create an integer array arr of size 5 and initialize all elements to -1 in a single line.
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int arr[5]={-1,-1,-1,-1,-1};
+    for (int i=0;i<5;i++) 
+    {
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
+====================================================================================================================
+q.7.Initialize an array arr2 by copying the values from another array arr1 which contains {1, 2, 3, 4, 5}.
+
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int arr1[5]={1,2,3,4,5};
+    int arr2[5];
+    for (int i=0;i<5;i++) 
+    {
+        arr2[i]=arr1[i];
+    }
+    for(auto it:arr2) 
+    {
+        cout<<it<< " ";
+    }
+    return 0;
+}
+====================================================================================================================
+q.8.Write a function that takes an integer n and returns an integer array of size n initialized with the value 42 in each position.
+
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() 
+{
+    int arr[5]={42,42,42,42,42};
+    for (int i = 0; i < 5; i++) 
+    {
+        cout<<arr[i]<<" ";
+    }
+    return 0;
+}
+====================================================================================================================
