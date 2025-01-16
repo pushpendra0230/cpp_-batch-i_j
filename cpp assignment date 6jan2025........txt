@@ -1,0 +1,224 @@
+cpp assignment date 6jan2025..........................
+=================================================================================================================================================
+q.1.Write a program to check if each element of an array is divisible by 6, and store the result as true (divisible) or false (not divisible).
+
+#include<bits/stdc++.h>
+using namespace std;
+void divisibleby6(int arr[],int n)
+{
+    bool res[n];
+    for(int i=0;i<n;i++)
+    {
+        if(arr[i]%6 == 0)
+        {
+            res[i]=true;
+        }
+        else
+        {
+            res[i]=false;
+        }
+    }
+    for(int i=0;i<n;i++)
+    {
+        cout<<res[i]<<" ";
+    }
+}
+int main()
+{
+    int arr[]={1,2,3,4,18,15,45,72,66,55,100,80,64,26,98,6};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    divisibleby6(arr,n);
+}
+=================================================================================================================================================
+q.2.Create a program to store in a new array the sum of each element of arr1 and the previous element from the original array.
+
+#include<bits/stdc++.h>
+using namespace std;
+void sum(int arr1[],int arr2[],int n1,int n2)
+{
+    int res[n1];
+    res[0]=arr1[0];
+   for(int i=1;i<n1;i++)
+   {
+      res[i]=arr2[i]+arr1[i-1];
+   }
+   for(int i=0;i<n1;i++)
+   {
+       cout<<res[i]<<" ";
+   }
+}
+int main()
+{
+    int arr1[]={1,2,3,4,18,15,45,72};
+    int arr2[]={1,2,3,6,9,7,8,9};
+    int n1 = sizeof(arr1)/sizeof(int);
+    int n2= sizeof(arr2)/sizeof(int);
+   sum(arr1,arr2,n1,n2);
+}
+=================================================================================================================================================
+q.3.Write a program to create a new array where each element is product the of the current element added to the product of the next element.
+
+#include <bits/stdc++.h>
+using namespace std;
+void sum(int arr1[], int n1) 
+{
+    int res[n1];
+
+    for(int i=0;i<n1;i++) 
+    {
+        if(i==n1-1) 
+        {
+            res[i] = arr1[i];
+        }
+        else 
+        {
+            res[i] = arr1[i] + arr1[i + 1];
+        }
+    }
+    for(int i=0;i<n1;i++) 
+    {
+        cout<<res[i]<<" ";
+    }
+}
+int main() 
+{
+    int arr1[] = {1, 2, 3, 4, 18, 15, 100, 19};
+    int n1 = sizeof(arr1) / sizeof(int);
+    sum(arr1, n1);
+    return 0;
+}
+=================================================================================================================================================
+q.4.Create a program to generate an array where each element is the sum of its index and the corresponding element from the original array.
+
+#include<bits/stdc++.h>
+using namespace std;
+void sum(int arr1[],int n1)
+{
+    int res[n1];
+    res[0]=arr1[0]+arr1[1];
+    int i;
+    for(i=1;i<n1-1;i++)
+    {
+        res[i]=arr1[i-1]+arr1[i]+arr1[i+1];
+    }
+    res[i]=arr1[i]+arr1[i-1];
+    for(int i=0;i<n1;i++)
+    {
+        cout<<res[i]<<" ";
+    }
+}
+int main()
+{
+    int arr1[]={1,2,3,4,18,15,100,19};
+    int n1 = sizeof(arr1)/sizeof(int);
+   sum(arr1,n1);
+}
+=================================================================================================================================================
+q.5.Write a program to calculate the sum of the elements at odd indexes and store the result in a new array.
+
+#include <bits/stdc++.h>
+using namespace std;
+void sumodd(int arr[], int n) 
+{
+    int sum=0;
+    for(int i=1;i<n;i+=2) 
+    {
+        sum += arr[i];
+    }
+    cout<<sum;
+}
+int main() 
+{
+    int arr[]={1,2,3,4,5,6,7,8};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    sumodd(arr, n);
+    return 0;
+}
+=================================================================================================================================================
+q.6.Write a program that divides each element by 8  and stores the result in a new array.
+
+#include <bits/stdc++.h>
+using namespace std;
+void divide(int arr[], int n)
+{
+    int result[n];
+    for(int i=0;i<n;i++) 
+    {
+        if(arr[i]%8==0) 
+        {
+            result[i]=arr[i]/8;
+        }
+        else 
+        {
+            result[i]=arr[i];
+        }
+    }
+    for (int i = 0; i < n; i++) 
+    {
+        cout << result[i] << " ";
+    }
+}
+int main() 
+{
+    int arr[]={16,32,64,128,255};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    divide(arr,n);
+    return 0;
+}
+=================================================================================================================================================
+q.7.Write a program that replaces all elements with 12 and stores the results in a new array.
+
+#include <bits/stdc++.h>
+using namespace std;
+void replace(int arr[],int n) 
+{
+    int result[n];
+    for(int i=0;i<n;i++) 
+    {
+        result[i]=12;
+    }
+    for(int i=0;i<n;i++) 
+    {
+        cout<<result[i]<<" ";
+    }
+}
+int main()
+{
+    int arr[]={5,10,15,20,25};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    replace(arr,n);
+    return 0;
+}
+=================================================================================================================================================
+q.8.Create a program that stores in a new array whether each element of the array is a multiple of 5 or not (true or false).
+
+
+#include <bits/stdc++.h>
+using namespace std;
+void check(int arr[],int n) 
+{
+    bool result[n];
+    for(int i=0;i<n;i++) 
+    {
+        if(arr[i]%5==0) 
+        {
+            result[i]=true;
+        } 
+        else 
+        {
+            result[i] = false;
+        }
+    }
+    for(int i=0;i<n;i++) 
+    {
+        cout<<result[i]<<" ";
+    }
+}
+int main() 
+{
+    int arr[]={10,23,35,47,50,12,15};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    check(arr,n);
+    return 0;
+}
+=================================================================================================================================================

@@ -1,0 +1,219 @@
+cpp assignment date 15jan2025........................
+=========================================================================================================================================
+Q1.Write a function that takes an array and its size, computes the square of each element, and stores the results in another array.
+
+Input: arr = {1, 2, 3, 4}, n = 4
+Output in result: {1, 4, 9, 16}
+
+
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> computeSquares(vector<int>& arr)
+{
+    vector<int> res;
+    for(int i=0;i<arr.size();i++)
+    {
+        res.push_back(arr[i]*arr[i]);
+    }
+    return res;
+}
+void printarr(vector<int>& arr)
+{
+    for(auto it : arr)
+    {
+        cout << it << " ";
+    }
+    cout << "\n";
+}
+int main()
+{
+    vector<int> arr = {1, 2, 3, 4};
+    vector<int> res = computeSquares(arr);
+    printarr(res);
+}
+=========================================================================================================================================
+Q2.Write a function  that calculates the cumulative sum of the array and stores it in another array.
+
+Input: arr = {1, 2, 3, 4}, n = 4
+Output in result: {1, 3, 6, 10}
+
+#include<bits/stdc++.h>
+using namespace std;
+vector<int> cummulativearr(vector<int>&arr)
+{
+    vector<int>res;
+    int sum=0;
+    for(int i=0;i<arr.size();i++)
+    {
+        sum+=arr[i];
+        res.push_back(sum);
+    }
+    return res;
+}
+void printarr(vector<int>&arr)
+{
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+int main()
+{
+    vector<int>arr={1,2,3,4} ;
+    vector<int>res = cummulativearr(arr);
+    printarr(res);
+}
+=========================================================================================================================================
+Q3.Write a function  that stores all odd numbers from the input array into another array and returns the count of odd numbers.
+
+Input: arr = {2, 5, 8, 9}, n = 4
+Output in result: {5, 9}, count = 2
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void printarr(vector<int>&arr)
+{
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+
+int cummulativearr(vector<int>&arr)
+{
+    vector<int>res;
+    for(auto it:arr)
+    {
+        if(it%2!=0)
+            res.push_back(it);
+    }
+    printarr(res);
+    return res.size();
+}
+int main()
+{
+    vector<int>arr={2,5,8,9};
+    cout<<cummulativearr(arr);
+   
+}
+=========================================================================================================================================
+Q4.Write a function that stores all elements from the input array that are multiples of x into another array and returns the count.
+
+Input: arr = {4, 10, 15, 20}, n = 4, x = 5
+Output in result: {10, 15, 20}, count = 3
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void printarr(vector<int>&arr)
+{
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+int cummulativearr(vector<int>&arr,int x)
+{
+    vector<int>res;
+    for(auto it:arr)
+    {
+        if(it%x==0)
+        {
+            res.push_back(it);
+        }
+    }
+    printarr(res);
+    return res.size();
+}
+int main()
+{
+    vector<int>arr={4,10,15,20};
+    int x=5;
+    cout<<cummulativearr(arr,x);
+   
+}
+=========================================================================================================================================
+Q.5.Write a function that extracts the digits of all numbers in the array and stores them in another array. Also, return the count of digits stored.
+
+Input: arr = {12, 34, 56}, n = 3
+Output in result: {1, 2, 3, 4, 5, 6}, count = 6
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void printarr(vector<int>&arr)
+{
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+void digitcount(vector<int>&res,int n)
+{
+    while(n)
+        {
+            res.push_back(n%10);
+            n/=10;
+        }
+}
+
+int cummulativearr(vector<int>&arr)
+{
+    vector<int>res;
+    for(auto it:arr)
+    {
+        digitcount(res,it);
+    }
+    printarr(res);
+    return res.size();
+}
+
+int main()
+{
+    vector<int>arr={12, 34, 56} ;
+    cout<<cummulativearr(arr);
+   
+}
+=========================================================================================================================================
+Q.6.Write a function that calculates the difference between each adjacent pair of elements in the array and stores the differences in another array.
+
+Input: arr = {10, 20, 15, 25}, n = 4
+Output in result: {10, -5, 10}
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void printarr(vector<int>&arr)
+{
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+
+vector<int> cummulativearr(vector<int>&arr)
+{
+    vector<int>res;
+   for(int i=1;i<arr.size();i++)
+   {
+       res.push_back(arr[i]-arr[i-1]);
+       
+   }
+   return res;
+}
+
+int main()
+{
+    vector<int>arr={10, 20, 15, 25} ;
+    vector<int>res = cummulativearr(arr);
+    printarr(res);
+}
+=========================================================================================================================================

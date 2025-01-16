@@ -1,0 +1,243 @@
+cpp assignment date 7jan2025...............................
+========================================================================================================
+q.1.Given an array of integers, calculate the factorial of each element and store the results in a new array.
+
+#include<bits/stdc++.h>
+using namespace std;
+int factorial(int n)
+{
+    int fact=1;
+    for(int i=1;i<=n;i++)
+    {
+        fact*=i;
+    }
+    return fact;
+}
+int main()
+{
+    int arr[]={1,2,4,5,8,9};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int factarr[n];
+    for(int i=0;i<n;i++)
+    {
+        factarr[i]=factorial(arr[i]);
+    }
+    for(auto it:factarr)
+    {
+        cout<<it<<" ";
+    }
+}
+===========================================================================================================================================
+q.2.Write a program that takes an array of integers as input and identifies all the prime numbers from the array. Store these prime numbers in a new array.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+bool primenumbers(int n)
+{
+    if(n<=1)
+     return false;
+    for(int i=2;i<n;i++)
+    {
+        if(n%i==0)
+         return false;
+    }
+    return true;
+}
+int main()
+{
+    int arr[]={1,2,3,4,5,6,78,17,19,23};
+    int n =sizeof(arr)/sizeof(arr[0]);
+    int res[n];
+    for(int i=0;i<n;i++)
+    {
+        if(primenumbers(arr[i]))
+            {
+                res[i]=arr[i];
+            }
+    }
+    for(auto it:res)
+    {
+       if(it!=0)
+       {
+           cout<<it<<" ";
+       }
+    }
+}
+===========================================================================================================================================
+q.3.A number is self-dividing if it is divisible by each of its digits. For example, 128 is a self-dividing number because 128 % 1 == 0, 128 % 2 == 0, and 128 % 8 == 0. Given an array of integers, find all self-dividing numbers and store them in a new array.
+
+#include<bits/stdc++.h>
+using namespace std;
+
+bool selfdividing(int n)
+{
+    int l;
+    int temp = n;
+    while(n)
+    {
+        l=n%10;
+        if(l==0)
+            return false;
+        if(temp%l!=0)
+            return false;
+        n/=10;
+    }
+    return true;
+}
+ 
+int main()
+{
+  int left =5,right=150;
+  int k=0;
+  int n = right-left;
+  int res[n];
+  for(int i=left;i<=right;i++)
+  {
+      if(selfdividing(i))
+      {
+          res[k]=i;
+          k++;
+      }
+  }
+  for(auto it:res)
+  {
+      if(it!=0)
+      {
+          cout<<it<<" ";
+      }
+  }
+}
+===========================================================================================================================================
+q.4.Take an array of integers and calculate the square of each element. Store the squares in a new array.
+
+#include <bits/stdc++.h>
+using namespace std;
+void squares(int arr[],int n) 
+{
+    int result[n];
+    for(int i=0;i<n;i++) 
+    {
+        result[i]=arr[i]*arr[i];
+    }
+    for(int i=0;i<n;i++) 
+    {
+        cout<<result[i]<<" ";
+    }
+}
+int main() 
+{
+    int arr[]={1,2,3,4,5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    squares(arr,n);
+    return 0;
+}
+===========================================================================================================================================
+q.5.Write a program to take an array of integers and calculate the sum, average, and product of all its elements. Store these three values in a result array.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    int arr[]={1,2,3,4,5};
+    int n=sizeof(arr)/sizeof(arr[0]);
+
+    int sum = 0;
+    long long product = 1;
+    for (int i = 0; i < n; i++) 
+    {
+        sum+=arr[i];
+        product*=arr[i];
+    }
+    int avg=sum/double(n);
+    int result[3]={int(sum),avg,int(product)};
+    cout<<"Sum: "<<result[0] <<"\n";
+    cout<<"Average: "<< result[1]<<"\n";
+    cout<<"Product: "<< result[2]<<"\n";
+    return 0;
+}
+===========================================================================================================================================
+q.6.Given an array of integers, calculate the cube of all odd numbers and store them in a new array.
+
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int arr[]={1,2,3,4,5,6,7};
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int result[n];
+    int k = 0;
+    for(int i=0;i<n;i++) 
+    {
+        if (arr[i] % 2 != 0) 
+        {
+            result[k]=arr[i]*arr[i]*arr[i];
+            k++;
+        }
+    }
+    for(int i=0;i<k;i++) 
+    {
+        cout<<result[i]<<" ";
+    }
+    return 0;
+}
+===========================================================================================================================================
+q.7.For each element in the given array, generate an array of its factors. Store these arrays as elements of a larger array.
+
+#include<bits/stdc++.h>
+using namespace std;
+vector<int>factors(int n)
+{
+    vector<int>res ;
+    for(int i=1;i<=n;i++)
+    {
+        if(n%i==0)
+        {
+           res.push_back(i);
+        }
+    }
+    return res;
+}
+
+int main()
+{
+    int n=12;
+    vector<int>arr = factors(n);
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+}
+===========================================================================================================================================
+q.8.Given an array of integers, check if each number is a palindrome. Store 1 for palindrome numbers and 0 otherwise in a new array.
+
+#include<bits/stdc++.h>
+using namespace std;
+bool isPalindrome(int num) 
+{
+    int original=num;
+    int reversed=0;
+    while(num!=0) 
+    {
+        int digit=num%10;
+        reversed=reversed*10+digit;
+        num/=10;
+    }
+    return original == reversed;
+}
+int main() 
+{
+    int arr[] = {121, 123, 232, 455, 909};
+    int n=sizeof(arr)/sizeof(arr[0]);
+    int result[n];
+    for(int i=0;i<n;i++) 
+    {
+        result[i]=isPalindrome(arr[i])?1:0;
+    }
+    for(int i=0;i<n;i++) 
+    {
+        cout<<result[i]<<" ";
+    }
+    return 0;
+}
+===============================================================================================================================================

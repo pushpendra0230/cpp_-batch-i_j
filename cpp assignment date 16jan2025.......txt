@@ -1,0 +1,160 @@
+cpp assignment date 16jan2025.................
+===========================================================================================================================================
+q.1.You are given a list of words. Your task is to group the words by their lengths and count how many words belong to each group. Find the length group that contains the most words.Example:
+Input: words = ["apple", "bat", "cat", "banana", "dog", "elephant", "ant"]
+Output: 3
+Explanation:
+Words of length 3: "bat", "cat", "dog", "ant" (4 words)
+Words of length 5: "apple" (1 word)
+Words of length 6: "banana" (1 word)
+Words of length 8: "elephant" (1 word)
+Group with the most words is of length 3 with 4 words.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int  findmax(vector<int>&arr)
+{
+    int maxi=arr[0];
+    for(int i=1;i<arr.size();i++)
+    {
+        if(maxi<arr[i])
+        {
+            maxi=arr[i];
+        }
+    }
+    return maxi+1;
+}
+void printarr(vector<int>&arr)
+{
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+int main()
+{
+ 
+   vector<string>arr={"apple", "bat", "cat", "banana", "dog", "elephant", "ant"};
+   vector<int>arrlength;
+   for(auto it:arr)
+   {
+       arrlength.push_back(it.length());
+   }
+   printarr(arrlength);
+   
+}
+=========================================================================================================================================
+q.2.You are given a list of product IDs represented as integers. Each product ID is placed in a bucket where the bucket number equals the sum of its digits. Determine which bucket has the most product IDs.Example:
+Input: productIDs = [12, 21, 15, 33, 42, 24, 51]
+Output: 3
+Explanation:
+Bucket 3: Product IDs [12, 21, 30] → (3 product IDs)
+Bucket 6: Product IDs [15, 33, 42, 24, 51] → (5 product IDs)
+Bucket 6 has the most product IDs with 5.
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int  findmax(vector<int>&arr)
+{
+    int maxi=arr[0];
+    for(int i=1;i<arr.size();i++)
+    {
+        if(maxi<arr[i])
+        {
+            maxi=arr[i];
+        }
+    }
+    return maxi+1;
+}
+int digitsum(int n)
+{
+    int sum=0,l;
+    while(n)
+    {
+        l=n%10;
+        sum+=l;
+        n/=10;
+    }
+    return sum;
+}
+void printarr(vector<int>&arr)
+{
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+int main()
+{
+ 
+  vector<int>arr={12, 21, 15, 33, 42, 24, 51};
+  vector<int>resdigitcount;
+  for(auto it:arr)
+  {
+      resdigitcount.push_back(digitsum(it));
+  }
+  printarr(resdigitcount);
+}
+=========================================================================================================================================
+q.3.You are given a list of integers and a divisor. Each number is assigned to a group based on its remainder when divided by the divisor. Find the group with the most numbers.Example:
+Input: nums = [10, 14, 20, 18, 22, 26, 30, 35], divisor = 5
+Output: 0
+Explanation:
+Remainder 0: [10, 20, 30] → (3 numbers)
+Remainder 1: [26] → (1 number)
+Remainder 2: [22] → (1 number)
+Remainder 4: [14, 18, 35] → (3 numbers)
+Groups 0 and 4 have the most numbers with 3.
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+int  findmax(vector<int>&arr)
+{
+    int maxi=arr[0];
+    for(int i=1;i<arr.size();i++)
+    {
+        if(maxi<arr[i])
+        {
+            maxi=arr[i];
+        }
+    }
+    return maxi+1;
+}
+int digitsum(int n)
+{
+    int sum=0,l;
+    while(n)
+    {
+        l=n%10;
+        sum+=l;
+        n/=10;
+    }
+    return sum;
+}
+void printarr(vector<int>&arr)
+{
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+int main()
+{
+ 
+  vector<int>arr={10, 14, 20, 18, 22, 26, 30, 35};
+  vector<int>divisibilty;
+  int divisor=5;
+  for(auto it:arr)
+  {
+      divisibilty.push_back(it%divisor);
+  }
+  printarr(divisibilty);
+}
+=========================================================================================================================================
