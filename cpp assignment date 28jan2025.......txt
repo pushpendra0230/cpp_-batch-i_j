@@ -1,0 +1,192 @@
+cpp assignment date 28jan2025.....................
+======================================================================================================================================================
+q.1.Create a function that takes an array of integers and returns a pair (tuple) containing the sum  and  average of the elements in the array.
+
+#include<bits/stdc++.h>
+using namespace std;
+int sumarr(vector<int>&arr)
+{
+    int sum=0;
+    for(auto it:arr)
+    {
+        sum+=it;
+    }
+    return sum;
+}
+float avgarr(vector<int>&arr)
+{
+    int sum=sumarr(arr);
+    float n=arr.size();
+    return sum/n;
+}
+
+pair<int,float>sum_avg(vector<int>&arr)
+{
+    int s=sumarr(arr);
+    float a=avgarr(arr);
+    return {s,a};
+}
+
+int main()
+{
+    vector<int>arr={1,2,3,4,5,56,67,78,98,70};
+    pair<int,float>res=sum_avg(arr);
+    cout<<res.first<<" "<<res.second;
+}
+======================================================================================================================================================
+q.2.Write a function that takes an array of integers and returns a pair (tuple) containing the max and the min values from the array.
+
+#include<bits/stdc++.h>
+using namespace std;
+int maxarr(vector<int>&arr)
+{
+    int max=arr[0];
+    for(auto it:arr)
+    {
+        if(max<it)
+            max=it;
+    }
+    return max;
+}
+int minarr(vector<int>&arr)
+{
+    int min=arr[0];
+    for(auto it:arr)
+    {
+        if(min>it)
+            min=it;
+    }
+    return min;
+}
+
+pair<int,int>max_minarr(vector<int>&arr)
+{
+    int max = maxarr(arr);
+    int min = minarr(arr);
+    return {max,min};
+}
+
+int main()
+{
+    vector<int>arr={1,2,3,4,5,56,67,78,98,70};
+    pair<int,int> res = max_minarr(arr);
+    cout<<"maximum number is : "<<res.first<<"\n"<<"minimum number is : "<<res.second;
+}
+======================================================================================================================================================
+q.3.Create a function that takes an array of integers and returns a pair containing count of odd and the  even values in the array.
+
+#include <bits/stdc++.h>
+using namespace std;
+pair<int,int>evenodd(vector<int>& arr) 
+{
+    int odd = 0, even = 0;
+    for (int num : arr) 
+    {
+        if (num % 2 == 0) 
+            even++;
+        else 
+            odd++;
+    }
+    return {odd,even};
+}
+int main() 
+{
+    vector<int>arr={1,2,3,4,5,6,7,8,9,10};
+    pair<int,int>result=evenodd(arr);
+    cout<<result.first<<" "<<result.second;
+    return 0;
+}
+======================================================================================================================================================
+q.4.Write a function that takes an array of integers and returns a pair containing the positive and the negative numbers  in the array.
+
+#include <bits/stdc++.h>
+using namespace std;
+pair<int,int>pn(vector<int>& arr)
+{
+    int positive=0,negative=0;
+    for(int num:arr) 
+    {
+        if(num>0) 
+            positive++;
+        else if(num<0) 
+            negative++;
+    }
+    return {positive,negative};
+}
+int main() 
+{
+    vector<int>arr={1,-2,3,-4,5,-6,7,-8,9,-10,-8};
+    pair<int,int>result=pn(arr);
+    cout<<result.first<<" "<<result.second;
+    return 0;
+}
+======================================================================================================================================================
+q.5.Create a function that takes an array and returns a pair containing the first and the last element of the array.
+
+#include <bits/stdc++.h>
+using namespace std;
+pair<int,int>firstLast(vector<int>& arr) 
+{
+    if(arr.empty())
+    {
+        return {-1,-1};
+    }
+    int first=arr[0];
+    int last=arr[arr.size()-1];
+    return {first,last};
+}
+int main()
+{
+    vector<int>arr={10,20,30,40,50};
+    pair<int,int>result=firstLast(arr);
+    cout<<result.first<<" "<<result.second;
+    return 0;
+}
+======================================================================================================================================================
+q.6.give two prameaters of prime number.
+
+#include<bits/stdc++.h>
+using namespace std;
+bool isprime(int n) 
+{
+    if (n <= 1) return false;
+    for (int i = 2; i * i <= n; i++) 
+    {
+        if (n % i == 0) return false;
+    }
+    return true;
+}
+vector<pair<int, int>> splitprime(int n) 
+{
+    vector<pair<int, int>> res;
+    for (int i = 1; i <= n / 2; i++)
+    {
+        if (i + (n - i) == n) 
+        {
+            if (isprime(i) && isprime(n - i)) 
+            {
+                res.push_back({i, n - i});
+            }
+        }
+    }
+    return res;
+}
+int main() 
+{
+    int n;
+    cin >> n;
+    vector<pair<int, int>> res = splitprime(n);
+    if (res.empty())
+    {
+        cout<<n;
+    } else 
+    {
+        cout<<n;
+        for (auto it : res) 
+        {
+            cout << it.first << " " << it.second << "\n";
+        }
+    }
+    return 0;
+}
+========================================================================================================
