@@ -1,0 +1,289 @@
+cpp advance batch ...................................
+========================================================================================================================
+#include<bits/stdc++.h>
+using namespace std;
+bool isprime(int n)
+{
+    for(int i=2;i*i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+pair<vector<int>,vector<int>>primenonprime(vector<int>&data)
+{
+    vector<int>prime;
+    vector<int>nonprime;
+    for(auto it:data)
+    {
+        if(isprime(it))
+        {
+            prime.push_back(it);
+        }
+        else
+        {
+            nonprime.push_back(it);
+        }
+    }
+    return {prime,nonprime};
+}
+void printarr(vector<int>&arr)
+{
+    for(auto it:arr)
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+int main()
+{
+    vector<int>data={99,15,25,89,23,56,96,41,17,25,63,23,11,10,5,9,2,33};
+    pair<vector<int>,vector<int>> res = primenonprime(data);
+    printarr(res.first);
+    printarr(res.second);
+}
+================================================================================================
+#include<bits/stdc++.h>
+using namespace std;
+
+pair<vector<int>, pair<vector<int>, vector<int>>>weight(vector<int>&weights) 
+{
+    vector<int>underweight,healthy,obese;
+    for(auto it : weights) 
+    {
+        if(it<50)
+        {
+            underweight.push_back(it);
+        }
+        else if(it <= 80)
+        {
+            healthy.push_back(it);
+        }
+        else
+        {
+            obese.push_back(it);
+        }
+    }
+    return {underweight,{healthy,obese}};
+}
+void printarr(vector<int>& arr)
+{
+    for(auto it:arr) 
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+int main() 
+{
+    vector<int>weights={45,78,90,55,68,79,88,98,44,34};
+    auto res=weight(weights);
+    cout << "Underweight: "; printarr(res.first);
+    cout << "Healthy: "; printarr(res.second.first);
+    cout << "Obese: "; printarr(res.second.second);
+}
+=============================================================================================
+#include<bits/stdc++.h>
+using namespace std;
+pair<vector<int>,pair<vector<int>, vector<int>>>heartrate(vector<int>& heartrates) 
+{
+    vector<int>athlete,normal,highrisk;
+    for(auto it : heartrates) 
+    {
+        if(it < 60)
+        {
+            athlete.push_back(it);
+        }
+        else if(it <= 90)
+        {
+            normal.push_back(it);
+        }
+        else 
+        {
+            highrisk.push_back(it);
+        }
+    }
+    return {athlete, {normal, highrisk}};
+}
+void printarr(vector<int>& arr) 
+{
+    for(auto it : arr) 
+    {
+        cout << it << " ";
+    }
+    cout << "\n";
+}
+int main()
+{
+    vector<int>heartrates = {55,67,87,65,98,77,65,78,65,45,77,89,111};
+    auto res=heartrate(heartrates);
+    cout << "Athlete: "; printarr(res.first);
+    cout << "Normal: "; printarr(res.second.first);
+    cout << "High Risk: "; printarr(res.second.second);
+}
+===============================================================================================
+#include<bits/stdc++.h>
+using namespace std;
+pair<vector<int>,pair<vector<int>, vector<int>>>step(vector<int>& steps) 
+{
+    vector<int>sedentary,active,highlyactive;
+    for(auto it : steps) 
+    {
+        if(it<5000)
+        {
+            sedentary.push_back(it);
+        }
+        else if(it<=10000)
+        {
+            active.push_back(it);
+        }
+        else
+        {
+            highlyactive.push_back(it);
+        }
+    }
+    return {sedentary,{active,highlyactive}};
+}
+void printarr(vector<int>& arr)
+{
+    for(auto it:arr) 
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+int main()
+{
+    vector<int>steps={2000,7000,12000,88000,56000,4000,2000,5000};
+    auto res=step(steps);
+    cout << "Sedentary: ";printarr(res.first);
+    cout << "Active: "; printarr(res.second.first);
+    cout << "Highly Active: "; printarr(res.second.second);
+}
+=================================================================================================
+#include<bits/stdc++.h>
+using namespace std;
+pair<vector<float>,pair<vector<float>,vector<float>>>waterintake(vector<float>& water)
+{
+    vector<float>dehydrated,normal,excess;
+    for(auto it:water) 
+    {
+        if(it<1)
+        {
+            dehydrated.push_back(it);
+        }
+        else if(it<=3)
+        {
+            normal.push_back(it);
+        }
+        else 
+        {
+            excess.push_back(it);
+        }
+    }
+    return {dehydrated,{normal,excess}};
+}
+void printarr(vector<float>& arr) 
+{
+    for(auto it:arr) 
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+int main() 
+{
+    vector<float>waterliters={0.5,2,3.5,4.6,5.8,4.7,2.3,5.9,1.1,1.2,2.3,3.1};
+    auto res = waterintake(waterliters);
+    cout << "Dehydrated: ";printarr(res.first);
+    cout << "Normal: ";printarr(res.second.first);
+    cout << "Excess: ";printarr(res.second.second);
+}
+=================================================================================================
+#include<bits/stdc++.h>
+using namespace std;
+pair<vector<int>,pair<vector<int>,vector<int>>>categorize(vector<int>&ages) 
+{
+    vector<int>young,middleage,senior;
+    for(auto age:ages) 
+    {
+        if(age<30) 
+        {
+            young.push_back(age);
+        }
+        else if(age<=60) 
+        {
+            middleage.push_back(age);
+        }
+        else 
+        {
+            senior.push_back(age);
+        }
+    }
+    return {young,{middleage,senior}};
+}
+void printArr(vector<int>& arr) 
+{
+    for(auto it:arr) 
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+int main()
+{
+    vector<int>ages={18,45,67,80,78,67,88,76,56,43,23,32,11,12,24,29};
+    auto res=categorize(ages);
+    cout << "Young: ";printArr(res.first);
+    cout << "Middle-age: ";printArr(res.second.first);
+    cout << "Senior: ";printArr(res.second.second);
+}
+=============================================================================================
+#include <bits/stdc++.h>
+using namespace std;
+struct salarycategory 
+{
+    vector<int>low;
+    vector<int>middle;
+    vector<int>high;
+};
+salarycategory salary(vector<int>& salaries) 
+{
+    salarycategory salarygroup;
+    for(auto salary : salaries) 
+    {
+        if(salary<50000) 
+        {
+            salarygroup.low.push_back(salary);
+        }
+        else if(salary<=100000) 
+        {
+            salarygroup.middle.push_back(salary);
+        }
+        else 
+        {
+            salarygroup.high.push_back(salary);
+        }
+    }
+    return salarygroup;
+}
+void printArr(const vector<int>&arr) 
+{
+    for(auto it:arr) 
+    {
+        cout<<it<<" ";
+    }
+    cout<<"\n";
+}
+int main() 
+{
+    vector<int>salaries={25000,70000,120000};
+    salarycategory res=salary(salaries);
+    cout << "Low Salary: ";printArr(res.low);
+    cout << "Middle Salary: ";printArr(res.middle);
+    cout << "High Salary: ";printArr(res.high);
+}
+=======================================================================================
