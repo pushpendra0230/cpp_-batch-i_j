@@ -1,0 +1,319 @@
+cpp assignment date 26.fab.2025...................................
+	
+table no . 1 .
+
+
+#include <bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    vector<string> TestCategory=
+    {
+        "Blood Test",
+        "MRI Scan",
+        "X-Ray",
+        "Ultrasound",
+        "ECG",
+        "CT Scan",
+        "COVID-19 Test",
+        "Urine Analysis",
+        "Allergy Test",
+        "Biopsy"
+    };
+    vector<int> Cost = 
+    {
+        120,
+        800,
+        100,
+        150,
+        260,
+        700,
+        50,
+        80,
+        300,
+        900
+    };
+    cout << "Test Category\t\tCost\n";
+    cout << "=====================================\n";
+
+    for (int i = 0; i < TestCategory.size(); i++)
+    {
+        cout<<TestCategory[i]<<"\t\t"<<Cost[i]<<"\n";
+    }
+    return 0;
+}
+
+next method.......
+
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct TestCategoryCost {
+    string testcategory;
+    int cost;
+};
+
+int main() {
+    vector<TestCategoryCost> test = {
+        {"X-Ray", 100},
+        {"Blood Test", 120},
+        {"MRI Scan", 800},
+        {"Ultrasound", 150},
+        {"ECG", 200},
+        {"CT Scan", 700},
+        {"COVID-19 Test", 50},
+        {"Urine Analysis", 80},
+        {"Allergy Test", 300},
+        {"Biopsy", 900}
+    };
+
+    cout << "Test Category\t\tCost\n";
+    cout << "============================================\n";
+
+    for (auto it : test) {
+        cout << it.testcategory << "\t\t" << it.cost << "\n";
+    }
+
+    return 0;
+}
+===================================================================================================================
+table no .2.
+
+with structre........
+
+#include <bits/stdc++.h>
+using namespace std;
+struct MedicineDosage 
+{
+    string medicineType;
+    double dosage;
+};
+int main() 
+{
+    vector<MedicineDosage> medicines = 
+    {
+        {"Antibiotic", 500},
+        {"Painkiller", 250},
+        {"Antacid", 150},
+        {"Antihistamine", 100},
+        {"Antidepressant", 300},
+        {"Antiviral", 400},
+        {"Anti-inflammatory", 200},
+        {"Vaccine", 0.5},
+        {"Insulin", 40},
+        {"Sedative", 50}
+    };
+    cout<<"Medicine Type\t\tAverage Dosage (mg)\n";
+    cout<<"============================================\n";
+    for(auto it:medicines) 
+    {
+        cout<<it.medicineType<<"\t\t"<<it.dosage<<"\n";
+    }
+    return 0;
+}
+
+..................
+
+with map.......
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    map<string,double>medicines=
+    {
+        {"Antibiotic", 500},
+        {"Painkiller", 250},
+        {"Antacid", 150},
+        {"Antihistamine", 100},
+        {"Antidepressant", 300},
+        {"Antiviral", 400},
+        {"Anti-inflammatory", 200},
+        {"Vaccine", 0.5},
+        {"Insulin", 40},
+        {"Sedative", 50}
+    };
+    cout << "Medicine Type\t\tAverage Dosage (mg)\n";
+    cout << "============================================\n";
+    for(auto it:medicines) 
+    {
+        cout<<it.first<<"\t\t"<<it.second<<"\n";
+    }
+    return 0;
+}
+===================================================================================================================
+table no .3.
+
+with structre........
+
+#include <bits/stdc++.h>
+using namespace std;
+struct Vehicle
+{
+    string VehicleType;
+    double Average;
+};
+int main()
+{
+    vector<Vehicle>gadi = 
+    {
+        {"seden", 15},
+        {"suv", 12},
+        {"hatchback", 18},
+        {"truck", 8},
+        {"motercycle", 40},
+        {"electric car", 120},
+        {"hybrid car", 25},
+        {"minivan", 14},
+        {"coupe", 16},
+        {"convertable", 13}
+    };
+    cout<<"VehicleType\t\tAverage\n";
+    cout<<"============================================\n";
+    for(auto it:gadi) 
+    {
+        cout<<it.VehicleType<<"\t\t"<<it.Average<<"\n";
+    }
+    return 0;
+}
+
+..................
+
+with map.......
+
+#include<bits/stdc++.h>
+using namespace std;
+int main() 
+{
+    map<string,int>gadi=
+    {
+        {"seden", 15},
+        {"suv", 12},
+        {"hatchback", 18},
+        {"truck", 8},
+        {"motercycle", 40},
+        {"electric car", 120},
+        {"hybrid car", 25},
+        {"minivan", 14},
+        {"coupe", 16},
+        {"convertable", 13}
+    };
+    cout << "VehicleType\t\tAverage\n";
+    cout << "============================================\n";
+    for(auto it:gadi) 
+    {
+        cout<<it.first<<"\t\t"<<it.second<<"\n";
+    }
+    return 0;
+}
+===================================================================================================================
+table no .4.
+
+with structre........
+
+#include <bits/stdc++.h>
+using namespace std;
+
+struct Course {
+    string CourseType;
+    int Duration;
+};
+
+int main() {
+    vector<Course> courses = {
+        {"Bachelor's Degree", 48},
+        {"Master's Degree", 24},
+        {"Diploma", 12},
+        {"Certification", 6},
+        {"Online Course", 3},
+        {"PhD Program", 60},
+        {"Bootcamp", 4},
+        {"Associate's Degree", 24},
+        {"Internship", 2},
+        {"Workshop", 1}
+    };
+
+    cout << "Course Type\t\t\tAverage Duration (Months)\n";
+    cout << "=================================================\n";
+    for (auto it : courses) {
+        cout << it.CourseType << "\t\t\t" << it.Duration << "\n";
+    }
+
+    return 0;
+}
+
+..................
+
+with map.......
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    map<string, int> courses = {
+        {"Bachelor's Degree", 48},
+        {"Master's Degree", 24},
+        {"Diploma", 12},
+        {"Certification", 6},
+        {"Online Course", 3},
+        {"PhD Program", 60},
+        {"Bootcamp", 4},
+        {"Associate's Degree", 24},
+        {"Internship", 2},
+        {"Workshop", 1}
+    };
+
+    cout << "Course Type\t\t\tAverage Duration (Months)\n";
+    cout << "=================================================\n";
+    for (auto it : courses) {
+        cout << it.first << "\t\t\t" << it.second << "\n";
+    }
+
+    return 0;
+}
+===================================================================================================================
+table no .8.
+
+
+
+#include <bits/stdc++.h>
+using namespace std;
+struct SightDestinationplans 
+{
+    vector<string>Destinations;
+    vector<string>Activities;
+    int costs;
+};
+int main() 
+{
+    vector<SightDestinationplans> plans = 
+    {
+        {{"Paris", "Rome"}, {"Sightseeing", "Museum Tour"}, 2000},
+        {{"New York", "Los Angeles"}, {"Shopping", "Broadway Show"}, 1500},
+        {{"Tokyo", "Kyoto"}, {"Temple Visit", "Food Tasting"}, 2500},
+        {{"Sydney", "Melbourne"}, {"Beach Day", "Wine Tasting"}, 1800},
+        {{"Cairo", "Luxor"}, {"Pyramid Tour", "Cruise"}, 1200},
+        {{"Istanbul", "Cappadocia"}, {"Hot Air Balloon", "Market Visit"}, 1600},
+        {{"Rio de Janeiro", "Buenos Aires"}, {"Carnival", "Tango Show"}, 2200},
+        {{"Bangkok", "Phuket"}, {"Temple Visit", "Snorkeling"}, 1300},
+        {{"London", "Edinburgh"}, {"Castle Tour", "Theatre"}, 1900},
+        {{"Dubai", "Abu Dhabi"}, {"Desert Safari", "Luxury Shopping"}, 2100}
+    };
+    for (auto plan:plans) 
+    {
+        for (auto destination:plan.Destinations) 
+        {
+            cout<<destination<<"; ";
+        }
+        cout<<"\t\t";
+        for(auto activity:plan.Activities) 
+        {
+            cout<<activity<<"; ";
+        }
+        cout<<"\t\t";
+        cout<<plan.costs<<"\n";
+    }
+   return 0;
+}
+====================================================================
